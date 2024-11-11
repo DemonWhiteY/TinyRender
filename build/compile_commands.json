@@ -1,0 +1,26 @@
+[
+{
+  "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\MinGW\\bin\\c++.exe -IE:/Lab/TinyShader/include/eigen  -Wall -std=gnu++14 -o CMakeFiles\\tinyshader.dir\\src\\Triangle.cpp.obj -c E:\\Lab\\TinyShader\\src\\Triangle.cpp",
+  "file": "E:\\Lab\\TinyShader\\src\\Triangle.cpp",
+  "output": "CMakeFiles\\tinyshader.dir\\src\\Triangle.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\MinGW\\bin\\c++.exe -IE:/Lab/TinyShader/include/eigen  -Wall -std=gnu++14 -o CMakeFiles\\tinyshader.dir\\src\\main.cpp.obj -c E:\\Lab\\TinyShader\\src\\main.cpp",
+  "file": "E:\\Lab\\TinyShader\\src\\main.cpp",
+  "output": "CMakeFiles\\tinyshader.dir\\src\\main.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\MinGW\\bin\\c++.exe -IE:/Lab/TinyShader/include/eigen  -Wall -std=gnu++14 -o CMakeFiles\\tinyshader.dir\\src\\rasterizer.cpp.obj -c E:\\Lab\\TinyShader\\src\\rasterizer.cpp",
+  "file": "E:\\Lab\\TinyShader\\src\\rasterizer.cpp",
+  "output": "CMakeFiles\\tinyshader.dir\\src\\rasterizer.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\MinGW\\bin\\c++.exe -IE:/Lab/TinyShader/include/eigen  -Wall -std=gnu++14 -o CMakeFiles\\tinyshader.dir\\src\\tgaimage.cpp.obj -c E:\\Lab\\TinyShader\\src\\tgaimage.cpp",
+  "file": "E:\\Lab\\TinyShader\\src\\tgaimage.cpp",
+  "output": "CMakeFiles\\tinyshader.dir\\src\\tgaimage.cpp.obj"
+}
+]

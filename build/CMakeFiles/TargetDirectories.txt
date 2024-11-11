@@ -1,0 +1,4 @@
+E:/Lab/TinyShader/build/CMakeFiles/tinyshader.dir
+E:/Lab/TinyShader/build/CMakeFiles/clean_all.dir
+E:/Lab/TinyShader/build/CMakeFiles/edit_cache.dir
+E:/Lab/TinyShader/build/CMakeFiles/rebuild_cache.dir
