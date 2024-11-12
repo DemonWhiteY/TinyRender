@@ -21,14 +21,3 @@ public:
     float get_zNear() { return zNear; }
     float get_zFar() { return zFar; }
 };
-
-Camera::Camera(/* args */)
-{
-    position = {0, 0, 0};
-    up = {0, 0, 1};
-    target = {1, 0, 0};
-    eye_fov = 60;
-    aspect_ratio = 1.5;
-    zNear = 10;
-    zFar = 100;
-}

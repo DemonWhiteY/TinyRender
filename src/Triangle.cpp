@@ -59,6 +59,6 @@ std::array<Vector4f, 3> Triangle::toVector4() const
 
 void Triangle::getinfo()
 {
-    boxmax = {std::max(v[0][0], std::max(v[1][0], v[2][0])), std::max(v[0][1], std::max(v[1][1], v[2][1])), std::max(v[0][2], std::max(v[1][2], v[2][2]))};
-    boxmin = {std::min(v[0][0], std::min(v[1][0], v[2][0])), std::min(v[0][1], std::min(v[1][1], v[2][1])), std::min(v[0][2], std::min(v[1][2], v[2][2]))};
+    boxmax = {std::max(v[0][0], std::max(v[1][0], v[2][0])), std::max(v[0][1], std::max(v[1][1], v[2][1]))};
+    boxmin = {std::min(v[0][0], std::min(v[1][0], v[2][0])), std::min(v[0][1], std::min(v[1][1], v[2][1]))};
 }

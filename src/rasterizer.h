@@ -5,6 +5,7 @@
 #include <map>
 #include "Triangle.hpp"
 #include "tgaimage.h"
+#include <Eigen/Dense>
 using namespace Eigen;
 
 enum class Buffers
@@ -39,11 +40,17 @@ public:
     Rasterizer(int w, int h);
     ~Rasterizer();
 
+    void Handle();
+
     void set_model(const Eigen::Matrix4f &m);
 
     void set_view(const Eigen::Matrix4f &v);
 
     void set_projection(const Eigen::Matrix4f &p);
+
+    void add_pos_buf(int i, std::vector<Eigen::Vector3f> position);
+    void add_ind_buf(int i, std::vector<Eigen::Vector3i> index);
+    void add_col_buf(int i, std::vector<Eigen::Vector3f> color);
 
     // void Rasterizer::clear(Buffers buff);
 
@@ -59,4 +66,8 @@ public:
     float crossProduct(Vector2f A, Vector2f B, Vector2f P);
     bool isPointInTriangle(Vector2f A, Vector2f B, Vector2f C, Vector2f P);
     std::tuple<float, float, float> computeBarycentric2D(float x, float y, const Vector3f *v);
+
+    Vector3f Transform(Vector3f, Matrix4f);
+
+    Vector3f World2Screen(Vector3f worldpos);
 };

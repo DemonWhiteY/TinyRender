@@ -15,25 +15,25 @@
 ########################
 
 //Path to a program.
-CMAKE_ADDR2LINE:FILEPATH=D:/MinGW/bin/addr2line.exe
+CMAKE_ADDR2LINE:FILEPATH=D:/mingw64/bin/addr2line.exe
 
 //Path to a program.
-CMAKE_AR:FILEPATH=D:/MinGW/bin/ar.exe
+CMAKE_AR:FILEPATH=D:/mingw64/bin/ar.exe
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
 CMAKE_BUILD_TYPE:STRING=
 
 //CXX compiler
-CMAKE_CXX_COMPILER:FILEPATH=D:/MinGW/bin/c++.exe
+CMAKE_CXX_COMPILER:FILEPATH=D:/mingw64/bin/c++.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_AR:FILEPATH=D:/MinGW/bin/gcc-ar.exe
+CMAKE_CXX_COMPILER_AR:FILEPATH=D:/mingw64/bin/gcc-ar.exe
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=D:/MinGW/bin/gcc-ranlib.exe
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=D:/mingw64/bin/gcc-ranlib.exe
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
@@ -54,7 +54,7 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
 
 //Path to a program.
-CMAKE_DLLTOOL:FILEPATH=D:/MinGW/bin/dlltool.exe
+CMAKE_DLLTOOL:FILEPATH=D:/mingw64/bin/dlltool.exe
 
 //Flags used by the linker during all build types.
 CMAKE_EXE_LINKER_FLAGS:STRING=
@@ -71,8 +71,8 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//No help, variable specified on the command line.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
+//Enable/Disable output of compile commands during generation.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=E:/Lab/TinyShader/build/CMakeFiles/pkgRedirects
@@ -84,7 +84,7 @@ CMAKE_GNUtoMS:BOOL=OFF
 CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/tinyshader
 
 //Path to a program.
-CMAKE_LINKER:FILEPATH=D:/MinGW/bin/ld.exe
+CMAKE_LINKER:FILEPATH=D:/mingw64/bin/ld.exe
 
 //make program
 CMAKE_MAKE_PROGRAM:FILEPATH=D:/VISUAL~2/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe
@@ -110,13 +110,13 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_NM:FILEPATH=D:/MinGW/bin/nm.exe
+CMAKE_NM:FILEPATH=D:/mingw64/bin/nm.exe
 
 //Path to a program.
-CMAKE_OBJCOPY:FILEPATH=D:/MinGW/bin/objcopy.exe
+CMAKE_OBJCOPY:FILEPATH=D:/mingw64/bin/objcopy.exe
 
 //Path to a program.
-CMAKE_OBJDUMP:FILEPATH=D:/MinGW/bin/objdump.exe
+CMAKE_OBJDUMP:FILEPATH=D:/mingw64/bin/objdump.exe
 
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
@@ -143,10 +143,10 @@ CMAKE_PROJECT_VERSION_PATCH:STATIC=
 CMAKE_PROJECT_VERSION_TWEAK:STATIC=
 
 //Path to a program.
-CMAKE_RANLIB:FILEPATH=D:/MinGW/bin/ranlib.exe
+CMAKE_RANLIB:FILEPATH=D:/mingw64/bin/ranlib.exe
 
 //RC compiler
-CMAKE_RC_COMPILER:FILEPATH=D:/MinGW/bin/windres.exe
+CMAKE_RC_COMPILER:FILEPATH=D:/mingw64/bin/windres.exe
 
 //Flags for Windows Resource Compiler during all build types.
 CMAKE_RC_FLAGS:STRING=
@@ -164,7 +164,7 @@ CMAKE_RC_FLAGS_RELEASE:STRING=
 CMAKE_RC_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_READELF:FILEPATH=D:/MinGW/bin/readelf.exe
+CMAKE_READELF:FILEPATH=D:/mingw64/bin/readelf.exe
 
 //Flags used by the linker during the creation of shared libraries
 // during all build types.
@@ -214,7 +214,7 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_STRIP:FILEPATH=D:/MinGW/bin/strip.exe
+CMAKE_STRIP:FILEPATH=D:/mingw64/bin/strip.exe
 
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND

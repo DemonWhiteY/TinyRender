@@ -19,7 +19,7 @@ public:
     Vector2f tex_coords[3]; // texture u,v
     Vector3f normal[3];     // normal vector for each vertex
 
-    Vector3f boxmin, boxmax;
+    Vector2f boxmin, boxmax;
 
     // Texture *tex;
     Triangle();

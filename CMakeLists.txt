@@ -13,18 +13,36 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 set(EIGEN3_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/eigen")
 
+set(OBJECTS_LOADER_DIR "${CMAKE_SOURCE_DIR}/include/tiny_obj_loader")
+
+
 message(STATUS "Eigen3 include dir: ${EIGEN3_INCLUDE_DIR}")
 
 include_directories(${EIGEN3_INCLUDE_DIR})
+include_directories(${OBJECTS_LOADER_DIR})
 
-# 查找所有的源文件（.cpp 文件）
-file(GLOB SOURCES "src/*.cpp")
+# 递归查找所有 .cpp 源文件
+file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 # 创建目标文件（可执行文件）
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 # 链接数学库
 target_link_libraries(${PROJECT_NAME} m)
+
+
+target_link_libraries(tinyshader 
+    kernel32
+    user32
+    gdi32
+    winspool
+    shell32
+    ole32
+    oleaut32
+    uuid
+    comdlg32
+    advapi32
+)
 
 # 自定义的清理操作
 add_custom_target(clean_all

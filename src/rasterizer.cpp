@@ -1,8 +1,9 @@
 #include "rasterizer.h"
-
+#include <random>
 Rasterizer::Rasterizer(int w, int h) : width(w), height(h)
 {
     image = new TGAImage(w, h, TGAImage::RGB);
+
     frame_buf.resize(w * h);
     depth_buf.resize(w * h);
     frame_buf.assign(frame_buf.size(), {255, 255, 255});
@@ -51,11 +52,10 @@ void Rasterizer::output(char *outdir)
     {
         for (int y = 0; y < height; y++)
         {
-            std::cout << depth_buf[get_index(x, y)] << " ";
+
             Vector3f color = frame_buf[get_index(x, y)];
             image->set(x, y, TGAColor(color[0], color[1], color[2], 255));
         }
-        std::cout << std::endl;
     }
 
     image->flip_vertically(); // i want to have the origin at the left bottom corner of the image
@@ -103,11 +103,12 @@ void Rasterizer::draw_line(int x0, int y0, int x1, int y1, TGAColor color)
 void Rasterizer::draw_triangle(Triangle Triangle)
 {
     Triangle.getinfo();
+
     auto v = Triangle.toVector4();
-    std::cout << Triangle.boxmax.x() << " " << Triangle.boxmax.y() << " " << Triangle.boxmax.z() << " " << Triangle.boxmin.x() << " " << Triangle.boxmin.y() << " " << Triangle.boxmin.z() << std::endl;
-    for (int x = Triangle.boxmin.x(); x < Triangle.boxmax.x(); x++)
+
+    for (int x = std::max(Triangle.boxmin.x(), 0.0f); x < Triangle.boxmax.x() && x < width; x++)
     {
-        for (int y = Triangle.boxmin.y(); y < Triangle.boxmax.y(); y++)
+        for (int y = std::max(Triangle.boxmin.y(), 0.0f); y < Triangle.boxmax.y() && y < height; y++)
         {
 
             if (isPointInTriangle({Triangle.v[0][0], Triangle.v[0][1]}, {Triangle.v[1][0], Triangle.v[1][1]}, {Triangle.v[2][0], Triangle.v[2][1]}, {x + 0.5, y + 0.5}))
@@ -146,4 +147,59 @@ std::tuple<float, float, float> Rasterizer::computeBarycentric2D(float x, float 
     float c2 = (x * (v[2].y() - v[0].y()) + (v[0].x() - v[2].x()) * y + v[2].x() * v[0].y() - v[0].x() * v[2].y()) / (v[1].x() * (v[2].y() - v[0].y()) + (v[0].x() - v[2].x()) * v[1].y() + v[2].x() * v[0].y() - v[0].x() * v[2].y());
     float c3 = (x * (v[0].y() - v[1].y()) + (v[1].x() - v[0].x()) * y + v[0].x() * v[1].y() - v[1].x() * v[0].y()) / (v[2].x() * (v[0].y() - v[1].y()) + (v[1].x() - v[0].x()) * v[2].y() + v[0].x() * v[1].y() - v[1].x() * v[0].y());
     return {c1, c2, c3};
+}
+
+void Rasterizer::add_pos_buf(int i, std::vector<Eigen::Vector3f> position)
+{
+    pos_buf[i] = position;
+}
+void Rasterizer::add_ind_buf(int i, std::vector<Eigen::Vector3i> index)
+{
+    ind_buf[i] = index;
+}
+void Rasterizer::add_col_buf(int i, std::vector<Eigen::Vector3f> color)
+{
+    col_buf[i] = color;
+}
+
+void Rasterizer::Handle()
+{
+
+    std::random_device rd;                       // 获取随机种子
+    std::mt19937 gen(rd());                      // 使用随机设备来初始化 Mersenne Twister 引擎
+    std::uniform_int_distribution<> dis(0, 255); // 均匀分布，范围从 0 到 255
+    for (int i = 0; i < ind_buf.size(); i++)
+    {
+        Matrix4f transform = projection * view;
+        std::cout << ind_buf[i].size() << std::endl;
+        for (int j = 0; j < ind_buf[i].size(); j++)
+        {
+            Triangle t;
+            t.setVertex(0, World2Screen(Transform(pos_buf[i][ind_buf[i][j].x()], transform)));
+            t.setVertex(1, World2Screen(Transform(pos_buf[i][ind_buf[i][j].y()], transform)));
+            t.setVertex(2, World2Screen(Transform(pos_buf[i][ind_buf[i][j].z()], transform)));
+
+            t.setColor(0, dis(gen), dis(gen), dis(gen));
+
+            draw_triangle(t);
+        }
+    }
+}
+
+Vector3f Rasterizer::Transform(Vector3f position, Matrix4f transform)
+{
+    Vector4f newpos = {position.x(), position.y(), position.z(), 1.0};
+    Vector4f result;
+    result = transform * newpos;
+    Vector3f NormalResult = {result[0] / result[3], result[1] / result[3], result[2] / result[3]};
+    return {NormalResult.x(), NormalResult.y(), NormalResult.z()};
+}
+
+Vector3f Rasterizer::World2Screen(Vector3f worldpos)
+{
+    Vector3f ScreenPos;
+    ScreenPos.x() = (width + int(worldpos.x() * width)) / 2;
+    ScreenPos.y() = (height + int(worldpos.y() * height)) / 2;
+    ScreenPos.z() = -worldpos.z() * 100;
+    return ScreenPos;
 }

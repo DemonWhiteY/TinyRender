@@ -1,7 +1,12 @@
+#ifndef MAIN_H
+#define MAIN_H
 #include "Sence/camera.h"
 #include "rasterizer.h"
+#include "objects_loader.h"
 
-constexpr double PI = 3.1415926;
+constexpr double MY_PI = 3.1415926;
+
+inline double DEG2RAD(double deg) { return deg * MY_PI / 180; }
 
 const TGAColor white = TGAColor(255, 255, 255, 255);
 const TGAColor red = TGAColor(255, 0, 0, 255);
@@ -43,21 +48,15 @@ Eigen::Matrix4f get_model_matrix(float rotation_angle)
 
 Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio, float zNear, float zFar)
 {
-	// 将角度转换为弧度
-	float radian_fov = eye_fov * PI / 180.0f;
+	// TODO: Copy-paste your implementation from the previous assignment.
+	Eigen::Matrix4f projection;
+	float top = -tan(DEG2RAD(eye_fov / 2.0f) * abs(zNear));
+	float right = top * aspect_ratio;
 
-	// 计算透视矩阵的元素
-	float tan_fov_2 = tan(radian_fov / 2.0f);
-
-	Eigen::Matrix4f projection = Eigen::Matrix4f::Zero();
-
-	// 填充透视投影矩阵
-	projection(0, 0) = 1.0f / (tan_fov_2 * aspect_ratio); // 左右视野
-	projection(1, 1) = 1.0f / tan_fov_2;				  // 上下视野
-	projection(2, 2) = zFar / (zFar - zNear);			  // 深度映射
-	projection(2, 3) = -zNear * zFar / (zFar - zNear);	  // 深度偏移
-	projection(3, 2) = 1.0f;							  // 使透视矩阵正常化
-
+	projection << zNear / right, 0, 0, 0,
+		0, zNear / top, 0, 0,
+		0, 0, (zNear + zFar) / (zNear - zFar), (2 * zNear * zFar) / (zFar - zNear),
+		0, 0, 1, 0;
 	return projection;
 }
 
@@ -65,24 +64,47 @@ int main(int argc, char **argv)
 {
 
 	Camera Camera;
-	Rasterizer ras(40, 40);
+	Rasterizer ras(1600, 900);
 	ras.set_model(get_model_matrix(0));
 	ras.set_view(get_view_matrix(Camera.get_position(), Camera.get_target(), Camera.get_up()));
 	ras.set_projection(get_projection_matrix(Camera.get_eye_fov(), Camera.get_aspect_ratio(), Camera.get_zNear(), Camera.get_zFar()));
 
-	Triangle tri2;
-	tri2.setVertex(0, {35, 20, 5});
-	tri2.setVertex(1, {5, 5, 35});
-	tri2.setVertex(2, {5, 35, 35});
-	tri2.setColor(0, 0, 0, 225);
-	ras.draw_triangle(tri2);
-	Triangle tri;
-	tri.setVertex(0, {5, 20, 5});
-	tri.setVertex(1, {35, 5, 35});
-	tri.setVertex(2, {35, 35, 35});
-	tri.setColor(0, 0, 100, 22);
-	ras.draw_triangle(tri);
+	// std::vector<Vector3f> position = {
+	// 	{0.2, 0.4, 0.8},
+	// 	{0.8, 0.4, 0.8},
+	// 	{0.8, 0.6, 0.2},
+	// 	{0.2, 0.4, 0.8},
+	// 	{0.2, 0.6, 0.2},
+	// 	{0.8, 0.6, 0.2},
+	// 	{0.2, 0.3, 0.5},
+	// 	{0.8, 0.3, 0.5},
+	// 	{0.5, 0.8, 0.5},
+
+	// };
+	// std::vector<Vector3i> index = {
+	// 	{0, 1, 2},
+	// 	{3, 4, 5},
+	// 	{6, 7, 8}};
+
+	// std::vector<Vector3f> color = {
+	// 	{0, 0, 0},
+	// 	{225, 0, 0},
+	// 	{0, 100, 5}};
+
+	std::vector<Vector3f> position, color;
+	std::vector<Vector3i> index;
+	objects_loader loader;
+	loader.load_obj("../objects/rock.obj", position, index);
+
+	std::cout << "finish_load" << std::endl;
+	ras.add_pos_buf(0, position);
+	ras.add_ind_buf(0, index);
+	ras.add_col_buf(0, color);
+
+	ras.Handle();
 
 	ras.output("../output/output.tga");
 	return 0;
 }
+
+#endif
