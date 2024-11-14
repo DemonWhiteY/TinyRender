@@ -12,7 +12,7 @@ private:
 public:
     objects_loader(/* args */);
     ~objects_loader();
-    void load_obj(const std::string &filename, std::vector<Eigen::Vector3f> &positions, std::vector<Eigen::Vector3i> &indices);
+    void load_obj(const std::string &filename, std::vector<Eigen::Vector3f> &positions, std::vector<Eigen::Vector3i> &indices, std::vector<Eigen::Vector3f> &normal, std::vector<Eigen::Vector2f> &uv);
     void load_obj_withoutuv(const std::string &filename, std::vector<Eigen::Vector3f> &positions, std::vector<Eigen::Vector3i> &indices);
     void load_obj_without_normal(const std::string &filename, std::vector<Eigen::Vector3f> &positions, std::vector<Eigen::Vector3i> &indices);
 };

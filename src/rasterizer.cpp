@@ -1,3 +1,4 @@
+
 #include "rasterizer.h"
 #include <random>
 Rasterizer::Rasterizer(int w, int h) : width(w), height(h)
@@ -44,6 +45,22 @@ void Rasterizer::set_pixel(const Eigen::Vector3f &point, const Eigen::Vector3f &
         depth_buf[ind] = point.z();
         frame_buf[ind] = color;
     }
+}
+
+static Eigen::Vector3f interpolate(float alpha, float beta, float gamma, const Eigen::Vector3f &vert1, const Eigen::Vector3f &vert2, const Eigen::Vector3f &vert3, float weight)
+{
+    return (alpha * vert1 + beta * vert2 + gamma * vert3) / weight;
+}
+
+static Eigen::Vector2f interpolate(float alpha, float beta, float gamma, const Eigen::Vector2f &vert1, const Eigen::Vector2f &vert2, const Eigen::Vector2f &vert3, float weight)
+{
+    auto u = (alpha * vert1[0] + beta * vert2[0] + gamma * vert3[0]);
+    auto v = (alpha * vert1[1] + beta * vert2[1] + gamma * vert3[1]);
+
+    u /= weight;
+    v /= weight;
+
+    return Eigen::Vector2f(u, v);
 }
 
 void Rasterizer::output(char *outdir)
@@ -100,7 +117,7 @@ void Rasterizer::draw_line(int x0, int y0, int x1, int y1, TGAColor color)
     }
 }
 
-void Rasterizer::draw_triangle(Triangle Triangle)
+void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos)
 {
     Triangle.getinfo();
 
@@ -120,7 +137,17 @@ void Rasterizer::draw_triangle(Triangle Triangle)
                 float w_reciprocal = 1.0 / (alpha / v[0].w() + beta / v[1].w() + gamma / v[2].w());
                 float z_interpolated = alpha * v[0].z() / v[0].w() + beta * v[1].z() / v[1].w() + gamma * v[2].z() / v[2].w();
                 z_interpolated *= w_reciprocal;
-                set_pixel({x, y, z_interpolated}, Triangle.color[0]);
+
+                auto interpolated_color = interpolate(alpha, beta, gamma, Triangle.color[0], Triangle.color[1], Triangle.color[2], 1);
+                auto interpolated_normal = interpolate(alpha, beta, gamma, Triangle.normal[0], Triangle.normal[1], Triangle.normal[2], 1);
+                auto interpolated_texcoords = interpolate(alpha, beta, gamma, Triangle.tex_coords[0], Triangle.tex_coords[1], Triangle.tex_coords[2], 1);
+                auto interpolated_viewpos = interpolate(alpha, beta, gamma, view_pos[0], view_pos[1], view_pos[2], 1);
+
+                fragment_shader_payload payload(interpolated_color / 255.0f, interpolated_normal.normalized(), interpolated_texcoords, &texture);
+                payload.view_pos = interpolated_viewpos;
+                auto pixel_color = fragment_shader(payload);
+
+                set_pixel({x, y, z_interpolated}, pixel_color);
             }
         }
     }
@@ -162,6 +189,15 @@ void Rasterizer::add_col_buf(int i, std::vector<Eigen::Vector3f> color)
     col_buf[i] = color;
 }
 
+void Rasterizer::add_nor_buf(int i, std::vector<Eigen::Vector3f> normal)
+{
+    nor_buf[i] = normal;
+}
+void Rasterizer::add_tex_buf(int i, std::vector<Eigen::Vector2f> tex_crood)
+{
+    tex_buf[i] = tex_crood;
+}
+
 void Rasterizer::Handle()
 {
 
@@ -170,29 +206,55 @@ void Rasterizer::Handle()
     std::uniform_int_distribution<> dis(0, 255); // 均匀分布，范围从 0 到 255
     for (int i = 0; i < ind_buf.size(); i++)
     {
-        Matrix4f transform = projection * view;
-        std::cout << ind_buf[i].size() << std::endl;
+        Matrix4f transform = projection * view * model;
+        Eigen::Matrix4f inv_trans = (view * model).inverse().transpose();
+
         for (int j = 0; j < ind_buf[i].size(); j++)
         {
             Triangle t;
-            t.setVertex(0, World2Screen(Transform(pos_buf[i][ind_buf[i][j].x()], transform)));
-            t.setVertex(1, World2Screen(Transform(pos_buf[i][ind_buf[i][j].y()], transform)));
-            t.setVertex(2, World2Screen(Transform(pos_buf[i][ind_buf[i][j].z()], transform)));
+            std::vector<Eigen::Vector3f> viewspace_pos;
 
-            t.setColor(0, dis(gen), dis(gen), dis(gen));
+            viewspace_pos.push_back(get_view_pos(pos_buf[i][ind_buf[i][j].x()]));
+            viewspace_pos.push_back(get_view_pos(pos_buf[i][ind_buf[i][j].y()]));
+            viewspace_pos.push_back(get_view_pos(pos_buf[i][ind_buf[i][j].z()]));
 
-            draw_triangle(t);
+            t.setVertex(0, World2Screen(Transform(pos_buf[i][ind_buf[i][j].x()], transform, 1.0f)));
+            t.setVertex(1, World2Screen(Transform(pos_buf[i][ind_buf[i][j].y()], transform, 1.0f)));
+            t.setVertex(2, World2Screen(Transform(pos_buf[i][ind_buf[i][j].z()], transform, 1.0f)));
+            t.setNormal(0, Transform(nor_buf[i][ind_buf[i][j].x()], inv_trans, 0));
+            t.setNormal(1, Transform(nor_buf[i][ind_buf[i][j].y()], inv_trans, 0));
+            t.setNormal(2, Transform(nor_buf[i][ind_buf[i][j].z()], inv_trans, 0));
+            t.setColor(0, 178, 221.0, 192.0);
+            t.setColor(1, 178, 221.0, 192.0);
+            t.setColor(2, 178, 221.0, 192.0);
+
+            draw_triangle(t, viewspace_pos);
         }
     }
 }
 
-Vector3f Rasterizer::Transform(Vector3f position, Matrix4f transform)
+Vector3f Rasterizer::get_view_pos(Vector3f v)
 {
-    Vector4f newpos = {position.x(), position.y(), position.z(), 1.0};
+    Vector4f newpos = {v.x(), v.y(), v.z(), 1.0};
+    Vector4f result;
+    result = view * model * newpos;
+    return {result.x(), result.y(), result.z()};
+}
+
+Vector3f Rasterizer::Transform(Vector3f position, Matrix4f transform, float f)
+{
+    Vector4f newpos = {position.x(), position.y(), position.z(), f};
     Vector4f result;
     result = transform * newpos;
-    Vector3f NormalResult = {result[0] / result[3], result[1] / result[3], result[2] / result[3]};
-    return {NormalResult.x(), NormalResult.y(), NormalResult.z()};
+    if (f == 0)
+
+        return {result.x(), result.y(), result.z()};
+
+    else
+    {
+        Vector3f NormalResult = {result[0] / result[3], result[1] / result[3], result[2] / result[3]};
+        return {NormalResult.x(), NormalResult.y(), NormalResult.z()};
+    }
 }
 
 Vector3f Rasterizer::World2Screen(Vector3f worldpos)
@@ -202,4 +264,22 @@ Vector3f Rasterizer::World2Screen(Vector3f worldpos)
     ScreenPos.y() = (height + int(worldpos.y() * height)) / 2;
     ScreenPos.z() = -worldpos.z() * 100;
     return ScreenPos;
+}
+
+void Rasterizer::clear()
+{
+
+    std::fill(frame_buf.begin(), frame_buf.end(), Eigen::Vector3f{255, 255, 255});
+
+    std::fill(depth_buf.begin(), depth_buf.end(), std::numeric_limits<float>::infinity());
+}
+
+void Rasterizer::set_vertex_shader(std::function<Eigen::Vector3f(vertex_shader_payload)> vert_shader)
+{
+    vertex_shader = vert_shader;
+}
+
+void Rasterizer::set_fragment_shader(std::function<Eigen::Vector3f(fragment_shader_payload)> frag_shader)
+{
+    fragment_shader = frag_shader;
 }

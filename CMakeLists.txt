@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.10)
 project(tinyshader VERSION 1.0 LANGUAGES CXX)
 
 # 设置 C++ 标准
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # 添加编译标志
@@ -15,11 +15,12 @@ set(EIGEN3_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/eigen")
 
 set(OBJECTS_LOADER_DIR "${CMAKE_SOURCE_DIR}/include/tiny_obj_loader")
 
+set(STB_IMAGE_DIR "${CMAKE_SOURCE_DIR}/include/stb_image")
 
-message(STATUS "Eigen3 include dir: ${EIGEN3_INCLUDE_DIR}")
 
 include_directories(${EIGEN3_INCLUDE_DIR})
 include_directories(${OBJECTS_LOADER_DIR})
+include_directories(${STB_IMAGE_DIR})
 
 # 递归查找所有 .cpp 源文件
 file(GLOB_RECURSE SOURCES "src/*.cpp")

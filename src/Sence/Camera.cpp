@@ -2,7 +2,7 @@
 
 Camera::Camera(/* args */)
 {
-    position = {5, 0, 0};
+    position = {0, 0, 5};
     up = {0, 1, 0};
     target = {0, 0, 0};
     eye_fov = 60;
