@@ -37,7 +37,7 @@ private:
     std::map<int, std::vector<Eigen::Vector2f>> tex_buf;
 
     std::vector<Eigen::Vector3f> frame_buf;
-    Texture texture;
+    Texture *texture;
     std::function<Eigen::Vector3f(fragment_shader_payload)> fragment_shader;
     std::function<Eigen::Vector3f(vertex_shader_payload)> vertex_shader;
 
@@ -60,6 +60,7 @@ public:
     void add_col_buf(int i, std::vector<Eigen::Vector3f> color);
     void add_nor_buf(int i, std::vector<Eigen::Vector3f> normal);
     void add_tex_buf(int i, std::vector<Eigen::Vector2f> tex_crood);
+    void set_texture(Texture *texture);
     void set_vertex_shader(std::function<Eigen::Vector3f(vertex_shader_payload)> vert_shader);
     void set_fragment_shader(std::function<Eigen::Vector3f(fragment_shader_payload)> frag_shader);
     // void Rasterizer::clear(Buffers buff);

@@ -143,7 +143,7 @@ void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos
                 auto interpolated_texcoords = interpolate(alpha, beta, gamma, Triangle.tex_coords[0], Triangle.tex_coords[1], Triangle.tex_coords[2], 1);
                 auto interpolated_viewpos = interpolate(alpha, beta, gamma, view_pos[0], view_pos[1], view_pos[2], 1);
 
-                fragment_shader_payload payload(interpolated_color / 255.0f, interpolated_normal.normalized(), interpolated_texcoords, &texture);
+                fragment_shader_payload payload(interpolated_color / 255.0f, interpolated_normal.normalized(), interpolated_texcoords, texture);
                 payload.view_pos = interpolated_viewpos;
                 auto pixel_color = fragment_shader(payload);
 
@@ -224,6 +224,9 @@ void Rasterizer::Handle()
             t.setNormal(0, Transform(nor_buf[i][ind_buf[i][j].x()], inv_trans, 0));
             t.setNormal(1, Transform(nor_buf[i][ind_buf[i][j].y()], inv_trans, 0));
             t.setNormal(2, Transform(nor_buf[i][ind_buf[i][j].z()], inv_trans, 0));
+            t.setTexCoord(0, tex_buf[i][ind_buf[i][j].x()].x(), tex_buf[i][ind_buf[i][j].x()].y());
+            t.setTexCoord(1, tex_buf[i][ind_buf[i][j].y()].x(), tex_buf[i][ind_buf[i][j].y()].y());
+            t.setTexCoord(2, tex_buf[i][ind_buf[i][j].z()].x(), tex_buf[i][ind_buf[i][j].z()].y());
             t.setColor(0, 178, 221.0, 192.0);
             t.setColor(1, 178, 221.0, 192.0);
             t.setColor(2, 178, 221.0, 192.0);
@@ -282,4 +285,9 @@ void Rasterizer::set_vertex_shader(std::function<Eigen::Vector3f(vertex_shader_p
 void Rasterizer::set_fragment_shader(std::function<Eigen::Vector3f(fragment_shader_payload)> frag_shader)
 {
     fragment_shader = frag_shader;
+}
+
+void Rasterizer::set_texture(Texture *texture)
+{
+    this->texture = texture;
 }

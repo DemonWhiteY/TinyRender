@@ -68,6 +68,60 @@ Eigen::Vector3f phong_fragment_shader(const fragment_shader_payload &payload)
 	return result_color * 255.f;
 }
 
+Eigen::Vector3f texture_fragment_shader(const fragment_shader_payload &payload)
+{
+	Eigen::Vector3f return_color = {0, 0, 0};
+	if (payload.texture)
+	{
+
+		return_color = payload.texture->getColor(payload.tex_coords.x(), payload.tex_coords.y()) / 255.0f;
+	}
+
+	Eigen::Vector3f ka = Eigen::Vector3f(0.005, 0.005, 0.005);
+	Eigen::Vector3f kd = return_color;
+	Eigen::Vector3f ks = Eigen::Vector3f(0.7937, 0.7937, 0.7937);
+
+	auto l1 = light{{20, 20, 20}, {500, 500, 500}};
+	auto l2 = light{{-20, 20, 0}, {500, 500, 500}};
+
+	std::vector<light> lights = {l1, l2};
+	Eigen::Vector3f amb_light_intensity{20, 20, 20};
+	Eigen::Vector3f eye_pos{0, 0, 0};
+
+	float p = 150;
+
+	Eigen::Vector3f color = payload.color;
+	Eigen::Vector3f point = payload.view_pos;
+	Eigen::Vector3f normal = payload.normal.normalized();
+
+	Eigen::Vector3f result_color = {0, 0, 0};
+	Vector3f view_dir = (point).normalized();
+	for (auto &light : lights)
+	{
+		// TODO: For each light source in the code, calculate what the *ambient*, *diffuse*, and *specular*
+		// components are. Then, accumulate that result on the *result_color* object.
+		float rr = (light.position - point).squaredNorm();
+		Vector3f diffsue(0, 0, 0);
+		Vector3f specular(0, 0, 0);
+		Vector3f ambient(0, 0, 0);
+		Vector3f light_dir = (light.position - point).normalized();
+
+		for (size_t i = 0; i < 3; i++)
+		{
+			Vector3f h = (view_dir + light_dir).normalized(); // half
+			float intensity = light.intensity[i] / rr;
+			diffsue[i] = kd[i] * intensity * std::max(0.0f, normal.dot(light_dir));
+			specular[i] = ks[i] * intensity * std::pow(std::max(0.0f, normal.dot(h)), p);
+			ambient[i] = amb_light_intensity[i] * ka[i];
+		}
+		result_color += diffsue;
+		result_color += specular;
+		result_color += ambient;
+	}
+
+	return result_color * 255.f;
+}
+
 Eigen::Matrix4f get_view_matrix(Eigen::Vector3f eye_pos, Eigen::Vector3f target, Eigen::Vector3f up)
 {
 	Eigen::Matrix4f view = Eigen::Matrix4f::Identity();
@@ -151,29 +205,30 @@ int main(int argc, char **argv)
 	objects_loader loader;
 	loader.load_obj("../objects/spot_triangulated_good.obj", position, index, normal, uv);
 
-	std::cout << "finish_load" << std::endl;
 	ras.add_pos_buf(0, position);
 	ras.add_ind_buf(0, index);
 	ras.add_col_buf(0, color);
 	ras.add_nor_buf(0, normal);
 	ras.add_tex_buf(0, uv);
+	Texture *texture = new Texture("../objects/Texture/spot_texture.png");
 
-	ras.set_fragment_shader(phong_fragment_shader);
-
+	ras.set_texture(texture);
+	ras.set_fragment_shader(texture_fragment_shader);
+	std::cout << "finish_load" << std::endl;
 	ras.Handle();
 	int key = 0;
 	int frame_count = 0;
 	ras.output("../output/output.tga");
-	while (key != 'q')
-	{
-		ras.clear();
-		ras.set_model(get_model_matrix(angle));
+	// while (key != 'q')
+	// {
+	// 	ras.clear();
+	// 	ras.set_model(get_model_matrix(angle));
 
-		ras.Handle();
-		ras.output("../output/output.tga");
+	// 	ras.Handle();
+	// 	ras.output("../output/output.tga");
 
-		angle += 30.0f;
-	}
+	// 	angle += 30.0f;
+	// }
 	return 0;
 }
 
