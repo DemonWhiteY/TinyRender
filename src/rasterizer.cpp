@@ -79,45 +79,7 @@ void Rasterizer::output(char *outdir)
     image->write_tga_file(outdir);
 }
 
-void Rasterizer::draw_line(int x0, int y0, int x1, int y1, TGAColor color)
-{
-    bool steep = false;
-    if (std::abs(x0 - x1) < std::abs(y0 - y1))
-    {
-        std::swap(x0, y0);
-        std::swap(x1, y1);
-        steep = true;
-    }
-    if (x0 > x1)
-    {
-        std::swap(x0, x1);
-        std::swap(y0, y1);
-    }
-    int dx = x1 - x0;
-    int dy = y1 - y0;
-    int derror2 = std::abs(dy) * 2;
-    int error2 = 0;
-    int y = y0;
-    for (int x = x0; x <= x1; x++)
-    {
-        if (steep)
-        {
-            image->set(y, x, color);
-        }
-        else
-        {
-            image->set(x, y, color);
-        }
-        error2 += derror2;
-        if (error2 > dx)
-        {
-            y += (y1 > y0 ? 1 : -1);
-            error2 -= dx * 2;
-        }
-    }
-}
-
-void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos)
+void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos, Texture *texture)
 {
     Triangle.getinfo();
 
@@ -176,63 +138,57 @@ std::tuple<float, float, float> Rasterizer::computeBarycentric2D(float x, float 
     return {c1, c2, c3};
 }
 
-void Rasterizer::add_pos_buf(int i, std::vector<Eigen::Vector3f> position)
+auto to_vec4(const Eigen::Vector3f &v3, float w = 1.0f)
 {
-    pos_buf[i] = position;
-}
-void Rasterizer::add_ind_buf(int i, std::vector<Eigen::Vector3i> index)
-{
-    ind_buf[i] = index;
-}
-void Rasterizer::add_col_buf(int i, std::vector<Eigen::Vector3f> color)
-{
-    col_buf[i] = color;
-}
-
-void Rasterizer::add_nor_buf(int i, std::vector<Eigen::Vector3f> normal)
-{
-    nor_buf[i] = normal;
-}
-void Rasterizer::add_tex_buf(int i, std::vector<Eigen::Vector2f> tex_crood)
-{
-    tex_buf[i] = tex_crood;
+    return Vector4f(v3.x(), v3.y(), v3.z(), w);
 }
 
 void Rasterizer::Handle()
 {
-
-    std::random_device rd;                       // 获取随机种子
-    std::mt19937 gen(rd());                      // 使用随机设备来初始化 Mersenne Twister 引擎
-    std::uniform_int_distribution<> dis(0, 255); // 均匀分布，范围从 0 到 255
-    for (int i = 0; i < ind_buf.size(); i++)
+    this->set_view(camera.get_view_matrix());
+    this->set_projection(camera.get_projection_matrix());
+    for (int i = 0; i < models.size(); i++)
     {
+        this->set_model(models[i].get_model_matrix());
+
         Matrix4f transform = projection * view * model;
         Eigen::Matrix4f inv_trans = (view * model).inverse().transpose();
-
-        for (int j = 0; j < ind_buf[i].size(); j++)
+        int size = models[i].get_triangles().size();
+        std::cout << size << std::endl;
+        for (int t = 0; t < size; t++)
         {
-            Triangle t;
+            Triangle *ori_t = models[i].get_triangles()[t];
+            Triangle new_t;
             std::vector<Eigen::Vector3f> viewspace_pos;
 
-            viewspace_pos.push_back(get_view_pos(pos_buf[i][ind_buf[i][j].x()]));
-            viewspace_pos.push_back(get_view_pos(pos_buf[i][ind_buf[i][j].y()]));
-            viewspace_pos.push_back(get_view_pos(pos_buf[i][ind_buf[i][j].z()]));
+            for (int n = 0; n < 3; n++)
+            {
+                viewspace_pos.push_back(get_view_pos(ori_t->v[n]));
+            }
 
-            t.setVertex(0, World2Screen(Transform(pos_buf[i][ind_buf[i][j].x()], transform, 1.0f)));
-            t.setVertex(1, World2Screen(Transform(pos_buf[i][ind_buf[i][j].y()], transform, 1.0f)));
-            t.setVertex(2, World2Screen(Transform(pos_buf[i][ind_buf[i][j].z()], transform, 1.0f)));
-            t.setNormal(0, Transform(nor_buf[i][ind_buf[i][j].x()], inv_trans, 0));
-            t.setNormal(1, Transform(nor_buf[i][ind_buf[i][j].y()], inv_trans, 0));
-            t.setNormal(2, Transform(nor_buf[i][ind_buf[i][j].z()], inv_trans, 0));
-            t.setTexCoord(0, tex_buf[i][ind_buf[i][j].x()].x(), tex_buf[i][ind_buf[i][j].x()].y());
-            t.setTexCoord(1, tex_buf[i][ind_buf[i][j].y()].x(), tex_buf[i][ind_buf[i][j].y()].y());
-            t.setTexCoord(2, tex_buf[i][ind_buf[i][j].z()].x(), tex_buf[i][ind_buf[i][j].z()].y());
-            t.setColor(0, 178, 221.0, 192.0);
-            t.setColor(1, 178, 221.0, 192.0);
-            t.setColor(2, 178, 221.0, 192.0);
+            for (int n = 0; n < 3; n++)
+            {
+                Vector3f new_vertex = Transform(ori_t->v[n], transform, 1.0f);
+                new_vertex = World2Screen(new_vertex);
+                new_t.setVertex(n, new_vertex);
+            }
 
-            draw_triangle(t, viewspace_pos);
+            for (int n = 0; n < 3; n++)
+            {
+                Vector3f new_normal = Transform(ori_t->normal[n], inv_trans, 0);
+                new_t.setNormal(n, new_normal);
+            }
+
+            for (int n = 0; n < 3; n++)
+            {
+                new_t.setTexCoord(n, ori_t->tex_coords[n][0], ori_t->tex_coords[n][1]);
+                new_t.setColor(n, 178, 221.0, 192.0);
+            }
+
+            draw_triangle(new_t, viewspace_pos, models[i].get_Texture());
         }
+
+        std::cout << "Model:" << models[i].name << "Have been render well" << std::endl;
     }
 }
 
@@ -287,7 +243,7 @@ void Rasterizer::set_fragment_shader(std::function<Eigen::Vector3f(fragment_shad
     fragment_shader = frag_shader;
 }
 
-void Rasterizer::set_texture(Texture *texture)
+void Rasterizer::add_model(Model model)
 {
-    this->texture = texture;
+    this->models.push_back(model);
 }

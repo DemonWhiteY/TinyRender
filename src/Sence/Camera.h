@@ -1,4 +1,5 @@
 #include <Eigen/Core>
+#include <Eigen/Dense>
 class Camera
 {
 private:
@@ -20,4 +21,6 @@ public:
     float get_aspect_ratio() { return aspect_ratio; }
     float get_zNear() { return zNear; }
     float get_zFar() { return zFar; }
+    Eigen::Matrix4f get_view_matrix();
+    Eigen::Matrix4f get_projection_matrix();
 };

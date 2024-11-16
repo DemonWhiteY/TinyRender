@@ -51,6 +51,20 @@ build CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj: CXX_COMPILER__tinyshad
   OBJECT_DIR = CMakeFiles\tinyshader.dir
   OBJECT_FILE_DIR = CMakeFiles\tinyshader.dir\src\Sence
 
+build CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj: CXX_COMPILER__tinyshader_unscanned_ E$:/Lab/TinyShader/src/Sence/Model.cpp || cmake_object_order_depends_target_tinyshader
+  DEP_FILE = CMakeFiles\tinyshader.dir\src\Sence\Model.cpp.obj.d
+  FLAGS = -Wall -std=gnu++17
+  INCLUDES = -IE:/Lab/TinyShader/include/eigen -IE:/Lab/TinyShader/include/tiny_obj_loader -IE:/Lab/TinyShader/include/stb_image
+  OBJECT_DIR = CMakeFiles\tinyshader.dir
+  OBJECT_FILE_DIR = CMakeFiles\tinyshader.dir\src\Sence
+
+build CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj: CXX_COMPILER__tinyshader_unscanned_ E$:/Lab/TinyShader/src/Shader/Shader.cpp || cmake_object_order_depends_target_tinyshader
+  DEP_FILE = CMakeFiles\tinyshader.dir\src\Shader\Shader.cpp.obj.d
+  FLAGS = -Wall -std=gnu++17
+  INCLUDES = -IE:/Lab/TinyShader/include/eigen -IE:/Lab/TinyShader/include/tiny_obj_loader -IE:/Lab/TinyShader/include/stb_image
+  OBJECT_DIR = CMakeFiles\tinyshader.dir
+  OBJECT_FILE_DIR = CMakeFiles\tinyshader.dir\src\Shader
+
 build CMakeFiles/tinyshader.dir/src/Texture.cpp.obj: CXX_COMPILER__tinyshader_unscanned_ E$:/Lab/TinyShader/src/Texture.cpp || cmake_object_order_depends_target_tinyshader
   DEP_FILE = CMakeFiles\tinyshader.dir\src\Texture.cpp.obj.d
   FLAGS = -Wall -std=gnu++17
@@ -101,7 +115,7 @@ build CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: CXX_COMPILER__tinyshader
 #############################################
 # Link the executable tinyshader.exe
 
-build tinyshader.exe: CXX_EXECUTABLE_LINKER__tinyshader_ CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj CMakeFiles/tinyshader.dir/src/Texture.cpp.obj CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj CMakeFiles/tinyshader.dir/src/Utils/tgaimage.cpp.obj CMakeFiles/tinyshader.dir/src/main.cpp.obj CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj
+build tinyshader.exe: CXX_EXECUTABLE_LINKER__tinyshader_ CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj CMakeFiles/tinyshader.dir/src/Texture.cpp.obj CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj CMakeFiles/tinyshader.dir/src/Utils/tgaimage.cpp.obj CMakeFiles/tinyshader.dir/src/main.cpp.obj CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj
   FLAGS = -Wall
   LINK_LIBRARIES = -lm  -lkernel32  -luser32  -lgdi32  -lwinspool  -lshell32  -lole32  -loleaut32  -luuid  -lcomdlg32  -ladvapi32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\tinyshader.dir

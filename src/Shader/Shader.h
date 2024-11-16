@@ -1,9 +1,9 @@
 //
 // Created by LEI XU on 4/27/19.
 //
+#ifndef SHADER_H
+#define SHADER_H
 
-#ifndef RASTERIZER_SHADER_H
-#define RASTERIZER_SHADER_H
 #include <Eigen/Eigen>
 #include "../Texture.h"
 #include "../Sence/light.h"
@@ -28,5 +28,9 @@ struct vertex_shader_payload
 {
     Eigen::Vector3f position;
 };
+
+Eigen::Vector3f normal_fragment_shader(const fragment_shader_payload &payload);
+Eigen::Vector3f phong_fragment_shader(const fragment_shader_payload &payload);
+Eigen::Vector3f texture_fragment_shader(const fragment_shader_payload &payload);
 
 #endif // RASTERIZER_SHADER_H
