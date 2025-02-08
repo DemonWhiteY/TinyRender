@@ -1,0 +1,3 @@
+D:\CMake\bin\cmake.exe -E rm -f CMakeFiles\jsoncpp_lib.dir/objects.a
+D:\mingw64\bin\ar.exe qc CMakeFiles\jsoncpp_lib.dir/objects.a @CMakeFiles\jsoncpp_lib.dir\objects1.rsp
+D:\mingw64\bin\g++.exe  -Wall -g -shared -o libjsoncpp.dll -Wl,--out-implib,libjsoncpp.dll.a -Wl,--major-image-version,1,--minor-image-version,9 -Wl,--whole-archive CMakeFiles\jsoncpp_lib.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\jsoncpp_lib.dir\linkLibs.rsp

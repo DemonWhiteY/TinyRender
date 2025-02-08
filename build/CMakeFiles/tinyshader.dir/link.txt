@@ -1,0 +1,3 @@
+D:\CMake\bin\cmake.exe -E rm -f CMakeFiles\tinyshader.dir/objects.a
+D:\mingw64\bin\ar.exe qc CMakeFiles\tinyshader.dir/objects.a @CMakeFiles\tinyshader.dir\objects1.rsp
+D:\mingw64\bin\g++.exe  -Wall -g -Wl,--whole-archive CMakeFiles\tinyshader.dir/objects.a -Wl,--no-whole-archive -o tinyshader.exe -Wl,--out-implib,libtinyshader.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\tinyshader.dir\linkLibs.rsp

@@ -1,0 +1,3 @@
+D:\CMake\bin\cmake.exe -E rm -f CMakeFiles\jsoncpp_test.dir/objects.a
+D:\mingw64\bin\ar.exe qc CMakeFiles\jsoncpp_test.dir/objects.a @CMakeFiles\jsoncpp_test.dir\objects1.rsp
+D:\mingw64\bin\g++.exe  -Wall -g -Wl,--whole-archive CMakeFiles\jsoncpp_test.dir/objects.a -Wl,--no-whole-archive -o jsoncpp_test.exe -Wl,--out-implib,libjsoncpp_test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\jsoncpp_test.dir\linkLibs.rsp

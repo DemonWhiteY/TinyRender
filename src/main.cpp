@@ -4,7 +4,7 @@
 #include "rasterizer.h"
 #include "Utils/objects_loader.h"
 #include <conio.h>
-
+#include "Utils/json_loader.h"
 constexpr double MY_PI = 3.1415926;
 
 inline double DEG2RAD(double deg) { return deg * MY_PI / 180; }
@@ -14,14 +14,18 @@ int main(int argc, char **argv)
 
 	Camera Camera;
 
-	Rasterizer ras(1600, 900);
+	Rasterizer ras(900, 600);
 	ras.add_camera(Camera);
-	Model model("../objects/spot_triangulated_good.obj", "牛牛");
-	Texture *texture = new Texture("../objects/Texture/spot_texture.png");
-	model.set_Texture(texture);
-	model.set_Transform({1.0f, 1.0f, 1.0f}, {0, 140, 0}, {0, 0, 0});
 
-	ras.add_model(model);
+	ras.add_camera(Camera);
+
+	json_loader json_loader("../test.JSON");
+	std::vector<Model *> models = json_loader.get_models();
+
+	for (auto model : models)
+	{
+		ras.add_model(*model);
+	}
 
 	ras.set_fragment_shader(texture_fragment_shader);
 	std::cout << "finish_load" << std::endl;

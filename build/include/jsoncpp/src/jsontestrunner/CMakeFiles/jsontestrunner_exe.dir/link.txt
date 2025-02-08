@@ -1,0 +1,3 @@
+D:\CMake\bin\cmake.exe -E rm -f CMakeFiles\jsontestrunner_exe.dir/objects.a
+D:\mingw64\bin\ar.exe qc CMakeFiles\jsontestrunner_exe.dir/objects.a @CMakeFiles\jsontestrunner_exe.dir\objects1.rsp
+D:\mingw64\bin\g++.exe  -Wall -g -Wl,--whole-archive CMakeFiles\jsontestrunner_exe.dir/objects.a -Wl,--no-whole-archive -o jsontestrunner_exe.exe -Wl,--out-implib,libjsontestrunner_exe.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\jsontestrunner_exe.dir\linkLibs.rsp

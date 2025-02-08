@@ -1,0 +1,9 @@
+{
+    "objects": [
+        {
+            "name": "model",
+            "objfile": "../objects/spot_triangulated_good.obj",
+            "texture": "../objects/Texture/spot_texture.png"
+        }
+    ]
+}

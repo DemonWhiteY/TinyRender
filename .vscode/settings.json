@@ -58,6 +58,12 @@
         "thread": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "cmake.generator": "Ninja",
+        "string_view": "cpp",
+        "cassert": "cpp",
+        "forward_list": "cpp",
+        "any": "cpp",
+        "optional": "cpp"
     }
 }
