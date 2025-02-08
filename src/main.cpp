@@ -28,7 +28,6 @@ int main(int argc, char **argv)
 	}
 
 	ras.set_fragment_shader(texture_fragment_shader);
-	std::cout << "finish_load" << std::endl;
 	ras.Handle();
 
 	int key = 0;

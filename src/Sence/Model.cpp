@@ -5,13 +5,13 @@ inline double DEG2RAD(double deg) { return deg * MY_PI / 180; }
 Model::Model(const std::string &filename, const std::string &name)
 {
     this->name = name;
-    std::vector<Vector3f> position, color, normal;
+    std::vector<Vector3f> position, normal;
     std::vector<Vector3i> index;
     std::vector<Vector2f> texCroods;
     objects_loader loader;
     loader.load_obj(filename, position, index, normal, texCroods);
     std::cout << "load_model" << std::endl;
-    this->load_triangles(position, color, normal, index, texCroods);
+    this->load_triangles(position, normal, index, texCroods);
 }
 
 Model::Model(/* args */)
@@ -22,7 +22,7 @@ Model::~Model()
 {
 }
 
-void Model::load_triangles(std::vector<Vector3f> position, std::vector<Vector3f> color, std::vector<Vector3f> normal, std::vector<Vector3i> index, std::vector<Vector2f> texCrood)
+void Model::load_triangles(std::vector<Vector3f> position, std::vector<Vector3f> normal, std::vector<Vector3i> index, std::vector<Vector2f> texCrood)
 {
     for (int i = 0; i < index.size(); i++)
     {
@@ -33,8 +33,10 @@ void Model::load_triangles(std::vector<Vector3f> position, std::vector<Vector3f>
 
             temp_triangle->setVertex(m, position[i * 3 + m]);
             temp_triangle->setNormal(m, normal[i * 3 + m]);
-            temp_triangle->setTexCoord(m, texCrood[i * 3 + m][0], texCrood[i * 3 + m][1]);
-            // temp_triangle->setColor(index[i][m], color[i][0], color[i][1], color[i][2]);
+            if (texCrood.size() != 0)
+            {
+                temp_triangle->setTexCoord(m, texCrood[i * 3 + m][0], texCrood[i * 3 + m][1]);
+            }
         }
 
         this->triangles.push_back(temp_triangle);

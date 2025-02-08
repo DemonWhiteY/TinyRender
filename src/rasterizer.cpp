@@ -182,7 +182,7 @@ void Rasterizer::Handle()
             for (int n = 0; n < 3; n++)
             {
                 new_t.setTexCoord(n, ori_t->tex_coords[n][0], ori_t->tex_coords[n][1]);
-                new_t.setColor(n, 178, 221.0, 192.0);
+                new_t.setColor(n, ori_t->color[n][0], ori_t->color[n][1], ori_t->color[n][2]);
             }
 
             draw_triangle(new_t, viewspace_pos, models[i].get_Texture());

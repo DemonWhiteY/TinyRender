@@ -63,6 +63,10 @@ Eigen::Vector3f texture_fragment_shader(const fragment_shader_payload &payload)
 
         return_color = payload.texture->getColor(payload.tex_coords.x(), payload.tex_coords.y()) / 255.0f;
     }
+    else
+    {
+        return_color = payload.color;
+    }
 
     Eigen::Vector3f ka = Eigen::Vector3f(0.005, 0.005, 0.005);
     Eigen::Vector3f kd = return_color;

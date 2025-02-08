@@ -45,15 +45,44 @@ json_loader::json_loader(std::string path)
     {
         std::string name = object["name"];
         std::string objfile = object["objfile"];
-        std::string texture = object["texture"];
-        std::cout << "load:: " << name << "  path::" << objfile << std::endl;
-
         models.push_back(new Model(objfile, name));
-        if (!texture.empty())
+        if (object.contains("texture"))
         {
-            models.back()->set_Texture(new Texture(texture));
+            std::cout << "texture" << std::endl;
+            std::string texture = object.value("texture", "");
+            if (!texture.empty())
+            {
+                models.back()->set_Texture(new Texture(texture));
+            }
         }
-        models.back()->set_Transform({1.0f, 1.0f, 1.0f}, {0, 140, 0}, {0, 0, 0});
+        else if (object.contains("color"))
+        {
+            models.back()->color[0] = object["color"][0];
+            models.back()->color[1] = object["color"][1];
+            models.back()->color[2] = object["color"][2];
+            models.back()->set_color();
+        }
+        else
+        {
+            models.back()->color[0] = 20;
+            models.back()->color[1] = 220;
+            models.back()->color[2] = 20;
+            models.back()->set_color();
+        }
+
+        models.back()->scale[0] = object["scale"][0];
+        models.back()->scale[1] = object["scale"][1];
+        models.back()->scale[2] = object["scale"][2];
+
+        models.back()->rotation[0] = object["rotation"][0];
+        models.back()->rotation[1] = object["rotation"][1];
+        models.back()->rotation[2] = object["rotation"][2];
+
+        models.back()->translate[0] = object["translate"][0];
+        models.back()->translate[1] = object["translate"][1];
+        models.back()->translate[2] = object["translate"][2];
+
+        models.back()->set_Transform(models.back()->scale, models.back()->rotation, models.back()->translate);
     }
 }
 

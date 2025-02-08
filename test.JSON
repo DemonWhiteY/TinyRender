@@ -3,7 +3,75 @@
         {
             "name": "model",
             "objfile": "../objects/spot_triangulated_good.obj",
-            "texture": "../objects/Texture/spot_texture.png"
+            "texture": "../objects/Texture/spot_texture.png",
+            "color": [
+                225.0,
+                0,
+                0
+            ],
+            "scale": [
+                1.5,
+                1.5,
+                1.5
+            ],
+            "rotation": [
+                0,
+                10,
+                0
+            ],
+            "translate": [
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "floor",
+            "objfile": "../objects/floor.obj",
+            "color": [
+                250.0,
+                0,
+                0
+            ],
+            "scale": [
+                0.2,
+                0.2,
+                0.2
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "translate": [
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "rock",
+            "objfile": "../objects/rock.obj",
+            "color": [
+                250.0,
+                230,
+                0
+            ],
+            "scale": [
+                0.4,
+                0.4,
+                0.4
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "translate": [
+                -1,
+                0,
+                0
+            ]
         }
     ]
 }
