@@ -14,10 +14,6 @@ Eigen::Vector3f phong_fragment_shader(const fragment_shader_payload &payload)
     Eigen::Vector3f kd = payload.color;
     Eigen::Vector3f ks = Eigen::Vector3f(0.7937, 0.7937, 0.7937);
 
-    auto l1 = light{{20, 20, 20}, {500, 500, 500}};
-    auto l2 = light{{-20, 20, 0}, {500, 500, 500}};
-
-    std::vector<light> lights = {l1, l2};
     Eigen::Vector3f amb_light_intensity{20, 20, 20};
     Eigen::Vector3f eye_pos{0, 0, 0};
 
@@ -29,7 +25,7 @@ Eigen::Vector3f phong_fragment_shader(const fragment_shader_payload &payload)
 
     Eigen::Vector3f result_color = {0, 0, 0};
     Eigen::Vector3f view_dir = (point).normalized();
-    for (auto &light : lights)
+    for (auto &light : payload.lights)
     {
         // TODO: For each light source in the code, calculate what the *ambient*, *diffuse*, and *specular*
         // components are. Then, accumulate that result on the *result_color* object.
@@ -72,11 +68,7 @@ Eigen::Vector3f texture_fragment_shader(const fragment_shader_payload &payload)
     Eigen::Vector3f kd = return_color;
     Eigen::Vector3f ks = Eigen::Vector3f(0.7937, 0.7937, 0.7937);
 
-    auto l1 = light{{20, 20, 20}, {500, 500, 500}};
-    auto l2 = light{{-20, 20, 0}, {500, 500, 500}};
-
-    std::vector<light> lights = {l1, l2};
-    Eigen::Vector3f amb_light_intensity{20, 20, 20};
+       Eigen::Vector3f amb_light_intensity{20, 20, 20};
     Eigen::Vector3f eye_pos{0, 0, 0};
 
     float p = 150;
@@ -87,7 +79,7 @@ Eigen::Vector3f texture_fragment_shader(const fragment_shader_payload &payload)
 
     Eigen::Vector3f result_color = {0, 0, 0};
     Eigen::Vector3f view_dir = (point).normalized();
-    for (auto &light : lights)
+    for (auto &light : payload.lights)
     {
         // TODO: For each light source in the code, calculate what the *ambient*, *diffuse*, and *specular*
         // components are. Then, accumulate that result on the *result_color* object.
@@ -108,6 +100,19 @@ Eigen::Vector3f texture_fragment_shader(const fragment_shader_payload &payload)
         result_color += diffsue;
         result_color += specular;
         result_color += ambient;
+
+        if (result_color.x() > 1)
+        {
+            result_color.x() = 1;
+        }
+        if (result_color.y() > 1)
+        {
+            result_color.y() = 1;
+        }
+        if (result_color.z() > 1)
+        {
+            result_color.z() = 1;
+        }
     }
 
     return result_color * 255.f;

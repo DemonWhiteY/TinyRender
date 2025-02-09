@@ -12,21 +12,21 @@ inline double DEG2RAD(double deg) { return deg * MY_PI / 180; }
 int main(int argc, char **argv)
 {
 
-	Camera Camera;
-
-	Rasterizer ras(900, 600);
-	ras.add_camera(Camera);
-
-	ras.add_camera(Camera);
+	Rasterizer ras(900, 900);
 
 	json_loader json_loader("../test.JSON");
 	std::vector<Model *> models = json_loader.get_models();
-
+	std::vector<light> lights = json_loader.get_lights();
 	for (auto model : models)
 	{
 		ras.add_model(*model);
 	}
 
+	for (auto light : lights)
+	{
+		ras.add_light(light);
+	}
+	ras.add_camera(json_loader.get_camera());
 	ras.set_fragment_shader(texture_fragment_shader);
 	ras.Handle();
 

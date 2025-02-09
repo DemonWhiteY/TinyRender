@@ -105,7 +105,7 @@ void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos
                 auto interpolated_texcoords = interpolate(alpha, beta, gamma, Triangle.tex_coords[0], Triangle.tex_coords[1], Triangle.tex_coords[2], 1);
                 auto interpolated_viewpos = interpolate(alpha, beta, gamma, view_pos[0], view_pos[1], view_pos[2], 1);
 
-                fragment_shader_payload payload(interpolated_color / 255.0f, interpolated_normal.normalized(), interpolated_texcoords, texture);
+                fragment_shader_payload payload(interpolated_color / 255.0f, interpolated_normal.normalized(), interpolated_texcoords, texture, lights);
                 payload.view_pos = interpolated_viewpos;
                 auto pixel_color = fragment_shader(payload);
 

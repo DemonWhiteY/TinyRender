@@ -22,6 +22,31 @@
             "translate": [
                 0,
                 0,
+                -2
+            ]
+        },
+        {
+            "name": "model",
+            "objfile": "../objects/spot_triangulated_good.obj",
+            "texture": "../objects/Texture/spot_texture.png",
+            "color": [
+                225.0,
+                0,
+                0
+            ],
+            "scale": [
+                1.5,
+                1.5,
+                1.5
+            ],
+            "rotation": [
+                0,
+                10,
+                0
+            ],
+            "translate": [
+                0,
+                0,
                 0
             ]
         },
@@ -72,6 +97,77 @@
                 0,
                 0
             ]
+        },
+        {
+            "name": "cube",
+            "objfile": "../objects/cube.obj",
+            "color": [
+                0.0,
+                230,
+                0
+            ],
+            "scale": [
+                0.4,
+                0.4,
+                0.4
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "translate": [
+                -1,
+                0,
+                0
+            ]
         }
-    ]
+    ],
+    "lights": [
+        {
+            "intensity": [
+                500.0,
+                500.0,
+                500.0
+            ],
+            "position": [
+                20,
+                20,
+                20
+            ]
+        },
+        {
+            "intensity": [
+                500.0,
+                500.0,
+                500.0
+            ],
+            "position": [
+                -20,
+                20,
+                0
+            ]
+        }
+    ],
+    "camera": {
+        "position": [
+            0,
+            0,
+            -7
+        ],
+        "target": [
+            0,
+            0,
+            0
+        ],
+        "up": [
+            0,
+            -1,
+            0
+        ],
+        "fov": 60,
+        "aspect": 1,
+        "near": 0.1,
+        "far": 10
+    }
 }

@@ -1,0 +1,135 @@
+{
+    "objects": [
+        {
+            "name": "left",
+            "objfile": "../objects/floor.obj",
+            "color": [
+                100,
+                100,
+                100
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "translate": [
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "left",
+            "objfile": "../objects/floor.obj",
+            "color": [
+                255,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "rotation": [
+                0,
+                90,
+                0
+            ],
+            "translate": [
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "right",
+            "objfile": "../objects/floor.obj",
+            "color": [
+                0,
+                255,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "rotation": [
+                0,
+                90,
+                0
+            ],
+            "translate": [
+                0,
+                0,
+                -2
+            ]
+        },
+        {
+            "name": "floor",
+            "objfile": "../objects/floor.obj",
+            "color": [
+                100,
+                100,
+                230
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "rotation": [
+                270,
+                0,
+                0
+            ],
+            "translate": [
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    "lights": [
+        {
+            "intensity": [
+                1000.0,
+                1000.0,
+                1000.0
+            ],
+            "position": [
+                -20,
+                20,
+                0
+            ]
+        }
+    ],
+    "camera": {
+        "position": [
+            0,
+            0,
+            -5
+        ],
+        "target": [
+            0,
+            0,
+            0
+        ],
+        "up": [
+            0,
+            1,
+            0
+        ],
+        "fov": 60,
+        "aspect": 1,
+        "near": 0.1,
+        "far": 100
+    }
+}

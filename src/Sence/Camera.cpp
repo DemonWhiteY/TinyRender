@@ -71,6 +71,6 @@ Eigen::Matrix4f Camera::get_projection_matrix()
     projection << zNear / right, 0, 0, 0,
         0, zNear / top, 0, 0,
         0, 0, (zNear + zFar) / (zNear - zFar), (2 * zNear * zFar) / (zFar - zNear),
-        0, 0, 1, 0;
+        0, 0, -1, 0;
     return projection;
 }
