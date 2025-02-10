@@ -36,6 +36,7 @@ public:
 };
 
 // JsonLoader 类的构造函数，用于加载 JSON 配置文件
+// JsonLoader 类的构造函数，用于加载和解析 JSON 配置文件
 json_loader::json_loader(std::string path)
 {
     // 使用 nlohmann/json 进行解析
