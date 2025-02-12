@@ -22,23 +22,40 @@ Model::~Model()
 {
 }
 
+/**
+ * @brief 加载三角形数据到模型中
+ *
+ * 该函数通过顶点位置、法线、索引和纹理坐标来加载三角形数据，以构建模型的三角形网格。
+ *
+ * @param position 顶点位置数组，每个顶点一个Vector3f
+ * @param normal 顶点法线数组，每个顶点一个Vector3f
+ * @param index 顶点索引数组，每个三角形一个Vector3i，定义了三角形的顶点顺序
+ * @param texCrood 纹理坐标数组，每个顶点一个Vector2f，用于映射纹理到三角形
+ */
 void Model::load_triangles(std::vector<Vector3f> position, std::vector<Vector3f> normal, std::vector<Vector3i> index, std::vector<Vector2f> texCrood)
 {
+    // 遍历索引数组，每个索引代表一个三角形的一个顶点
     for (int i = 0; i < index.size(); i++)
     {
-
+        // 创建一个新的三角形对象
         auto temp_triangle = new Triangle();
+
+        // 遍历三角形的三个顶点
         for (int m = 0; m < 3; m++)
         {
-
+            // 设置顶点位置
             temp_triangle->setVertex(m, position[i * 3 + m]);
+            // 设置顶点法线
             temp_triangle->setNormal(m, normal[i * 3 + m]);
+
+            // 如果提供了纹理坐标，则设置顶点的纹理坐标
             if (texCrood.size() != 0)
             {
                 temp_triangle->setTexCoord(m, texCrood[i * 3 + m][0], texCrood[i * 3 + m][1]);
             }
         }
 
+        // 将构建好的三角形添加到模型的三角形列表中
         this->triangles.push_back(temp_triangle);
     }
 }
