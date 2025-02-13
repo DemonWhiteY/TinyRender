@@ -43,6 +43,12 @@
 },
 {
   "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyshader.dir/includes_CXX.rsp  -Wall -g -std=gnu++17 -o CMakeFiles\\tinyshader.dir\\src\\Utils\\ui.cpp.obj -c E:\\Lab\\TinyShader\\src\\Utils\\ui.cpp",
+  "file": "E:/Lab/TinyShader/src/Utils/ui.cpp",
+  "output": "CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
   "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyshader.dir/includes_CXX.rsp  -Wall -g -std=gnu++17 -o CMakeFiles\\tinyshader.dir\\src\\main.cpp.obj -c E:\\Lab\\TinyShader\\src\\main.cpp",
   "file": "E:/Lab/TinyShader/src/main.cpp",
   "output": "CMakeFiles/tinyshader.dir/src/main.cpp.obj"

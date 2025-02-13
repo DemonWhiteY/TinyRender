@@ -498,7 +498,71 @@ CMakeFiles/tinyshader.dir/src/main.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
  D:/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
  D:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
- E:\Lab\TinyShader\src\Sence/Camera.h \
+ E:\Lab\TinyShader\src\Sence/Camera.h E:\Lab\TinyShader\src\Utils/ui.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_stdinc.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform_defines.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+ D:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_begin_code.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_close_code.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_assert.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_asyncio.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_atomic.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_bits.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_blendmode.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_camera.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_error.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_pixels.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_endian.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_properties.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_surface.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_rect.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_iostream.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_clipboard.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_cpuinfo.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_dialog.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_video.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_events.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_audio.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_mutex.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_thread.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_gamepad.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_guid.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_joystick.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_power.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_sensor.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_keyboard.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_keycode.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_scancode.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_mouse.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_pen.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_touch.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_filesystem.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_gpu.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_haptic.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_hidapi.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_hints.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_init.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_loadso.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_locale.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_log.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_messagebox.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_metal.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_misc.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_process.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_render.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_storage.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_system.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_time.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_timer.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_tray.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_version.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_oldnames.h \
+ E:\Lab\TinyShader\src\Utils/tgaimage.h \
+ E:/Lab/TinyShader/include/SDL3_image/include/SDL3_image/SDL_image.h \
  E:\Lab\TinyShader\src\Utils/objects_loader.h \
  D:/mingw64/x86_64-w64-mingw32/include/conio.h \
  D:/mingw64/x86_64-w64-mingw32/include/sec_api/conio_s.h \

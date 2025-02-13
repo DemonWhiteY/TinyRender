@@ -9,6 +9,9 @@
 #include "Shader/Shader.h"
 #include "Sence/Model.h"
 #include "Sence/Camera.h"
+#include "Utils/ui.h"
+#include "SDL3/SDL.h"
+#include "SDL3_image/SDL_image.h"
 using namespace Eigen;
 
 enum class Buffers
@@ -45,7 +48,6 @@ public:
     ~Rasterizer();
 
     void Handle();
-
     void set_model(const Eigen::Matrix4f &m);
 
     void set_view(const Eigen::Matrix4f &v);
@@ -73,4 +75,6 @@ public:
     std::tuple<float, float, float> computeBarycentric2D(float x, float y, const Vector3f *v);
     Vector3f Transform(Vector3f, Matrix4f, float);
     Vector3f World2Screen(Vector3f worldpos);
+
+    void show_window(TGAImage &image);
 };

@@ -74,7 +74,7 @@ void Rasterizer::output(char *outdir)
             image->set(x, y, TGAColor(color[0], color[1], color[2], 255));
         }
     }
-
+    Rasterizer::show_window(*image);
     image->flip_vertically(); // i want to have the origin at the left bottom corner of the image
     image->write_tga_file(outdir);
 }
@@ -258,4 +258,35 @@ void Rasterizer::set_fragment_shader(std::function<Eigen::Vector3f(fragment_shad
 void Rasterizer::add_model(Model model)
 {
     this->models.push_back(model);
+}
+
+void Rasterizer::show_window(TGAImage &image)
+{
+    SDL_Surface *hello = nullptr;
+    SDL_Window *window = nullptr;
+    SDL_Surface *screenSurface = nullptr;
+
+    // 初始化 SDL（SDL3 不再需要显式初始化每个子系统）
+    SDL_Init(SDL_INIT_VIDEO);
+
+    // 创建窗口（替换 SDL_SetVideoMode）
+    window = SDL_CreateWindow("Window", 640, 480, SDL_WINDOW_HIDDEN);
+    screenSurface = SDL_GetWindowSurface(window);
+
+    // 显示窗口（SDL3 新增显式窗口显示）
+    SDL_ShowWindow(window);
+
+    // 图像渲染（保持相同但建议改用 SDL_Renderer）
+    SDL_BlitSurface(hello, nullptr, screenSurface, nullptr);
+
+    // 更新窗口（改用新 API）
+    SDL_UpdateWindowSurface(window);
+
+    // 延迟（保持相同）
+    SDL_Delay(2000);
+
+    // 释放资源（注意新增窗口销毁）
+    SDL_DestroySurface(hello);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
 }

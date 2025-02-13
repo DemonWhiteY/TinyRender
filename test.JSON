@@ -22,31 +22,6 @@
             "translate": [
                 0,
                 0,
-                -2
-            ]
-        },
-        {
-            "name": "model",
-            "objfile": "../objects/spot_triangulated_good.obj",
-            "texture": "../objects/Texture/spot_texture.png",
-            "color": [
-                225.0,
-                0,
-                0
-            ],
-            "scale": [
-                1.5,
-                1.5,
-                1.5
-            ],
-            "rotation": [
-                0,
-                10,
-                0
-            ],
-            "translate": [
-                0,
-                0,
                 0
             ]
         },
@@ -144,7 +119,7 @@
             ],
             "position": [
                 -20,
-                20,
+                -20,
                 0
             ]
         }
@@ -153,7 +128,7 @@
         "position": [
             0,
             0,
-            -7
+            -6
         ],
         "target": [
             0,

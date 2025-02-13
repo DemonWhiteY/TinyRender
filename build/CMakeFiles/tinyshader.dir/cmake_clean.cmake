@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj.d"
   "CMakeFiles/tinyshader.dir/src/Utils/tgaimage.cpp.obj"
   "CMakeFiles/tinyshader.dir/src/Utils/tgaimage.cpp.obj.d"
+  "CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj"
+  "CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj.d"
   "CMakeFiles/tinyshader.dir/src/main.cpp.obj"
   "CMakeFiles/tinyshader.dir/src/main.cpp.obj.d"
   "CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj"

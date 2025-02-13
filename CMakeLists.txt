@@ -17,7 +17,10 @@ set(EIGEN3_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/eigen")
 set(OBJECTS_LOADER_DIR "${CMAKE_SOURCE_DIR}/include/tiny_obj_loader")
 
 set(STB_IMAGE_DIR "${CMAKE_SOURCE_DIR}/include/stb_image")
-
+set(SDL_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/SDL/include")
+set(SDL_LIBRARY "${CMAKE_SOURCE_DIR}/include/SDL/lib/x64/SDL3.lib")
+set(SD3_IMAGE_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/SDL3_image/include")
+set(SDL3_IMAGE_LIBRARY "${CMAKE_SOURCE_DIR}/include/SDL3_image/lib/x64/SDL3_image.lib")
 set(JSON_CPP_DIR "${CMAKE_SOURCE_DIR}/include/json")
 set(NLOHMANN_JSON_DIR "${CMAKE_SOURCE_DIR}/include")
 
@@ -25,10 +28,15 @@ set(NLOHMANN_JSON_DIR "${CMAKE_SOURCE_DIR}/include")
 
 
 
+
+include_directories(${SDL_INCLUDE_DIR})
 include_directories(${EIGEN3_INCLUDE_DIR})
 include_directories(${OBJECTS_LOADER_DIR})
 include_directories(${STB_IMAGE_DIR})
 include_directories(${NLOHMANN_JSON_DIR})
+include_directories(${SD3_IMAGE_INCLUDE_DIR})
+
+
 
 # 递归查找所有 .cpp 源文件
 file(GLOB_RECURSE SOURCES "src/*.cpp")
@@ -43,6 +51,8 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_link_libraries(${PROJECT_NAME} PUBLIC m)
 
+
+
 target_link_libraries(${PROJECT_NAME} 
 PUBLIC  kernel32
 PUBLIC        user32
@@ -54,6 +64,9 @@ PUBLIC         oleaut32
 PUBLIC         uuid
 PUBLIC         comdlg32
 PUBLIC         advapi32
+PUBLIC ${SDL_LIBRARY}
+PUBLIC ${SDL3_IMAGE_LIBRARY}
+
    
 )
 
