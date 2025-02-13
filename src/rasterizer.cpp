@@ -79,36 +79,48 @@ void Rasterizer::output(char *outdir)
     image->write_tga_file(outdir);
 }
 
+// 绘制三角形函数，负责将给定的三角形光栅化到图像上
 void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos, Texture *texture)
 {
+    // 获取三角形的顶点信息和其他相关数据
     Triangle.getinfo();
 
+    // 将三角形的顶点转换为齐次坐标表示
     auto v = Triangle.toVector4();
 
+    // 遍历三角形的包围盒内的每一个像素
     for (int x = std::max(Triangle.boxmin.x(), 0.0f); x < Triangle.boxmax.x() && x < width; x++)
     {
         for (int y = std::max(Triangle.boxmin.y(), 0.0f); y < Triangle.boxmax.y() && y < height; y++)
         {
-
+            // 检查当前像素是否在三角形内部
             if (isPointInTriangle({Triangle.v[0][0], Triangle.v[0][1]}, {Triangle.v[1][0], Triangle.v[1][1]}, {Triangle.v[2][0], Triangle.v[2][1]}, {x + 0.5, y + 0.5}))
             {
+                // 计算当前像素的重心坐标
                 std::tuple<float, float, float> barycentric_coords = computeBarycentric2D(x, y, Triangle.v);
                 float alpha = std::get<0>(barycentric_coords);
                 float beta = std::get<1>(barycentric_coords);
                 float gamma = std::get<2>(barycentric_coords);
+
+                // 计算深度值的 reciprocate
                 float w_reciprocal = 1.0 / (alpha / v[0].w() + beta / v[1].w() + gamma / v[2].w());
+                // 使用重心坐标插值计算深度值
                 float z_interpolated = alpha * v[0].z() / v[0].w() + beta * v[1].z() / v[1].w() + gamma * v[2].z() / v[2].w();
                 z_interpolated *= w_reciprocal;
 
+                // 插值计算颜色、法线、纹理坐标和视点位置
                 auto interpolated_color = interpolate(alpha, beta, gamma, Triangle.color[0], Triangle.color[1], Triangle.color[2], 1);
                 auto interpolated_normal = interpolate(alpha, beta, gamma, Triangle.normal[0], Triangle.normal[1], Triangle.normal[2], 1);
                 auto interpolated_texcoords = interpolate(alpha, beta, gamma, Triangle.tex_coords[0], Triangle.tex_coords[1], Triangle.tex_coords[2], 1);
                 auto interpolated_viewpos = interpolate(alpha, beta, gamma, view_pos[0], view_pos[1], view_pos[2], 1);
 
+                // 准备片段着色器的输入数据
                 fragment_shader_payload payload(interpolated_color / 255.0f, interpolated_normal.normalized(), interpolated_texcoords, texture, lights);
                 payload.view_pos = interpolated_viewpos;
+                // 调用片段着色器计算最终像素颜色
                 auto pixel_color = fragment_shader(payload);
 
+                // 设置像素的深度值和颜色
                 set_pixel({x, y, z_interpolated}, pixel_color);
             }
         }
