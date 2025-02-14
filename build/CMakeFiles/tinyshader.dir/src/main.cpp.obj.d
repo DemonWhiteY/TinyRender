@@ -1,43 +1,23 @@
 CMakeFiles/tinyshader.dir/src/main.cpp.obj: \
- E:\Lab\TinyShader\src\main.cpp E:\Lab\TinyShader\src\rasterizer.h \
- E:/Lab/TinyShader/include/eigen/Eigen/Core \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/DisableStupidWarnings.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/Macros.h \
- D:/mingw64/include/c++/14.2.0/cmath \
+ E:\Lab\TinyShader\src\main.cpp \
+ E:\Lab\TinyShader\src\Utils/objects_loader.h \
+ E:/Lab/TinyShader/include/tiny_obj_loader/tiny_obj_loader.h \
+ D:/mingw64/include/c++/14.2.0/map \
  D:/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
  D:/mingw64/include/c++/14.2.0/pstl/pstl_config.h \
- D:/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h \
- D:/mingw64/include/c++/14.2.0/ext/type_traits.h \
- D:/mingw64/x86_64-w64-mingw32/include/math.h \
- D:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
- D:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
- D:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
- D:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
- D:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
- D:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
- D:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
- D:/mingw64/include/c++/14.2.0/bits/std_abs.h \
- D:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
- D:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
- D:/mingw64/x86_64-w64-mingw32/include/limits.h \
- D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
- D:/mingw64/include/c++/14.2.0/stdlib.h \
- D:/mingw64/x86_64-w64-mingw32/include/malloc.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
- D:/mingw64/x86_64-w64-mingw32/include/errno.h \
- D:/mingw64/include/c++/14.2.0/bits/version.h \
- D:/mingw64/include/c++/14.2.0/bits/specfun.h \
+ D:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
  D:/mingw64/include/c++/14.2.0/bits/stl_algobase.h \
  D:/mingw64/include/c++/14.2.0/bits/functexcept.h \
  D:/mingw64/include/c++/14.2.0/bits/exception_defines.h \
+ D:/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h \
+ D:/mingw64/include/c++/14.2.0/ext/type_traits.h \
  D:/mingw64/include/c++/14.2.0/ext/numeric_traits.h \
  D:/mingw64/include/c++/14.2.0/bits/stl_pair.h \
  D:/mingw64/include/c++/14.2.0/type_traits \
+ D:/mingw64/include/c++/14.2.0/bits/version.h \
  D:/mingw64/include/c++/14.2.0/bits/move.h \
  D:/mingw64/include/c++/14.2.0/bits/utility.h \
  D:/mingw64/include/c++/14.2.0/bits/stl_iterator_base_types.h \
@@ -49,56 +29,96 @@ CMakeFiles/tinyshader.dir/src/main.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/debug/debug.h \
  D:/mingw64/include/c++/14.2.0/bits/predefined_ops.h \
  D:/mingw64/include/c++/14.2.0/bit D:/mingw64/include/c++/14.2.0/concepts \
- D:/mingw64/include/c++/14.2.0/limits \
- D:/mingw64/include/c++/14.2.0/tr1/gamma.tcc \
- D:/mingw64/include/c++/14.2.0/tr1/special_function_util.h \
- D:/mingw64/include/c++/14.2.0/tr1/bessel_function.tcc \
- D:/mingw64/include/c++/14.2.0/tr1/beta_function.tcc \
- D:/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc \
- D:/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc \
- D:/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc \
- D:/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc \
- D:/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
- D:/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
- D:/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
- D:/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/ConfigureVectorization.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mmintrin.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/emmintrin.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h \
+ D:/mingw64/include/c++/14.2.0/bits/allocator.h \
+ D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+ D:/mingw64/include/c++/14.2.0/bits/new_allocator.h \
  D:/mingw64/include/c++/14.2.0/new \
  D:/mingw64/include/c++/14.2.0/bits/exception.h \
- D:/mingw64/include/c++/14.2.0/complex \
- D:/mingw64/include/c++/14.2.0/sstream \
- D:/mingw64/include/c++/14.2.0/istream D:/mingw64/include/c++/14.2.0/ios \
- D:/mingw64/include/c++/14.2.0/iosfwd \
- D:/mingw64/include/c++/14.2.0/bits/stringfwd.h \
  D:/mingw64/include/c++/14.2.0/bits/memoryfwd.h \
+ D:/mingw64/include/c++/14.2.0/bits/stl_function.h \
+ D:/mingw64/include/c++/14.2.0/backward/binders.h \
+ D:/mingw64/include/c++/14.2.0/ext/alloc_traits.h \
+ D:/mingw64/include/c++/14.2.0/bits/alloc_traits.h \
+ D:/mingw64/include/c++/14.2.0/bits/stl_construct.h \
+ D:/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
+ D:/mingw64/include/c++/14.2.0/bits/node_handle.h \
+ D:/mingw64/include/c++/14.2.0/bits/stl_map.h \
+ D:/mingw64/include/c++/14.2.0/initializer_list \
+ D:/mingw64/include/c++/14.2.0/tuple \
+ D:/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
+ D:/mingw64/include/c++/14.2.0/bits/invoke.h \
+ D:/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+ D:/mingw64/include/c++/14.2.0/bits/range_access.h \
+ D:/mingw64/include/c++/14.2.0/bits/erase_if.h \
+ D:/mingw64/include/c++/14.2.0/bits/memory_resource.h \
+ D:/mingw64/include/c++/14.2.0/cstddef \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+ D:/mingw64/x86_64-w64-mingw32/include/stddef.h \
+ D:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ D:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ D:/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
+ D:/mingw64/include/c++/14.2.0/string \
+ D:/mingw64/include/c++/14.2.0/bits/stringfwd.h \
+ D:/mingw64/include/c++/14.2.0/bits/char_traits.h \
  D:/mingw64/include/c++/14.2.0/bits/postypes.h \
  D:/mingw64/include/c++/14.2.0/cwchar \
  D:/mingw64/x86_64-w64-mingw32/include/wchar.h \
  D:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+ D:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
  D:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
  D:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
  D:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
  D:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
- D:/mingw64/include/c++/14.2.0/exception \
- D:/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
- D:/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
- D:/mingw64/x86_64-w64-mingw32/include/stddef.h \
- D:/mingw64/include/c++/14.2.0/typeinfo \
- D:/mingw64/include/c++/14.2.0/bits/hash_bytes.h \
- D:/mingw64/include/c++/14.2.0/bits/nested_exception.h \
- D:/mingw64/include/c++/14.2.0/bits/char_traits.h \
  D:/mingw64/include/c++/14.2.0/bits/localefwd.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++locale.h \
  D:/mingw64/include/c++/14.2.0/clocale \
  D:/mingw64/x86_64-w64-mingw32/include/locale.h \
  D:/mingw64/x86_64-w64-mingw32/include/stdio.h \
  D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+ D:/mingw64/include/c++/14.2.0/iosfwd \
  D:/mingw64/include/c++/14.2.0/cctype \
  D:/mingw64/x86_64-w64-mingw32/include/ctype.h \
+ D:/mingw64/include/c++/14.2.0/bits/ostream_insert.h \
+ D:/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h \
+ D:/mingw64/include/c++/14.2.0/bits/refwrap.h \
+ D:/mingw64/include/c++/14.2.0/bits/basic_string.h \
+ D:/mingw64/include/c++/14.2.0/string_view \
+ D:/mingw64/include/c++/14.2.0/bits/functional_hash.h \
+ D:/mingw64/include/c++/14.2.0/bits/hash_bytes.h \
+ D:/mingw64/include/c++/14.2.0/bits/string_view.tcc \
+ D:/mingw64/include/c++/14.2.0/ext/string_conversions.h \
+ D:/mingw64/include/c++/14.2.0/cstdlib \
+ D:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+ D:/mingw64/x86_64-w64-mingw32/include/limits.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ D:/mingw64/include/c++/14.2.0/stdlib.h \
+ D:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+ D:/mingw64/x86_64-w64-mingw32/include/errno.h \
+ D:/mingw64/include/c++/14.2.0/bits/std_abs.h \
+ D:/mingw64/include/c++/14.2.0/cstdio \
+ D:/mingw64/include/c++/14.2.0/cerrno \
+ D:/mingw64/include/c++/14.2.0/bits/charconv.h \
+ D:/mingw64/include/c++/14.2.0/bits/basic_string.tcc \
+ D:/mingw64/include/c++/14.2.0/vector \
+ D:/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
+ D:/mingw64/include/c++/14.2.0/bits/stl_vector.h \
+ D:/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
+ D:/mingw64/include/c++/14.2.0/bits/vector.tcc \
+ D:/mingw64/include/c++/14.2.0/iostream \
+ D:/mingw64/include/c++/14.2.0/ostream D:/mingw64/include/c++/14.2.0/ios \
+ D:/mingw64/include/c++/14.2.0/exception \
+ D:/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
+ D:/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
+ D:/mingw64/include/c++/14.2.0/typeinfo \
+ D:/mingw64/include/c++/14.2.0/bits/nested_exception.h \
  D:/mingw64/include/c++/14.2.0/bits/ios_base.h \
  D:/mingw64/include/c++/14.2.0/ext/atomicity.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
@@ -118,36 +138,6 @@ CMakeFiles/tinyshader.dir/src/main.cpp.obj: \
  D:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
  D:/mingw64/include/c++/14.2.0/bits/locale_classes.h \
- D:/mingw64/include/c++/14.2.0/string \
- D:/mingw64/include/c++/14.2.0/bits/allocator.h \
- D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
- D:/mingw64/include/c++/14.2.0/bits/new_allocator.h \
- D:/mingw64/include/c++/14.2.0/bits/ostream_insert.h \
- D:/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h \
- D:/mingw64/include/c++/14.2.0/bits/stl_function.h \
- D:/mingw64/include/c++/14.2.0/backward/binders.h \
- D:/mingw64/include/c++/14.2.0/bits/refwrap.h \
- D:/mingw64/include/c++/14.2.0/bits/invoke.h \
- D:/mingw64/include/c++/14.2.0/bits/range_access.h \
- D:/mingw64/include/c++/14.2.0/initializer_list \
- D:/mingw64/include/c++/14.2.0/bits/basic_string.h \
- D:/mingw64/include/c++/14.2.0/ext/alloc_traits.h \
- D:/mingw64/include/c++/14.2.0/bits/alloc_traits.h \
- D:/mingw64/include/c++/14.2.0/bits/stl_construct.h \
- D:/mingw64/include/c++/14.2.0/string_view \
- D:/mingw64/include/c++/14.2.0/bits/functional_hash.h \
- D:/mingw64/include/c++/14.2.0/bits/string_view.tcc \
- D:/mingw64/include/c++/14.2.0/ext/string_conversions.h \
- D:/mingw64/include/c++/14.2.0/cstdlib \
- D:/mingw64/include/c++/14.2.0/cstdio \
- D:/mingw64/include/c++/14.2.0/cerrno \
- D:/mingw64/include/c++/14.2.0/bits/charconv.h \
- D:/mingw64/include/c++/14.2.0/bits/basic_string.tcc \
- D:/mingw64/include/c++/14.2.0/bits/memory_resource.h \
- D:/mingw64/include/c++/14.2.0/cstddef \
- D:/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
- D:/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
- D:/mingw64/include/c++/14.2.0/tuple \
  D:/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
  D:/mingw64/include/c++/14.2.0/system_error \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
@@ -163,9 +153,34 @@ CMakeFiles/tinyshader.dir/src/main.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
  D:/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
  D:/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
- D:/mingw64/include/c++/14.2.0/ostream \
  D:/mingw64/include/c++/14.2.0/bits/ostream.tcc \
+ D:/mingw64/include/c++/14.2.0/istream \
  D:/mingw64/include/c++/14.2.0/bits/istream.tcc \
+ E:/Lab/TinyShader/include/eigen/Eigen/Core \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/DisableStupidWarnings.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/Macros.h \
+ D:/mingw64/include/c++/14.2.0/cmath \
+ D:/mingw64/x86_64-w64-mingw32/include/math.h \
+ D:/mingw64/include/c++/14.2.0/bits/specfun.h \
+ D:/mingw64/include/c++/14.2.0/limits \
+ D:/mingw64/include/c++/14.2.0/tr1/gamma.tcc \
+ D:/mingw64/include/c++/14.2.0/tr1/special_function_util.h \
+ D:/mingw64/include/c++/14.2.0/tr1/bessel_function.tcc \
+ D:/mingw64/include/c++/14.2.0/tr1/beta_function.tcc \
+ D:/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc \
+ D:/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc \
+ D:/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc \
+ D:/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc \
+ D:/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
+ D:/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
+ D:/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
+ D:/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/ConfigureVectorization.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mmintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/emmintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h \
+ D:/mingw64/include/c++/14.2.0/complex \
+ D:/mingw64/include/c++/14.2.0/sstream \
  D:/mingw64/include/c++/14.2.0/bits/sstream.tcc \
  E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/MKL_support.h \
  D:/mingw64/include/c++/14.2.0/cassert \
@@ -176,15 +191,7 @@ CMakeFiles/tinyshader.dir/src/main.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/bits/unordered_map.h \
  D:/mingw64/include/c++/14.2.0/bits/hashtable.h \
  D:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
- D:/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
  D:/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
- D:/mingw64/include/c++/14.2.0/bits/node_handle.h \
- D:/mingw64/include/c++/14.2.0/bits/erase_if.h \
- D:/mingw64/include/c++/14.2.0/vector \
- D:/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
- D:/mingw64/include/c++/14.2.0/bits/stl_vector.h \
- D:/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
- D:/mingw64/include/c++/14.2.0/bits/vector.tcc \
  D:/mingw64/include/c++/14.2.0/array \
  D:/mingw64/include/c++/14.2.0/compare \
  D:/mingw64/include/c++/14.2.0/cstring \
@@ -328,248 +335,28 @@ CMakeFiles/tinyshader.dir/src/main.cpp.obj: \
  E:/Lab/TinyShader/include/eigen/Eigen/src/Core/StlIterators.h \
  E:/Lab/TinyShader/include/eigen/Eigen/src/Core/GlobalFunctions.h \
  E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/ReenableStupidWarnings.h \
- D:/mingw64/include/c++/14.2.0/iostream D:/mingw64/include/c++/14.2.0/map \
- D:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
- D:/mingw64/include/c++/14.2.0/bits/stl_map.h \
- D:/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
- E:\Lab\TinyShader\src\Triangle.hpp D:/mingw64/include/c++/14.2.0/vector \
- E:\Lab\TinyShader\src\Utils/tgaimage.h \
+ D:/mingw64/x86_64-w64-mingw32/include/conio.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sec_api/conio_s.h \
+ E:\Lab\TinyShader\src\Utils/json_loader.h \
  D:/mingw64/include/c++/14.2.0/fstream \
  D:/mingw64/include/c++/14.2.0/bits/codecvt.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
  D:/mingw64/include/c++/14.2.0/bits/fstream.tcc \
- E:/Lab/TinyShader/include/eigen/Eigen/Dense \
- E:/Lab/TinyShader/include/eigen/Eigen/Core \
- E:/Lab/TinyShader/include/eigen/Eigen/LU \
- E:/Lab/TinyShader/include/eigen/Eigen/src/misc/Kernel.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/misc/Image.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/LU/FullPivLU.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/LU/PartialPivLU.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/LU/Determinant.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/LU/InverseImpl.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/LU/arch/InverseSize4.h \
- E:/Lab/TinyShader/include/eigen/Eigen/Cholesky \
- E:/Lab/TinyShader/include/eigen/Eigen/Jacobi \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Jacobi/Jacobi.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Cholesky/LLT.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Cholesky/LDLT.h \
- E:/Lab/TinyShader/include/eigen/Eigen/QR \
- E:/Lab/TinyShader/include/eigen/Eigen/Householder \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Householder/Householder.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Householder/HouseholderSequence.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Householder/BlockHouseholder.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/QR/HouseholderQR.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/QR/FullPivHouseholderQR.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/QR/ColPivHouseholderQR.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
- E:/Lab/TinyShader/include/eigen/Eigen/SVD \
- E:/Lab/TinyShader/include/eigen/Eigen/src/misc/RealSvd2x2.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SVD/UpperBidiagonalization.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SVD/SVDBase.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SVD/JacobiSVD.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SVD/BDCSVD.h \
- E:/Lab/TinyShader/include/eigen/Eigen/Geometry \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/OrthoMethods.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/EulerAngles.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Homogeneous.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/RotationBase.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Rotation2D.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Quaternion.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/AngleAxis.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Transform.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Translation.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Scaling.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Hyperplane.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/ParametrizedLine.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/AlignedBox.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Umeyama.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/arch/Geometry_SIMD.h \
- E:/Lab/TinyShader/include/eigen/Eigen/Eigenvalues \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/Tridiagonalization.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/RealSchur.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/EigenSolver.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/RealSchur.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/Tridiagonalization.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/ComplexSchur.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/ComplexSchur.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/RealQZ.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/RealQZ.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
- E:\Lab\TinyShader\src\Shader/Shader.h \
- E:/Lab/TinyShader/include/eigen/Eigen/Eigen \
- E:/Lab/TinyShader/include/eigen/Eigen/Dense \
- E:/Lab/TinyShader/include/eigen/Eigen/Sparse \
- E:/Lab/TinyShader/include/eigen/Eigen/SparseCore \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseUtil.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseMatrixBase.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/CommonCwiseUnaryOps.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/CommonCwiseBinaryOps.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/BlockMethods.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseAssign.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/CompressedStorage.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/AmbiVector.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseCompressedBase.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseMatrix.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseMap.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/MappedSparseMatrix.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseVector.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseRef.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseTranspose.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseBlock.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseDot.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseRedux.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseView.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseDiagonalProduct.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseProduct.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseDenseProduct.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseSelfAdjointView.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseTriangularView.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/TriangularSolver.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparsePermutation.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseFuzzy.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseSolverBase.h \
- E:/Lab/TinyShader/include/eigen/Eigen/OrderingMethods \
- E:/Lab/TinyShader/include/eigen/Eigen/src/OrderingMethods/Amd.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/OrderingMethods/Ordering.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/OrderingMethods/Eigen_Colamd.h \
- E:/Lab/TinyShader/include/eigen/Eigen/SparseCholesky \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCholesky/SimplicialCholesky.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h \
- E:/Lab/TinyShader/include/eigen/Eigen/SparseLU \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_gemm_kernel.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_Structs.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLUImpl.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseColEtree.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_Memory.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_relax_snode.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_pivotL.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_panel_dfs.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_kernel_bmod.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_panel_bmod.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_column_dfs.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_column_bmod.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_pruneL.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_Utils.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU.h \
- E:/Lab/TinyShader/include/eigen/Eigen/SparseQR \
- E:/Lab/TinyShader/include/eigen/Eigen/src/SparseQR/SparseQR.h \
- E:/Lab/TinyShader/include/eigen/Eigen/IterativeLinearSolvers \
- E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
- D:/mingw64/include/c++/14.2.0/list \
- D:/mingw64/include/c++/14.2.0/bits/stl_list.h \
- D:/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
- D:/mingw64/include/c++/14.2.0/bits/list.tcc \
- E:/Lab/TinyShader/src/Texture.h \
- E:/Lab/TinyShader/include/stb_image/stb_image.h \
- E:/Lab/TinyShader/src/Sence/Light.h E:\Lab\TinyShader\src\Sence/Model.h \
- E:/Lab/TinyShader/src/Triangle.hpp E:/Lab/TinyShader/src/Texture.h \
- E:/Lab/TinyShader/src/Utils/objects_loader.h \
- E:/Lab/TinyShader/include/tiny_obj_loader/tiny_obj_loader.h \
+ E:/Lab/TinyShader/include/nlohmann/json.hpp \
+ D:/mingw64/include/c++/14.2.0/iterator \
+ D:/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
  D:/mingw64/include/c++/14.2.0/memory \
  D:/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
  D:/mingw64/include/c++/14.2.0/bits/align.h \
  D:/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
  D:/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
  D:/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
+ D:/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
  D:/mingw64/include/c++/14.2.0/ext/concurrence.h \
  D:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
  D:/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
  D:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
- E:\Lab\TinyShader\src\Sence/Camera.h E:\Lab\TinyShader\src\Utils/ui.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_stdinc.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform_defines.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
- D:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
- D:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_begin_code.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_close_code.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_assert.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_asyncio.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_atomic.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_bits.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_blendmode.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_camera.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_error.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_pixels.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_endian.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_properties.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_surface.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_rect.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_iostream.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_clipboard.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_cpuinfo.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_dialog.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_video.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_events.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_audio.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_mutex.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_thread.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_gamepad.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_guid.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_joystick.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_power.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_sensor.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_keyboard.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_keycode.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_scancode.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_mouse.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_pen.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_touch.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_filesystem.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_gpu.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_haptic.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_hidapi.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_hints.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_init.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_loadso.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_locale.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_log.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_messagebox.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_metal.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_misc.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_process.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_render.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_storage.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_system.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_time.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_timer.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_tray.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_version.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_oldnames.h \
- E:\Lab\TinyShader\src\Utils/tgaimage.h \
- E:/Lab/TinyShader/include/SDL3_image/include/SDL3_image/SDL_image.h \
- E:\Lab\TinyShader\src\Utils/objects_loader.h \
- D:/mingw64/x86_64-w64-mingw32/include/conio.h \
- D:/mingw64/x86_64-w64-mingw32/include/sec_api/conio_s.h \
- E:\Lab\TinyShader\src\Utils/json_loader.h \
- E:/Lab/TinyShader/include/nlohmann/json.hpp \
- D:/mingw64/include/c++/14.2.0/iterator \
- D:/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
  D:/mingw64/include/c++/14.2.0/utility \
  D:/mingw64/include/c++/14.2.0/bits/stl_relops.h \
  E:/Lab/TinyShader/include/nlohmann/adl_serializer.hpp \
@@ -653,4 +440,217 @@ CMakeFiles/tinyshader.dir/src/main.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/any \
  E:/Lab/TinyShader/include/nlohmann/detail/macro_unscope.hpp \
  E:/Lab/TinyShader/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
- E:/Lab/TinyShader/src/Sence/Model.h E:/Lab/TinyShader/src/Texture.h
+ E:/Lab/TinyShader/src/Sence/Model.h E:/Lab/TinyShader/src/Triangle.hpp \
+ D:/mingw64/include/c++/14.2.0/vector E:/Lab/TinyShader/src/Texture.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/Eigen \
+ E:/Lab/TinyShader/include/eigen/Eigen/Dense \
+ E:/Lab/TinyShader/include/eigen/Eigen/Core \
+ E:/Lab/TinyShader/include/eigen/Eigen/LU \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/misc/Kernel.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/misc/Image.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/LU/FullPivLU.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/LU/PartialPivLU.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/LU/Determinant.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/LU/InverseImpl.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/LU/arch/InverseSize4.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/Cholesky \
+ E:/Lab/TinyShader/include/eigen/Eigen/Jacobi \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Jacobi/Jacobi.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Cholesky/LLT.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Cholesky/LDLT.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/QR \
+ E:/Lab/TinyShader/include/eigen/Eigen/Householder \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Householder/Householder.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Householder/HouseholderSequence.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Householder/BlockHouseholder.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/QR/HouseholderQR.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/QR/FullPivHouseholderQR.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/QR/ColPivHouseholderQR.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/SVD \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/misc/RealSvd2x2.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SVD/UpperBidiagonalization.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SVD/SVDBase.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SVD/JacobiSVD.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SVD/BDCSVD.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/Geometry \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/OrthoMethods.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/EulerAngles.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Homogeneous.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/RotationBase.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Rotation2D.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Quaternion.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/AngleAxis.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Transform.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Translation.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Scaling.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Hyperplane.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/ParametrizedLine.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/AlignedBox.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/Umeyama.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Geometry/arch/Geometry_SIMD.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/Eigenvalues \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/Tridiagonalization.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/RealSchur.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/EigenSolver.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/RealSchur.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/Tridiagonalization.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/ComplexSchur.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/ComplexSchur.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/RealQZ.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/RealQZ.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/Sparse \
+ E:/Lab/TinyShader/include/eigen/Eigen/SparseCore \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseUtil.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseMatrixBase.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/BlockMethods.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseAssign.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/CompressedStorage.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/AmbiVector.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseCompressedBase.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseMatrix.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseMap.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/MappedSparseMatrix.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseVector.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseRef.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseTranspose.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseBlock.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseDot.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseRedux.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseView.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseProduct.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseDenseProduct.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseTriangularView.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/TriangularSolver.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparsePermutation.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseFuzzy.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseSolverBase.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/OrderingMethods \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/OrderingMethods/Amd.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/OrderingMethods/Ordering.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/OrderingMethods/Eigen_Colamd.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/SparseCholesky \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCholesky/SimplicialCholesky.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/SparseLU \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_gemm_kernel.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_Structs.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLUImpl.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseColEtree.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_Memory.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_relax_snode.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_pivotL.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_panel_dfs.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_kernel_bmod.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_panel_bmod.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_column_dfs.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_column_bmod.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_pruneL.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU_Utils.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseLU/SparseLU.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/SparseQR \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/SparseQR/SparseQR.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/IterativeLinearSolvers \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
+ D:/mingw64/include/c++/14.2.0/list \
+ D:/mingw64/include/c++/14.2.0/bits/stl_list.h \
+ D:/mingw64/include/c++/14.2.0/bits/list.tcc \
+ E:/Lab/TinyShader/include/stb_image/stb_image.h \
+ E:/Lab/TinyShader/src/Utils/objects_loader.h \
+ E:/Lab/TinyShader/src/Sence/Light.h E:/Lab/TinyShader/src/Sence/Camera.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/Dense \
+ E:/Lab/TinyShader/src/Texture.h E:\Lab\TinyShader\src\Utils/ui.h \
+ E:/Lab/TinyShader/src/rasterizer.h E:/Lab/TinyShader/src/Triangle.hpp \
+ E:/Lab/TinyShader/src/Shader/Shader.h E:/Lab/TinyShader/src/Texture.h \
+ E:/Lab/TinyShader/src/Sence/Model.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_stdinc.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform_defines.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+ D:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_begin_code.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_close_code.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_assert.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_asyncio.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_atomic.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_bits.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_blendmode.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_camera.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_error.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_pixels.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_endian.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_properties.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_surface.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_rect.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_iostream.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_clipboard.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_cpuinfo.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_dialog.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_video.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_events.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_audio.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_mutex.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_thread.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_gamepad.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_guid.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_joystick.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_power.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_sensor.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_keyboard.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_keycode.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_scancode.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_mouse.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_pen.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_touch.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_filesystem.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_gpu.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_haptic.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_hidapi.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_hints.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_init.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_loadso.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_locale.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_log.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_messagebox.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_metal.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_misc.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_process.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_render.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_storage.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_system.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_time.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_timer.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_tray.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_version.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_oldnames.h \
+ E:/Lab/TinyShader/include/SDL3_image/include/SDL3_image/SDL_image.h \
+ E:/Lab/TinyShader/include/stb_image/stb_image_write.h

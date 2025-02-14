@@ -24,78 +24,6 @@
                 0,
                 0
             ]
-        },
-        {
-            "name": "floor",
-            "objfile": "../objects/floor.obj",
-            "color": [
-                250.0,
-                0,
-                0
-            ],
-            "scale": [
-                0.2,
-                0.2,
-                0.2
-            ],
-            "rotation": [
-                0,
-                0,
-                0
-            ],
-            "translate": [
-                0,
-                0,
-                0
-            ]
-        },
-        {
-            "name": "rock",
-            "objfile": "../objects/rock.obj",
-            "color": [
-                250.0,
-                230,
-                0
-            ],
-            "scale": [
-                0.4,
-                0.4,
-                0.4
-            ],
-            "rotation": [
-                0,
-                0,
-                0
-            ],
-            "translate": [
-                -1,
-                0,
-                0
-            ]
-        },
-        {
-            "name": "cube",
-            "objfile": "../objects/cube.obj",
-            "color": [
-                0.0,
-                230,
-                0
-            ],
-            "scale": [
-                0.4,
-                0.4,
-                0.4
-            ],
-            "rotation": [
-                0,
-                0,
-                0
-            ],
-            "translate": [
-                -1,
-                0,
-                0
-            ]
         }
     ],
     "lights": [
@@ -119,7 +47,7 @@
             ],
             "position": [
                 -20,
-                -20,
+                20,
                 0
             ]
         }
@@ -128,7 +56,7 @@
         "position": [
             0,
             0,
-            -6
+            -7
         ],
         "target": [
             0,
@@ -137,7 +65,7 @@
         ],
         "up": [
             0,
-            -1,
+            1,
             0
         ],
         "fov": 60,

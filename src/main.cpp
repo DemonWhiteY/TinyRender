@@ -1,10 +1,10 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include "rasterizer.h"
 #include "Utils/objects_loader.h"
 #include <conio.h>
 #include "Utils/json_loader.h"
+#include "Utils/ui.h"
 constexpr double MY_PI = 3.1415926;
 
 inline double DEG2RAD(double deg) { return deg * MY_PI / 180; }
@@ -13,7 +13,7 @@ inline double DEG2RAD(double deg) { return deg * MY_PI / 180; }
 int main(int argc, char **argv)
 {
 	// 创建一个900x900的光栅化器对象
-	Rasterizer ras(900, 900);
+	Rasterizer *ras = new Rasterizer(900, 900);
 
 	// 创建一个JSON加载器对象，用于解析指定的JSON文件
 	json_loader json_loader("../test.JSON");
@@ -25,44 +25,30 @@ int main(int argc, char **argv)
 	// 遍历并添加所有加载的模型到光栅化器中
 	for (auto model : models)
 	{
-		ras.add_model(*model);
+		ras->add_model(*model);
 	}
 
 	// 遍历并添加所有加载的光源到光栅化器中
 	for (auto light : lights)
 	{
-		ras.add_light(light);
+		ras->add_light(light);
 	}
 
 	// 添加相机信息到光栅化器中
-	ras.add_camera(json_loader.get_camera());
+	ras->add_camera(json_loader.get_camera());
 
 	// 设置光栅化器的片段着色器为纹理片段着色器
-	ras.set_fragment_shader(texture_fragment_shader);
+	ras->set_fragment_shader(texture_fragment_shader);
 
 	// 处理光栅化器的所有设置和添加的操作
-	ras.Handle();
-
-	// 初始化键和帧计数变量
-	int key = 0;
-	int frame_count = 0;
+	ras->Handle();
 
 	// 将光栅化器的输出保存到指定的TGA文件中
-	ras.output("../output/output.tga");
+	ras->output();
+	gui *GUI = new gui(ras->width, ras->height);
+	GUI->get_rasterizer(ras);
+	GUI->windowsStart();
 
-	// 以下代码段被注释掉，功能为持续渲染和输出帧，直到用户按下'q'键
-	// while (key != 'q')
-	// {
-	//     ras.clear();
-	//     ras.set_model(get_model_matrix(angle));
-
-	//     ras.Handle();
-	//     ras.output("../output/output.tga");
-
-	//     angle += 30.0f;
-	// }
-
-	// 程序正常结束，返回0
 	return 0;
 }
 

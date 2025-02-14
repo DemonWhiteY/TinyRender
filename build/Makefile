@@ -285,30 +285,6 @@ src/Utils/objects_loader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\tinyshader.dir\build.make CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.s
 .PHONY : src/Utils/objects_loader.cpp.s
 
-src/Utils/tgaimage.obj: src/Utils/tgaimage.cpp.obj
-.PHONY : src/Utils/tgaimage.obj
-
-# target to build an object file
-src/Utils/tgaimage.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\tinyshader.dir\build.make CMakeFiles/tinyshader.dir/src/Utils/tgaimage.cpp.obj
-.PHONY : src/Utils/tgaimage.cpp.obj
-
-src/Utils/tgaimage.i: src/Utils/tgaimage.cpp.i
-.PHONY : src/Utils/tgaimage.i
-
-# target to preprocess a source file
-src/Utils/tgaimage.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\tinyshader.dir\build.make CMakeFiles/tinyshader.dir/src/Utils/tgaimage.cpp.i
-.PHONY : src/Utils/tgaimage.cpp.i
-
-src/Utils/tgaimage.s: src/Utils/tgaimage.cpp.s
-.PHONY : src/Utils/tgaimage.s
-
-# target to generate assembly for a file
-src/Utils/tgaimage.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\tinyshader.dir\build.make CMakeFiles/tinyshader.dir/src/Utils/tgaimage.cpp.s
-.PHONY : src/Utils/tgaimage.cpp.s
-
 src/Utils/ui.obj: src/Utils/ui.cpp.obj
 .PHONY : src/Utils/ui.obj
 
@@ -409,9 +385,6 @@ help:
 	@echo ... src/Utils/objects_loader.obj
 	@echo ... src/Utils/objects_loader.i
 	@echo ... src/Utils/objects_loader.s
-	@echo ... src/Utils/tgaimage.obj
-	@echo ... src/Utils/tgaimage.i
-	@echo ... src/Utils/tgaimage.s
 	@echo ... src/Utils/ui.obj
 	@echo ... src/Utils/ui.i
 	@echo ... src/Utils/ui.s

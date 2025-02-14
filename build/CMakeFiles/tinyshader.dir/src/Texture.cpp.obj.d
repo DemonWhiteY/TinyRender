@@ -78,4 +78,5 @@ CMakeFiles/tinyshader.dir/src/Texture.cpp.obj: \
  D:/mingw64/x86_64-w64-mingw32/include/stdint.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/emmintrin.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mmintrin.h
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mmintrin.h \
+ E:/Lab/TinyShader/include/stb_image/stb_image_write.h

@@ -3,12 +3,15 @@
 #include <random>
 Rasterizer::Rasterizer(int w, int h) : width(w), height(h)
 {
-    image = new TGAImage(w, h, TGAImage::RGB);
 
     frame_buf.resize(w * h);
     depth_buf.resize(w * h);
     frame_buf.assign(frame_buf.size(), {255, 255, 255});
     depth_buf.assign(depth_buf.size(), 1000);
+}
+
+Rasterizer::Rasterizer()
+{
 }
 
 Rasterizer::~Rasterizer()
@@ -63,20 +66,21 @@ static Eigen::Vector2f interpolate(float alpha, float beta, float gamma, const E
     return Eigen::Vector2f(u, v);
 }
 
-void Rasterizer::output(char *outdir)
+void Rasterizer::output()
 {
-    for (int x = 0; x < width; x++)
+    std::vector<unsigned char> data(width * height * 3);
+    for (int y = 0; y < height; ++y)
     {
-        for (int y = 0; y < height; y++)
+        for (int x = 0; x < width; ++x)
         {
-
-            Vector3f color = frame_buf[get_index(x, y)];
-            image->set(x, y, TGAColor(color[0], color[1], color[2], 255));
+            int index = get_index(x, y);
+            data[(y * width + x) * 3 + 0] = static_cast<unsigned char>(frame_buf[index].x());
+            data[(y * width + x) * 3 + 1] = static_cast<unsigned char>(frame_buf[index].y());
+            data[(y * width + x) * 3 + 2] = static_cast<unsigned char>(frame_buf[index].z());
         }
     }
-    Rasterizer::show_window(*image);
-    image->flip_vertically(); // i want to have the origin at the left bottom corner of the image
-    image->write_tga_file(outdir);
+
+    stbi_write_bmp("../output/output.bmp", width, height, 3, data.data());
 }
 
 // 绘制三角形函数，负责将给定的三角形光栅化到图像上
@@ -258,35 +262,4 @@ void Rasterizer::set_fragment_shader(std::function<Eigen::Vector3f(fragment_shad
 void Rasterizer::add_model(Model model)
 {
     this->models.push_back(model);
-}
-
-void Rasterizer::show_window(TGAImage &image)
-{
-    SDL_Surface *hello = nullptr;
-    SDL_Window *window = nullptr;
-    SDL_Surface *screenSurface = nullptr;
-
-    // 初始化 SDL（SDL3 不再需要显式初始化每个子系统）
-    SDL_Init(SDL_INIT_VIDEO);
-
-    // 创建窗口（替换 SDL_SetVideoMode）
-    window = SDL_CreateWindow("Window", 640, 480, SDL_WINDOW_HIDDEN);
-    screenSurface = SDL_GetWindowSurface(window);
-
-    // 显示窗口（SDL3 新增显式窗口显示）
-    SDL_ShowWindow(window);
-
-    // 图像渲染（保持相同但建议改用 SDL_Renderer）
-    SDL_BlitSurface(hello, nullptr, screenSurface, nullptr);
-
-    // 更新窗口（改用新 API）
-    SDL_UpdateWindowSurface(window);
-
-    // 延迟（保持相同）
-    SDL_Delay(2000);
-
-    // 释放资源（注意新增窗口销毁）
-    SDL_DestroySurface(hello);
-    SDL_DestroyWindow(window);
-    SDL_Quit();
 }

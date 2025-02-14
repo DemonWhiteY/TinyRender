@@ -1,17 +1,19 @@
+#ifndef RASTERIZER_H
+#define RASTERIZER_H
 #include <Eigen/Core>
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <map>
 #include "Triangle.hpp"
-#include "Utils/tgaimage.h"
 #include <Eigen/Dense>
 #include "Shader/Shader.h"
 #include "Sence/Model.h"
 #include "Sence/Camera.h"
-#include "Utils/ui.h"
 #include "SDL3/SDL.h"
 #include "SDL3_image/SDL_image.h"
+#include "stb_image.h"
+#include "stb_image_write.h"
 using namespace Eigen;
 
 enum class Buffers
@@ -28,8 +30,6 @@ struct ScreenPoint
 class Rasterizer
 {
 private:
-    TGAImage *image;
-    int width, height;
     Eigen::Matrix4f model;
     Eigen::Matrix4f view;
     Eigen::Matrix4f projection;
@@ -44,10 +44,17 @@ private:
     std::vector<float> depth_buf;
 
 public:
+    int width, height;
+    Rasterizer();
     Rasterizer(int w, int h);
     ~Rasterizer();
 
     void Handle();
+
+    std::vector<Model> &get_models()
+    {
+        return models;
+    };
     void set_model(const Eigen::Matrix4f &m);
 
     void set_view(const Eigen::Matrix4f &v);
@@ -67,7 +74,7 @@ public:
     void clear();
 
     void draw_triangle(Triangle triangle, std::vector<Vector3f>, Texture *);
-    void output(char *outdir);
+    void output();
 
     Vector3f get_view_pos(Vector3f v);
     float crossProduct(Vector2f A, Vector2f B, Vector2f P);
@@ -75,6 +82,6 @@ public:
     std::tuple<float, float, float> computeBarycentric2D(float x, float y, const Vector3f *v);
     Vector3f Transform(Vector3f, Matrix4f, float);
     Vector3f World2Screen(Vector3f worldpos);
-
-    void show_window(TGAImage &image);
 };
+
+#endif

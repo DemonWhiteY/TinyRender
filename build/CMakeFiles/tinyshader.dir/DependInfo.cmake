@@ -14,7 +14,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "E:/Lab/TinyShader/src/Texture.cpp" "CMakeFiles/tinyshader.dir/src/Texture.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/src/Texture.cpp.obj.d"
   "E:/Lab/TinyShader/src/Triangle.cpp" "CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj.d"
   "E:/Lab/TinyShader/src/Utils/objects_loader.cpp" "CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj.d"
-  "E:/Lab/TinyShader/src/Utils/tgaimage.cpp" "CMakeFiles/tinyshader.dir/src/Utils/tgaimage.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/src/Utils/tgaimage.cpp.obj.d"
   "E:/Lab/TinyShader/src/Utils/ui.cpp" "CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj.d"
   "E:/Lab/TinyShader/src/main.cpp" "CMakeFiles/tinyshader.dir/src/main.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/src/main.cpp.obj.d"
   "E:/Lab/TinyShader/src/rasterizer.cpp" "CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj.d"

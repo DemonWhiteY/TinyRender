@@ -333,12 +333,6 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/bits/stl_map.h \
  D:/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
  E:\Lab\TinyShader\src\Triangle.hpp D:/mingw64/include/c++/14.2.0/vector \
- E:\Lab\TinyShader\src\Utils/tgaimage.h \
- D:/mingw64/include/c++/14.2.0/fstream \
- D:/mingw64/include/c++/14.2.0/bits/codecvt.h \
- D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
- D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
- D:/mingw64/include/c++/14.2.0/bits/fstream.tcc \
  E:/Lab/TinyShader/include/eigen/Eigen/Dense \
  E:/Lab/TinyShader/include/eigen/Eigen/Core \
  E:/Lab/TinyShader/include/eigen/Eigen/LU \
@@ -498,7 +492,7 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
  D:/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
  D:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
- E:\Lab\TinyShader\src\Sence/Camera.h E:\Lab\TinyShader\src\Utils/ui.h \
+ E:\Lab\TinyShader\src\Sence/Camera.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_stdinc.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform_defines.h \
@@ -561,8 +555,8 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_tray.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_version.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_oldnames.h \
- E:\Lab\TinyShader\src\Utils/tgaimage.h \
  E:/Lab/TinyShader/include/SDL3_image/include/SDL3_image/SDL_image.h \
+ E:/Lab/TinyShader/include/stb_image/stb_image_write.h \
  D:/mingw64/include/c++/14.2.0/random \
  D:/mingw64/include/c++/14.2.0/bits/random.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/opt_random.h \
