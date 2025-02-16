@@ -5,13 +5,14 @@
 #include <vector>
 #include <algorithm>
 #include <map>
+#include <thread>
+#include <mutex>
 #include "Triangle.hpp"
 #include <Eigen/Dense>
 #include "Shader/Shader.h"
 #include "Sence/Model.h"
 #include "Sence/Camera.h"
 #include "SDL3/SDL.h"
-#include "SDL3_image/SDL_image.h"
 #include "stb_image.h"
 #include "stb_image_write.h"
 using namespace Eigen;
@@ -36,12 +37,12 @@ private:
     std::vector<Model> models;
     std::vector<light> lights;
     Camera camera;
+    std::vector<float> depth_buf;
+    std::vector<float> model_buf;
     std::vector<Eigen::Vector3f> frame_buf;
 
     std::function<Eigen::Vector3f(fragment_shader_payload)> fragment_shader;
     std::function<Eigen::Vector3f(vertex_shader_payload)> vertex_shader;
-
-    std::vector<float> depth_buf;
 
 public:
     int width, height;
@@ -55,6 +56,11 @@ public:
     {
         return models;
     };
+
+    Camera &get_camera()
+    {
+        return camera;
+    }
     void set_model(const Eigen::Matrix4f &m);
 
     void set_view(const Eigen::Matrix4f &v);
@@ -62,6 +68,12 @@ public:
     void set_projection(const Eigen::Matrix4f &p);
 
     void add_model(Model);
+
+    int get_pixel_model(int x, int y)
+    {
+        auto ind = (height - 1 - y) * width + x;
+        return model_buf[ind];
+    }
     void add_light(light l) { this->lights.push_back(l); };
     void add_camera(Camera camera) { this->camera = camera; };
     void set_vertex_shader(std::function<Eigen::Vector3f(vertex_shader_payload)> vert_shader);
@@ -70,10 +82,10 @@ public:
 
     int get_index(int x, int y);
 
-    void set_pixel(const Eigen::Vector3f &point, const Eigen::Vector3f &color);
+    void set_pixel(const Eigen::Vector3f &point, const Eigen::Vector3f &color, int);
     void clear();
 
-    void draw_triangle(Triangle triangle, std::vector<Vector3f>, Texture *);
+    void draw_triangle(Triangle triangle, std::vector<Vector3f>, Texture *, int);
     void output();
 
     Vector3f get_view_pos(Vector3f v);
@@ -82,6 +94,7 @@ public:
     std::tuple<float, float, float> computeBarycentric2D(float x, float y, const Vector3f *v);
     Vector3f Transform(Vector3f, Matrix4f, float);
     Vector3f World2Screen(Vector3f worldpos);
+    void Edge_Detection();
 };
 
 #endif

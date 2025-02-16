@@ -7,6 +7,7 @@ project(tinyshader VERSION 1.0 LANGUAGES CXX)
 # 设置 C++ 标准
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+#set(CMAKE_CXX_FLAGS "-fopenmp")
 set(CMAKE_TOOLCHAIN_FILE "D:/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "vcpkg toolchain file")
 set(CMAKE_PREFIX_PATH "D:/vcpkg/installed/x64-windows/share" ${CMAKE_PREFIX_PATH})
 # 添加编译标志
@@ -17,12 +18,14 @@ set(EIGEN3_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/eigen")
 set(OBJECTS_LOADER_DIR "${CMAKE_SOURCE_DIR}/include/tiny_obj_loader")
 
 set(STB_IMAGE_DIR "${CMAKE_SOURCE_DIR}/include/stb_image")
+set(THREAD_DIR "${CMAKE_SOURCE_DIR}/include/thread")
 set(SDL_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/SDL/include")
 set(SDL_LIBRARY "${CMAKE_SOURCE_DIR}/include/SDL/lib/x64/SDL3.lib")
-set(SD3_IMAGE_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/SDL3_image/include")
-set(SDL3_IMAGE_LIBRARY "${CMAKE_SOURCE_DIR}/include/SDL3_image/lib/x64/SDL3_image.lib")
+set(SD3_TTF_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/SDL3_ttf/include")
+set(SDL3_TTF_LIBRARY "${CMAKE_SOURCE_DIR}/include/SDL3_ttf/lib/x64/SDL3_ttf.lib")
 set(JSON_CPP_DIR "${CMAKE_SOURCE_DIR}/include/json")
 set(NLOHMANN_JSON_DIR "${CMAKE_SOURCE_DIR}/include")
+set(NUKLEAR_DIR "${CMAKE_SOURCE_DIR}/include/nuklear")
 
 
 
@@ -34,7 +37,9 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 include_directories(${OBJECTS_LOADER_DIR})
 include_directories(${STB_IMAGE_DIR})
 include_directories(${NLOHMANN_JSON_DIR})
-include_directories(${SD3_IMAGE_INCLUDE_DIR})
+include_directories(${SD3_TTF_INCLUDE_DIR})
+include_directories(${THREAD_DIR})
+include_directories(${NUKLEAR_DIR})
 
 
 
@@ -65,10 +70,12 @@ PUBLIC         uuid
 PUBLIC         comdlg32
 PUBLIC         advapi32
 PUBLIC ${SDL_LIBRARY}
-PUBLIC ${SDL3_IMAGE_LIBRARY}
+PUBLIC ${SDL3_TTF_LIBRARY}
 
    
 )
+
+
 
 # 自定义的清理操作
 add_custom_target(clean_all

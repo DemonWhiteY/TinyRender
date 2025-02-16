@@ -64,6 +64,8 @@
         "cassert": "cpp",
         "forward_list": "cpp",
         "any": "cpp",
-        "optional": "cpp"
+        "optional": "cpp",
+        "cmake.buildType": "Debug",
+        "shared_mutex": "cpp"
     }
 }

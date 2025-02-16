@@ -1,13 +1,18 @@
 
 #include "rasterizer.h"
 #include <random>
+#include <thread>
+// #include <omp.h>
+#include "mingw.thread.h"
 Rasterizer::Rasterizer(int w, int h) : width(w), height(h)
 {
 
     frame_buf.resize(w * h);
     depth_buf.resize(w * h);
+    model_buf.resize(w * h);
     frame_buf.assign(frame_buf.size(), {255, 255, 255});
     depth_buf.assign(depth_buf.size(), 1000);
+    model_buf.assign(model_buf.size(), -1);
 }
 
 Rasterizer::Rasterizer()
@@ -38,7 +43,7 @@ int Rasterizer::get_index(int x, int y)
     return (height - 1 - y) * width + x;
 }
 
-void Rasterizer::set_pixel(const Eigen::Vector3f &point, const Eigen::Vector3f &color)
+void Rasterizer::set_pixel(const Eigen::Vector3f &point, const Eigen::Vector3f &color, int modelnum)
 {
     // old index: auto ind = point.y() + point.x() * width;
     auto ind = (height - 1 - point.y()) * width + point.x();
@@ -47,6 +52,7 @@ void Rasterizer::set_pixel(const Eigen::Vector3f &point, const Eigen::Vector3f &
     {
         depth_buf[ind] = point.z();
         frame_buf[ind] = color;
+        model_buf[ind] = modelnum;
     }
 }
 
@@ -84,7 +90,7 @@ void Rasterizer::output()
 }
 
 // 绘制三角形函数，负责将给定的三角形光栅化到图像上
-void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos, Texture *texture)
+void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos, Texture *texture, int modelnum)
 {
     // 获取三角形的顶点信息和其他相关数据
     Triangle.getinfo();
@@ -125,7 +131,7 @@ void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos
                 auto pixel_color = fragment_shader(payload);
 
                 // 设置像素的深度值和颜色
-                set_pixel({x, y, z_interpolated}, pixel_color);
+                set_pixel({x, y, z_interpolated}, pixel_color, modelnum);
             }
         }
     }
@@ -163,6 +169,7 @@ void Rasterizer::Handle()
 {
     this->set_view(camera.get_view_matrix());
     this->set_projection(camera.get_projection_matrix());
+
     for (int i = 0; i < models.size(); i++)
     {
         this->set_model(models[i].get_model_matrix());
@@ -171,17 +178,22 @@ void Rasterizer::Handle()
         Eigen::Matrix4f inv_trans = (view * model).inverse().transpose();
         int size = models[i].get_triangles().size();
         std::cout << size << std::endl;
+
+// 使用 OpenMP 并行化外层的 for 循环
+#pragma omp parallel for
         for (int t = 0; t < size; t++)
         {
             Triangle *ori_t = models[i].get_triangles()[t];
             Triangle new_t;
             std::vector<Eigen::Vector3f> viewspace_pos;
 
+            // 计算顶点位置并放入 viewspace_pos
             for (int n = 0; n < 3; n++)
             {
                 viewspace_pos.push_back(get_view_pos(ori_t->v[n]));
             }
 
+            // 变换顶点并设置新三角形的顶点
             for (int n = 0; n < 3; n++)
             {
                 Vector3f new_vertex = Transform(ori_t->v[n], transform, 1.0f);
@@ -189,22 +201,25 @@ void Rasterizer::Handle()
                 new_t.setVertex(n, new_vertex);
             }
 
+            // 变换法线并设置新三角形的法线
             for (int n = 0; n < 3; n++)
             {
                 Vector3f new_normal = Transform(ori_t->normal[n], inv_trans, 0);
                 new_t.setNormal(n, new_normal);
             }
 
+            // 设置纹理坐标和颜色
             for (int n = 0; n < 3; n++)
             {
                 new_t.setTexCoord(n, ori_t->tex_coords[n][0], ori_t->tex_coords[n][1]);
                 new_t.setColor(n, ori_t->color[n][0], ori_t->color[n][1], ori_t->color[n][2]);
             }
 
-            draw_triangle(new_t, viewspace_pos, models[i].get_Texture());
+            // 绘制三角形
+            draw_triangle(new_t, viewspace_pos, models[i].get_Texture(), i);
         }
 
-        std::cout << "Model:" << models[i].name << "Have been render well" << std::endl;
+        std::cout << "Model:" << models[i].name << "Have been rendered well" << std::endl;
     }
 }
 
@@ -247,6 +262,7 @@ void Rasterizer::clear()
     std::fill(frame_buf.begin(), frame_buf.end(), Eigen::Vector3f{255, 255, 255});
 
     std::fill(depth_buf.begin(), depth_buf.end(), std::numeric_limits<float>::infinity());
+    std::fill(model_buf.begin(), model_buf.end(), -1);
 }
 
 void Rasterizer::set_vertex_shader(std::function<Eigen::Vector3f(vertex_shader_payload)> vert_shader)

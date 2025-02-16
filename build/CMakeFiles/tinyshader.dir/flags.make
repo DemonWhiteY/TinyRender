@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/tinyshader.dir/includes_CXX.rsp
 
-CXX_FLAGS =  -Wall -g -std=gnu++17
+CXX_FLAGS =  -Wall -O3 -DNDEBUG -std=gnu++17
 

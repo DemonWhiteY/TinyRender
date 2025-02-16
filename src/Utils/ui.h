@@ -2,7 +2,15 @@
 #define UI_H
 #include "../rasterizer.h"
 #include "SDL3/SDL.h"
+#include "SDL3_ttf/SDL_ttf.h"
 #include <iostream>
+#include "../Sence/Camera.h"
+#include <Eigen/Geometry>
+enum class type
+{
+    READ,
+    EDIT
+};
 
 class gui
 {

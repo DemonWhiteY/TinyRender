@@ -333,6 +333,16 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
  D:/mingw64/include/c++/14.2.0/bits/stl_map.h \
  D:/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+ D:/mingw64/include/c++/14.2.0/thread \
+ D:/mingw64/include/c++/14.2.0/bits/std_thread.h \
+ D:/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
+ D:/mingw64/include/c++/14.2.0/bits/this_thread_sleep.h \
+ D:/mingw64/include/c++/14.2.0/bits/chrono.h \
+ D:/mingw64/include/c++/14.2.0/ratio D:/mingw64/include/c++/14.2.0/ctime \
+ D:/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
+ D:/mingw64/include/c++/14.2.0/mutex \
+ D:/mingw64/include/c++/14.2.0/bits/std_mutex.h \
+ D:/mingw64/include/c++/14.2.0/bits/unique_lock.h \
  E:/Lab/TinyShader/src/Triangle.hpp D:/mingw64/include/c++/14.2.0/vector \
  E:/Lab/TinyShader/include/eigen/Eigen/Dense \
  E:/Lab/TinyShader/include/eigen/Eigen/Core \
@@ -486,7 +496,6 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/memory \
  D:/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
  D:/mingw64/include/c++/14.2.0/bits/align.h \
- D:/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
  D:/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
  D:/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
  D:/mingw64/include/c++/14.2.0/ext/concurrence.h \
@@ -556,5 +565,9 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_tray.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_version.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_oldnames.h \
- E:/Lab/TinyShader/include/SDL3_image/include/SDL3_image/SDL_image.h \
- E:/Lab/TinyShader/include/stb_image/stb_image_write.h
+ E:/Lab/TinyShader/include/stb_image/stb_image_write.h \
+ E:/Lab/TinyShader/include/SDL3_ttf/include/SDL3_ttf/SDL_ttf.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/Geometry \
+ D:/mingw64/include/c++/14.2.0/math.h \
+ E:/Lab/TinyShader/include/nuklear/nuklear.h \
+ E:/Lab/TinyShader/include/nuklear/nuklear_sdl_renderer.h

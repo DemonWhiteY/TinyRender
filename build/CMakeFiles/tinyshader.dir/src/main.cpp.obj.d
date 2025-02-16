@@ -587,9 +587,14 @@ CMakeFiles/tinyshader.dir/src/main.cpp.obj: \
  E:/Lab/TinyShader/src/Sence/Light.h E:/Lab/TinyShader/src/Sence/Camera.h \
  E:/Lab/TinyShader/include/eigen/Eigen/Dense \
  E:/Lab/TinyShader/src/Texture.h E:\Lab\TinyShader\src\Utils/ui.h \
- E:/Lab/TinyShader/src/rasterizer.h E:/Lab/TinyShader/src/Triangle.hpp \
- E:/Lab/TinyShader/src/Shader/Shader.h E:/Lab/TinyShader/src/Texture.h \
- E:/Lab/TinyShader/src/Sence/Model.h \
+ E:/Lab/TinyShader/src/rasterizer.h D:/mingw64/include/c++/14.2.0/thread \
+ D:/mingw64/include/c++/14.2.0/bits/std_thread.h \
+ D:/mingw64/include/c++/14.2.0/bits/this_thread_sleep.h \
+ D:/mingw64/include/c++/14.2.0/mutex \
+ D:/mingw64/include/c++/14.2.0/bits/std_mutex.h \
+ D:/mingw64/include/c++/14.2.0/bits/unique_lock.h \
+ E:/Lab/TinyShader/src/Triangle.hpp E:/Lab/TinyShader/src/Shader/Shader.h \
+ E:/Lab/TinyShader/src/Texture.h E:/Lab/TinyShader/src/Sence/Model.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_stdinc.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform_defines.h \
@@ -652,5 +657,6 @@ CMakeFiles/tinyshader.dir/src/main.cpp.obj: \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_tray.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_version.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_oldnames.h \
- E:/Lab/TinyShader/include/SDL3_image/include/SDL3_image/SDL_image.h \
- E:/Lab/TinyShader/include/stb_image/stb_image_write.h
+ E:/Lab/TinyShader/include/stb_image/stb_image_write.h \
+ E:/Lab/TinyShader/include/SDL3_ttf/include/SDL3_ttf/SDL_ttf.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/Geometry
