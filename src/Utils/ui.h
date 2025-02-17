@@ -1,7 +1,17 @@
 #ifndef UI_H
 #define UI_H
+#include <stdio.h>
+#include "imgui.h"
+#include "imgui_impl_sdl3.h"
+#include "imgui_impl_sdlrenderer3.h"
+#include "imgui_impl_opengl3.h"
+#include <SDL3/SDL.h>
+#if defined(IMGUI_IMPL_OPENGL_ES2)
+#include <SDL3/SDL_opengles2.h>
+#else
+#include <SDL3/SDL_opengl.h>
+#endif
 #include "../rasterizer.h"
-#include "SDL3/SDL.h"
 #include "SDL3_ttf/SDL_ttf.h"
 #include <iostream>
 #include "../Sence/Camera.h"
@@ -21,6 +31,7 @@ private:
     SDL_Renderer *renderer;
     SDL_Texture *texture;
     Rasterizer *ras;
+    struct nk_context *ctx;
 
 public:
     gui();
@@ -32,6 +43,15 @@ public:
     {
         this->ras = rasterizer;
     }
+    void create_menu(struct nk_context *ctx);
+    void imageController(SDL_Event event);
+    type Type = type::READ;
+    int model_num = -1;
+    bool running = true;
+    bool isMouseDown = false;
+    bool isCtrlDown = false;
+    int mouseX, mouseY;
+    SDL_Event event;
 };
 
 #endif

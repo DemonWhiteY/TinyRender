@@ -25,8 +25,8 @@ set(SD3_TTF_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/SDL3_ttf/include")
 set(SDL3_TTF_LIBRARY "${CMAKE_SOURCE_DIR}/include/SDL3_ttf/lib/x64/SDL3_ttf.lib")
 set(JSON_CPP_DIR "${CMAKE_SOURCE_DIR}/include/json")
 set(NLOHMANN_JSON_DIR "${CMAKE_SOURCE_DIR}/include")
-set(NUKLEAR_DIR "${CMAKE_SOURCE_DIR}/include/nuklear")
 
+set(IMGUI_DIR "${CMAKE_SOURCE_DIR}/include/imgui")
 
 
 
@@ -39,12 +39,13 @@ include_directories(${STB_IMAGE_DIR})
 include_directories(${NLOHMANN_JSON_DIR})
 include_directories(${SD3_TTF_INCLUDE_DIR})
 include_directories(${THREAD_DIR})
-include_directories(${NUKLEAR_DIR})
 
+include_directories(${IMGUI_DIR})
 
 
 # 递归查找所有 .cpp 源文件
-file(GLOB_RECURSE SOURCES "src/*.cpp")
+file(GLOB_RECURSE SOURCES "src/*.cpp" "include/imgui/*.cpp")
+
 
 # 创建目标文件（可执行文件）
 add_executable(${PROJECT_NAME} ${SOURCES})

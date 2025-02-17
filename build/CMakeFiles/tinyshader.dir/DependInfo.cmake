@@ -8,6 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "E:/Lab/TinyShader/include/imgui/imgui.cpp" "CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.obj.d"
+  "E:/Lab/TinyShader/include/imgui/imgui_demo.cpp" "CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.obj.d"
+  "E:/Lab/TinyShader/include/imgui/imgui_draw.cpp" "CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.obj.d"
+  "E:/Lab/TinyShader/include/imgui/imgui_impl_opengl3.cpp" "CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.obj.d"
+  "E:/Lab/TinyShader/include/imgui/imgui_impl_sdl3.cpp" "CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj.d"
+  "E:/Lab/TinyShader/include/imgui/imgui_impl_sdlrenderer3.cpp" "CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.obj.d"
+  "E:/Lab/TinyShader/include/imgui/imgui_tables.cpp" "CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.obj.d"
+  "E:/Lab/TinyShader/include/imgui/imgui_widgets.cpp" "CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.obj.d"
   "E:/Lab/TinyShader/src/Sence/Camera.cpp" "CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj.d"
   "E:/Lab/TinyShader/src/Sence/Model.cpp" "CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj.d"
   "E:/Lab/TinyShader/src/Shader/Shader.cpp" "CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj" "gcc" "CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj.d"

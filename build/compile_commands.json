@@ -1,6 +1,54 @@
 [
 {
   "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyshader.dir/includes_CXX.rsp  -Wall -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\tinyshader.dir\\include\\imgui\\imgui.cpp.obj -c E:\\Lab\\TinyShader\\include\\imgui\\imgui.cpp",
+  "file": "E:/Lab/TinyShader/include/imgui/imgui.cpp",
+  "output": "CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyshader.dir/includes_CXX.rsp  -Wall -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\tinyshader.dir\\include\\imgui\\imgui_demo.cpp.obj -c E:\\Lab\\TinyShader\\include\\imgui\\imgui_demo.cpp",
+  "file": "E:/Lab/TinyShader/include/imgui/imgui_demo.cpp",
+  "output": "CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyshader.dir/includes_CXX.rsp  -Wall -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\tinyshader.dir\\include\\imgui\\imgui_draw.cpp.obj -c E:\\Lab\\TinyShader\\include\\imgui\\imgui_draw.cpp",
+  "file": "E:/Lab/TinyShader/include/imgui/imgui_draw.cpp",
+  "output": "CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyshader.dir/includes_CXX.rsp  -Wall -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\tinyshader.dir\\include\\imgui\\imgui_impl_opengl3.cpp.obj -c E:\\Lab\\TinyShader\\include\\imgui\\imgui_impl_opengl3.cpp",
+  "file": "E:/Lab/TinyShader/include/imgui/imgui_impl_opengl3.cpp",
+  "output": "CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyshader.dir/includes_CXX.rsp  -Wall -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\tinyshader.dir\\include\\imgui\\imgui_impl_sdl3.cpp.obj -c E:\\Lab\\TinyShader\\include\\imgui\\imgui_impl_sdl3.cpp",
+  "file": "E:/Lab/TinyShader/include/imgui/imgui_impl_sdl3.cpp",
+  "output": "CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyshader.dir/includes_CXX.rsp  -Wall -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\tinyshader.dir\\include\\imgui\\imgui_impl_sdlrenderer3.cpp.obj -c E:\\Lab\\TinyShader\\include\\imgui\\imgui_impl_sdlrenderer3.cpp",
+  "file": "E:/Lab/TinyShader/include/imgui/imgui_impl_sdlrenderer3.cpp",
+  "output": "CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyshader.dir/includes_CXX.rsp  -Wall -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\tinyshader.dir\\include\\imgui\\imgui_tables.cpp.obj -c E:\\Lab\\TinyShader\\include\\imgui\\imgui_tables.cpp",
+  "file": "E:/Lab/TinyShader/include/imgui/imgui_tables.cpp",
+  "output": "CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyshader.dir/includes_CXX.rsp  -Wall -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\tinyshader.dir\\include\\imgui\\imgui_widgets.cpp.obj -c E:\\Lab\\TinyShader\\include\\imgui\\imgui_widgets.cpp",
+  "file": "E:/Lab/TinyShader/include/imgui/imgui_widgets.cpp",
+  "output": "CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.obj"
+},
+{
+  "directory": "E:/Lab/TinyShader/build",
   "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/tinyshader.dir/includes_CXX.rsp  -Wall -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\tinyshader.dir\\src\\Sence\\Camera.cpp.obj -c E:\\Lab\\TinyShader\\src\\Sence\\Camera.cpp",
   "file": "E:/Lab/TinyShader/src/Sence/Camera.cpp",
   "output": "CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj"

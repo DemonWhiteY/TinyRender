@@ -68,11 +68,131 @@ include CMakeFiles/tinyshader.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tinyshader.dir/flags.make
 
+CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.obj: CMakeFiles/tinyshader.dir/flags.make
+CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
+CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.obj: E:/Lab/TinyShader/include/imgui/imgui.cpp
+CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.obj"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.obj -MF CMakeFiles\tinyshader.dir\include\imgui\imgui.cpp.obj.d -o CMakeFiles\tinyshader.dir\include\imgui\imgui.cpp.obj -c E:\Lab\TinyShader\include\imgui\imgui.cpp
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.i"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Lab\TinyShader\include\imgui\imgui.cpp > CMakeFiles\tinyshader.dir\include\imgui\imgui.cpp.i
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.s"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Lab\TinyShader\include\imgui\imgui.cpp -o CMakeFiles\tinyshader.dir\include\imgui\imgui.cpp.s
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.obj: CMakeFiles/tinyshader.dir/flags.make
+CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.obj: E:/Lab/TinyShader/include/imgui/imgui_demo.cpp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.obj"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.obj -MF CMakeFiles\tinyshader.dir\include\imgui\imgui_demo.cpp.obj.d -o CMakeFiles\tinyshader.dir\include\imgui\imgui_demo.cpp.obj -c E:\Lab\TinyShader\include\imgui\imgui_demo.cpp
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.i"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Lab\TinyShader\include\imgui\imgui_demo.cpp > CMakeFiles\tinyshader.dir\include\imgui\imgui_demo.cpp.i
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.s"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Lab\TinyShader\include\imgui\imgui_demo.cpp -o CMakeFiles\tinyshader.dir\include\imgui\imgui_demo.cpp.s
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.obj: CMakeFiles/tinyshader.dir/flags.make
+CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.obj: E:/Lab/TinyShader/include/imgui/imgui_draw.cpp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.obj"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.obj -MF CMakeFiles\tinyshader.dir\include\imgui\imgui_draw.cpp.obj.d -o CMakeFiles\tinyshader.dir\include\imgui\imgui_draw.cpp.obj -c E:\Lab\TinyShader\include\imgui\imgui_draw.cpp
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.i"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Lab\TinyShader\include\imgui\imgui_draw.cpp > CMakeFiles\tinyshader.dir\include\imgui\imgui_draw.cpp.i
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.s"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Lab\TinyShader\include\imgui\imgui_draw.cpp -o CMakeFiles\tinyshader.dir\include\imgui\imgui_draw.cpp.s
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.obj: CMakeFiles/tinyshader.dir/flags.make
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.obj: E:/Lab/TinyShader/include/imgui/imgui_impl_opengl3.cpp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.obj"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.obj -MF CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_opengl3.cpp.obj.d -o CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_opengl3.cpp.obj -c E:\Lab\TinyShader\include\imgui\imgui_impl_opengl3.cpp
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.i"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Lab\TinyShader\include\imgui\imgui_impl_opengl3.cpp > CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_opengl3.cpp.i
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.s"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Lab\TinyShader\include\imgui\imgui_impl_opengl3.cpp -o CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_opengl3.cpp.s
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj: CMakeFiles/tinyshader.dir/flags.make
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj: E:/Lab/TinyShader/include/imgui/imgui_impl_sdl3.cpp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj -MF CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_sdl3.cpp.obj.d -o CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_sdl3.cpp.obj -c E:\Lab\TinyShader\include\imgui\imgui_impl_sdl3.cpp
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.i"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Lab\TinyShader\include\imgui\imgui_impl_sdl3.cpp > CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_sdl3.cpp.i
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.s"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Lab\TinyShader\include\imgui\imgui_impl_sdl3.cpp -o CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_sdl3.cpp.s
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.obj: CMakeFiles/tinyshader.dir/flags.make
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.obj: E:/Lab/TinyShader/include/imgui/imgui_impl_sdlrenderer3.cpp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.obj"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.obj -MF CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_sdlrenderer3.cpp.obj.d -o CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_sdlrenderer3.cpp.obj -c E:\Lab\TinyShader\include\imgui\imgui_impl_sdlrenderer3.cpp
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.i"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Lab\TinyShader\include\imgui\imgui_impl_sdlrenderer3.cpp > CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_sdlrenderer3.cpp.i
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.s"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Lab\TinyShader\include\imgui\imgui_impl_sdlrenderer3.cpp -o CMakeFiles\tinyshader.dir\include\imgui\imgui_impl_sdlrenderer3.cpp.s
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.obj: CMakeFiles/tinyshader.dir/flags.make
+CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.obj: E:/Lab/TinyShader/include/imgui/imgui_tables.cpp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.obj"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.obj -MF CMakeFiles\tinyshader.dir\include\imgui\imgui_tables.cpp.obj.d -o CMakeFiles\tinyshader.dir\include\imgui\imgui_tables.cpp.obj -c E:\Lab\TinyShader\include\imgui\imgui_tables.cpp
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.i"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Lab\TinyShader\include\imgui\imgui_tables.cpp > CMakeFiles\tinyshader.dir\include\imgui\imgui_tables.cpp.i
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.s"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Lab\TinyShader\include\imgui\imgui_tables.cpp -o CMakeFiles\tinyshader.dir\include\imgui\imgui_tables.cpp.s
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.obj: CMakeFiles/tinyshader.dir/flags.make
+CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.obj: E:/Lab/TinyShader/include/imgui/imgui_widgets.cpp
+CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.obj"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.obj -MF CMakeFiles\tinyshader.dir\include\imgui\imgui_widgets.cpp.obj.d -o CMakeFiles\tinyshader.dir\include\imgui\imgui_widgets.cpp.obj -c E:\Lab\TinyShader\include\imgui\imgui_widgets.cpp
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.i"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Lab\TinyShader\include\imgui\imgui_widgets.cpp > CMakeFiles\tinyshader.dir\include\imgui\imgui_widgets.cpp.i
+
+CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.s"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Lab\TinyShader\include\imgui\imgui_widgets.cpp -o CMakeFiles\tinyshader.dir\include\imgui\imgui_widgets.cpp.s
+
 CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj: CMakeFiles/tinyshader.dir/flags.make
 CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
 CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj: E:/Lab/TinyShader/src/Sence/Camera.cpp
 CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj -MF CMakeFiles\tinyshader.dir\src\Sence\Camera.cpp.obj.d -o CMakeFiles\tinyshader.dir\src\Sence\Camera.cpp.obj -c E:\Lab\TinyShader\src\Sence\Camera.cpp
 
 CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.i: cmake_force
@@ -87,7 +207,7 @@ CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj: CMakeFiles/tinyshader.dir/fla
 CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
 CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj: E:/Lab/TinyShader/src/Sence/Model.cpp
 CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj -MF CMakeFiles\tinyshader.dir\src\Sence\Model.cpp.obj.d -o CMakeFiles\tinyshader.dir\src\Sence\Model.cpp.obj -c E:\Lab\TinyShader\src\Sence\Model.cpp
 
 CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.i: cmake_force
@@ -102,7 +222,7 @@ CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj: CMakeFiles/tinyshader.dir/f
 CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
 CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj: E:/Lab/TinyShader/src/Shader/Shader.cpp
 CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj -MF CMakeFiles\tinyshader.dir\src\Shader\Shader.cpp.obj.d -o CMakeFiles\tinyshader.dir\src\Shader\Shader.cpp.obj -c E:\Lab\TinyShader\src\Shader\Shader.cpp
 
 CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.i: cmake_force
@@ -117,7 +237,7 @@ CMakeFiles/tinyshader.dir/src/Texture.cpp.obj: CMakeFiles/tinyshader.dir/flags.m
 CMakeFiles/tinyshader.dir/src/Texture.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
 CMakeFiles/tinyshader.dir/src/Texture.cpp.obj: E:/Lab/TinyShader/src/Texture.cpp
 CMakeFiles/tinyshader.dir/src/Texture.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tinyshader.dir/src/Texture.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/tinyshader.dir/src/Texture.cpp.obj"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/src/Texture.cpp.obj -MF CMakeFiles\tinyshader.dir\src\Texture.cpp.obj.d -o CMakeFiles\tinyshader.dir\src\Texture.cpp.obj -c E:\Lab\TinyShader\src\Texture.cpp
 
 CMakeFiles/tinyshader.dir/src/Texture.cpp.i: cmake_force
@@ -132,7 +252,7 @@ CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj: CMakeFiles/tinyshader.dir/flags.
 CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
 CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj: E:/Lab/TinyShader/src/Triangle.cpp
 CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj -MF CMakeFiles\tinyshader.dir\src\Triangle.cpp.obj.d -o CMakeFiles\tinyshader.dir\src\Triangle.cpp.obj -c E:\Lab\TinyShader\src\Triangle.cpp
 
 CMakeFiles/tinyshader.dir/src/Triangle.cpp.i: cmake_force
@@ -147,7 +267,7 @@ CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj: CMakeFiles/tinyshade
 CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
 CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj: E:/Lab/TinyShader/src/Utils/objects_loader.cpp
 CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj -MF CMakeFiles\tinyshader.dir\src\Utils\objects_loader.cpp.obj.d -o CMakeFiles\tinyshader.dir\src\Utils\objects_loader.cpp.obj -c E:\Lab\TinyShader\src\Utils\objects_loader.cpp
 
 CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.i: cmake_force
@@ -162,7 +282,7 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: CMakeFiles/tinyshader.dir/flags.
 CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
 CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: E:/Lab/TinyShader/src/Utils/ui.cpp
 CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj -MF CMakeFiles\tinyshader.dir\src\Utils\ui.cpp.obj.d -o CMakeFiles\tinyshader.dir\src\Utils\ui.cpp.obj -c E:\Lab\TinyShader\src\Utils\ui.cpp
 
 CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.i: cmake_force
@@ -177,7 +297,7 @@ CMakeFiles/tinyshader.dir/src/main.cpp.obj: CMakeFiles/tinyshader.dir/flags.make
 CMakeFiles/tinyshader.dir/src/main.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
 CMakeFiles/tinyshader.dir/src/main.cpp.obj: E:/Lab/TinyShader/src/main.cpp
 CMakeFiles/tinyshader.dir/src/main.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/tinyshader.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/tinyshader.dir/src/main.cpp.obj"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/src/main.cpp.obj -MF CMakeFiles\tinyshader.dir\src\main.cpp.obj.d -o CMakeFiles\tinyshader.dir\src\main.cpp.obj -c E:\Lab\TinyShader\src\main.cpp
 
 CMakeFiles/tinyshader.dir/src/main.cpp.i: cmake_force
@@ -192,7 +312,7 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: CMakeFiles/tinyshader.dir/flag
 CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: CMakeFiles/tinyshader.dir/includes_CXX.rsp
 CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasterizer.cpp
 CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: CMakeFiles/tinyshader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj -MF CMakeFiles\tinyshader.dir\src\rasterizer.cpp.obj.d -o CMakeFiles\tinyshader.dir\src\rasterizer.cpp.obj -c E:\Lab\TinyShader\src\rasterizer.cpp
 
 CMakeFiles/tinyshader.dir/src/rasterizer.cpp.i: cmake_force
@@ -205,6 +325,14 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.s: cmake_force
 
 # Object files for target tinyshader
 tinyshader_OBJECTS = \
+"CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.obj" \
+"CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.obj" \
+"CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.obj" \
+"CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.obj" \
+"CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj" \
+"CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.obj" \
+"CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.obj" \
+"CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.obj" \
 "CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj" \
 "CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj" \
 "CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj" \
@@ -218,6 +346,14 @@ tinyshader_OBJECTS = \
 # External object files for target tinyshader
 tinyshader_EXTERNAL_OBJECTS =
 
+tinyshader.exe: CMakeFiles/tinyshader.dir/include/imgui/imgui.cpp.obj
+tinyshader.exe: CMakeFiles/tinyshader.dir/include/imgui/imgui_demo.cpp.obj
+tinyshader.exe: CMakeFiles/tinyshader.dir/include/imgui/imgui_draw.cpp.obj
+tinyshader.exe: CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_opengl3.cpp.obj
+tinyshader.exe: CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj
+tinyshader.exe: CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdlrenderer3.cpp.obj
+tinyshader.exe: CMakeFiles/tinyshader.dir/include/imgui/imgui_tables.cpp.obj
+tinyshader.exe: CMakeFiles/tinyshader.dir/include/imgui/imgui_widgets.cpp.obj
 tinyshader.exe: CMakeFiles/tinyshader.dir/src/Sence/Camera.cpp.obj
 tinyshader.exe: CMakeFiles/tinyshader.dir/src/Sence/Model.cpp.obj
 tinyshader.exe: CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj
@@ -233,7 +369,7 @@ tinyshader.exe: E:/Lab/TinyShader/include/SDL3_ttf/lib/x64/SDL3_ttf.lib
 tinyshader.exe: CMakeFiles/tinyshader.dir/linkLibs.rsp
 tinyshader.exe: CMakeFiles/tinyshader.dir/objects1.rsp
 tinyshader.exe: CMakeFiles/tinyshader.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable tinyshader.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:\Lab\TinyShader\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable tinyshader.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\tinyshader.dir\link.txt --verbose=$(VERBOSE)
 	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/Lab/TinyShader/build/tinyshader.exe -installedDir D:/vcpkg/installed/x64-windows/bin -OutVariable out
 

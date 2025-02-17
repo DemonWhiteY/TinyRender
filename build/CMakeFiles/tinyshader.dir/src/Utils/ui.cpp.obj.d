@@ -1,36 +1,309 @@
 CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  E:\Lab\TinyShader\src\Utils\ui.cpp E:\Lab\TinyShader\src\Utils\ui.h \
- E:/Lab/TinyShader/src/rasterizer.h \
- E:/Lab/TinyShader/include/eigen/Eigen/Core \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/DisableStupidWarnings.h \
- E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/Macros.h \
- D:/mingw64/include/c++/14.2.0/cmath \
- D:/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
- D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
- D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
- D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
- D:/mingw64/include/c++/14.2.0/pstl/pstl_config.h \
- D:/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h \
- D:/mingw64/include/c++/14.2.0/ext/type_traits.h \
- D:/mingw64/x86_64-w64-mingw32/include/math.h \
- D:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ D:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+ D:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
  D:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  D:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
  D:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
  D:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
  D:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
  D:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
- D:/mingw64/include/c++/14.2.0/bits/std_abs.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+ D:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+ D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+ E:/Lab/TinyShader/include/imgui/imgui.h \
+ E:/Lab/TinyShader/include/imgui/imconfig.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/float.h \
+ D:/mingw64/x86_64-w64-mingw32/include/float.h \
+ D:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+ D:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+ D:/mingw64/x86_64-w64-mingw32/include/stddef.h \
+ D:/mingw64/x86_64-w64-mingw32/include/string.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ D:/mingw64/x86_64-w64-mingw32/include/assert.h \
+ D:/mingw64/include/c++/14.2.0/stdlib.h \
+ D:/mingw64/include/c++/14.2.0/cstdlib \
+ D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
+ D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+ D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+ D:/mingw64/include/c++/14.2.0/pstl/pstl_config.h \
  D:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  D:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
  D:/mingw64/x86_64-w64-mingw32/include/limits.h \
  D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
- D:/mingw64/include/c++/14.2.0/stdlib.h \
  D:/mingw64/x86_64-w64-mingw32/include/malloc.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
  D:/mingw64/x86_64-w64-mingw32/include/errno.h \
+ D:/mingw64/include/c++/14.2.0/bits/std_abs.h \
+ E:/Lab/TinyShader/include/imgui/imgui_impl_sdl3.h \
+ E:/Lab/TinyShader/include/imgui/imgui_impl_sdlrenderer3.h \
+ E:/Lab/TinyShader/include/imgui/imgui_impl_opengl3.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_stdinc.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform_defines.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
+ D:/mingw64/x86_64-w64-mingw32/include/stdint.h \
+ D:/mingw64/x86_64-w64-mingw32/include/wchar.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_begin_code.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_close_code.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_assert.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_asyncio.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_atomic.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_bits.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_blendmode.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_camera.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_error.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_pixels.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_endian.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_properties.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_surface.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_rect.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_iostream.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_clipboard.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_cpuinfo.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_dialog.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_video.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_events.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_audio.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_mutex.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_thread.h \
+ D:/mingw64/x86_64-w64-mingw32/include/process.h \
+ D:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_gamepad.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_guid.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_joystick.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_power.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_sensor.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_keyboard.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_keycode.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_scancode.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_mouse.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_pen.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_touch.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_filesystem.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_gpu.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_haptic.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_hidapi.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_hints.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_init.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_loadso.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_locale.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_log.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_messagebox.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_metal.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_misc.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_process.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_render.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_storage.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_system.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_time.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_timer.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_tray.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_version.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_oldnames.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_opengl.h \
+ D:/mingw64/x86_64-w64-mingw32/include/windows.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sdkddkver.h \
+ D:/mingw64/x86_64-w64-mingw32/include/excpt.h \
+ D:/mingw64/x86_64-w64-mingw32/include/windef.h \
+ D:/mingw64/x86_64-w64-mingw32/include/winapifamily.h \
+ D:/mingw64/x86_64-w64-mingw32/include/minwindef.h \
+ D:/mingw64/x86_64-w64-mingw32/include/specstrings.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sal.h \
+ D:/mingw64/x86_64-w64-mingw32/include/concurrencysal.h \
+ D:/mingw64/x86_64-w64-mingw32/include/driverspecs.h \
+ D:/mingw64/x86_64-w64-mingw32/include/winnt.h \
+ D:/mingw64/x86_64-w64-mingw32/include/_mingw_unicode.h \
+ D:/mingw64/x86_64-w64-mingw32/include/ctype.h \
+ D:/mingw64/x86_64-w64-mingw32/include/apiset.h \
+ D:/mingw64/x86_64-w64-mingw32/include/psdk_inc/intrin-impl.h \
+ D:/mingw64/x86_64-w64-mingw32/include/basetsd.h \
+ D:/mingw64/x86_64-w64-mingw32/include/guiddef.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/x86intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/x86gprintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/ia32intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/adxintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/bmiintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/bmi2intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/cetintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/cldemoteintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clflushoptintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clwbintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clzerointrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/cmpccxaddintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/enqcmdintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/fxsrintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/lzcntintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/lwpintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/movdirintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mwaitintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mwaitxintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/pconfigintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/popcntintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/pkuintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/prfchiintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/raointintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/rdseedintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/rtmintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/serializeintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sgxintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/tbmintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/tsxldtrkintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/uintrintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/waitpkgintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/wbnoinvdintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xsaveintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xsavecintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xsaveoptintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xsavesintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xtestintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/hresetintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/usermsrintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/immintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mmintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/emmintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/pmmintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/tmmintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/smmintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/wmmintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxvnniintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxifmaintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxvnniint8intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxvnniint16intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx2intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512fintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512erintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512pfintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512cdintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vlintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bwintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512dqintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vlbwintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vldqintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512ifmaintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512ifmavlintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmiintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmivlintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx5124fmapsintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx5124vnniwintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vpopcntdqintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmi2intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmi2vlintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vnniintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vnnivlintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vpopcntdqvlintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bitalgintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bitalgvlintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vp2intersectintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vp2intersectvlintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512fp16intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512fp16vlintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/shaintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sm3intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sha512intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sm4intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/fmaintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/f16cintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/gfniintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/vaesintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/vpclmulqdqintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bf16vlintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bf16intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxneconvertintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxtileintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxint8intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxbf16intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxcomplexintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/prfchwintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/keylockerintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxfp16intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm3dnow.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/fma4intrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/ammintrin.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xopintrin.h \
+ D:/mingw64/x86_64-w64-mingw32/include/pshpack4.h \
+ D:/mingw64/x86_64-w64-mingw32/include/poppack.h \
+ D:/mingw64/x86_64-w64-mingw32/include/pshpack4.h \
+ D:/mingw64/x86_64-w64-mingw32/include/pshpack2.h \
+ D:/mingw64/x86_64-w64-mingw32/include/poppack.h \
+ D:/mingw64/x86_64-w64-mingw32/include/pshpack2.h \
+ D:/mingw64/x86_64-w64-mingw32/include/pshpack8.h \
+ D:/mingw64/x86_64-w64-mingw32/include/pshpack8.h \
+ D:/mingw64/x86_64-w64-mingw32/include/ktmtypes.h \
+ D:/mingw64/x86_64-w64-mingw32/include/winbase.h \
+ D:/mingw64/x86_64-w64-mingw32/include/apisetcconv.h \
+ D:/mingw64/x86_64-w64-mingw32/include/minwinbase.h \
+ D:/mingw64/x86_64-w64-mingw32/include/bemapiset.h \
+ D:/mingw64/x86_64-w64-mingw32/include/debugapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/errhandlingapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/fibersapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/fileapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/handleapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/heapapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/ioapiset.h \
+ D:/mingw64/x86_64-w64-mingw32/include/interlockedapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/jobapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/libloaderapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/memoryapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/namedpipeapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/namespaceapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/processenv.h \
+ D:/mingw64/x86_64-w64-mingw32/include/processthreadsapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/processtopologyapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/profileapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/realtimeapiset.h \
+ D:/mingw64/x86_64-w64-mingw32/include/securityappcontainer.h \
+ D:/mingw64/x86_64-w64-mingw32/include/securitybaseapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/synchapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sysinfoapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/systemtopologyapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/threadpoolapiset.h \
+ D:/mingw64/x86_64-w64-mingw32/include/threadpoollegacyapiset.h \
+ D:/mingw64/x86_64-w64-mingw32/include/utilapiset.h \
+ D:/mingw64/x86_64-w64-mingw32/include/wow64apiset.h \
+ D:/mingw64/x86_64-w64-mingw32/include/winerror.h \
+ D:/mingw64/x86_64-w64-mingw32/include/fltwinerror.h \
+ D:/mingw64/x86_64-w64-mingw32/include/timezoneapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/wingdi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/pshpack1.h \
+ D:/mingw64/x86_64-w64-mingw32/include/winuser.h \
+ D:/mingw64/x86_64-w64-mingw32/include/tvout.h \
+ D:/mingw64/x86_64-w64-mingw32/include/winnls.h \
+ D:/mingw64/x86_64-w64-mingw32/include/datetimeapi.h \
+ D:/mingw64/x86_64-w64-mingw32/include/stringapiset.h \
+ D:/mingw64/x86_64-w64-mingw32/include/wincon.h \
+ D:/mingw64/x86_64-w64-mingw32/include/winver.h \
+ D:/mingw64/x86_64-w64-mingw32/include/winreg.h \
+ D:/mingw64/x86_64-w64-mingw32/include/reason.h \
+ D:/mingw64/x86_64-w64-mingw32/include/winnetwk.h \
+ D:/mingw64/x86_64-w64-mingw32/include/wnnc.h \
+ D:/mingw64/x86_64-w64-mingw32/include/virtdisk.h \
+ D:/mingw64/x86_64-w64-mingw32/include/stralign.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sec_api/stralign_s.h \
+ D:/mingw64/x86_64-w64-mingw32/include/winsvc.h \
+ D:/mingw64/x86_64-w64-mingw32/include/mcx.h \
+ D:/mingw64/x86_64-w64-mingw32/include/imm.h \
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_opengl_glext.h \
+ E:/Lab/TinyShader/src/rasterizer.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/Core \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/DisableStupidWarnings.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/Macros.h \
+ D:/mingw64/include/c++/14.2.0/cmath \
+ D:/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
+ D:/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h \
+ D:/mingw64/include/c++/14.2.0/ext/type_traits.h \
+ D:/mingw64/x86_64-w64-mingw32/include/math.h \
  D:/mingw64/include/c++/14.2.0/bits/version.h \
  D:/mingw64/include/c++/14.2.0/bits/specfun.h \
  D:/mingw64/include/c++/14.2.0/bits/stl_algobase.h \
@@ -64,9 +337,6 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
  D:/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
  E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/ConfigureVectorization.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mmintrin.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/emmintrin.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h \
  D:/mingw64/include/c++/14.2.0/new \
  D:/mingw64/include/c++/14.2.0/bits/exception.h \
  D:/mingw64/include/c++/14.2.0/complex \
@@ -77,17 +347,9 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/bits/memoryfwd.h \
  D:/mingw64/include/c++/14.2.0/bits/postypes.h \
  D:/mingw64/include/c++/14.2.0/cwchar \
- D:/mingw64/x86_64-w64-mingw32/include/wchar.h \
- D:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
- D:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
- D:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
- D:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
- D:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
  D:/mingw64/include/c++/14.2.0/exception \
  D:/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
  D:/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
- D:/mingw64/x86_64-w64-mingw32/include/stddef.h \
  D:/mingw64/include/c++/14.2.0/typeinfo \
  D:/mingw64/include/c++/14.2.0/bits/hash_bytes.h \
  D:/mingw64/include/c++/14.2.0/bits/nested_exception.h \
@@ -96,18 +358,12 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++locale.h \
  D:/mingw64/include/c++/14.2.0/clocale \
  D:/mingw64/x86_64-w64-mingw32/include/locale.h \
- D:/mingw64/x86_64-w64-mingw32/include/stdio.h \
- D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
  D:/mingw64/include/c++/14.2.0/cctype \
- D:/mingw64/x86_64-w64-mingw32/include/ctype.h \
  D:/mingw64/include/c++/14.2.0/bits/ios_base.h \
  D:/mingw64/include/c++/14.2.0/ext/atomicity.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
  D:/mingw64/x86_64-w64-mingw32/include/pthread.h \
- D:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
- D:/mingw64/x86_64-w64-mingw32/include/process.h \
- D:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
  D:/mingw64/x86_64-w64-mingw32/include/signal.h \
  D:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
  D:/mingw64/x86_64-w64-mingw32/include/time.h \
@@ -139,7 +395,6 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/bits/functional_hash.h \
  D:/mingw64/include/c++/14.2.0/bits/string_view.tcc \
  D:/mingw64/include/c++/14.2.0/ext/string_conversions.h \
- D:/mingw64/include/c++/14.2.0/cstdlib \
  D:/mingw64/include/c++/14.2.0/cstdio \
  D:/mingw64/include/c++/14.2.0/cerrno \
  D:/mingw64/include/c++/14.2.0/bits/charconv.h \
@@ -170,7 +425,6 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/bits/sstream.tcc \
  E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/MKL_support.h \
  D:/mingw64/include/c++/14.2.0/cassert \
- D:/mingw64/x86_64-w64-mingw32/include/assert.h \
  D:/mingw64/include/c++/14.2.0/functional \
  D:/mingw64/include/c++/14.2.0/bits/std_function.h \
  D:/mingw64/include/c++/14.2.0/unordered_map \
@@ -189,8 +443,6 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/array \
  D:/mingw64/include/c++/14.2.0/compare \
  D:/mingw64/include/c++/14.2.0/cstring \
- D:/mingw64/x86_64-w64-mingw32/include/string.h \
- D:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
  D:/mingw64/include/c++/14.2.0/climits \
  D:/mingw64/include/c++/14.2.0/algorithm \
  D:/mingw64/include/c++/14.2.0/bits/stl_algo.h \
@@ -203,8 +455,6 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/Constants.h \
  E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/Meta.h \
  D:/mingw64/include/c++/14.2.0/cstdint \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
- D:/mingw64/x86_64-w64-mingw32/include/stdint.h \
  E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/ForwardDeclarations.h \
  E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/StaticAssert.h \
  E:/Lab/TinyShader/include/eigen/Eigen/src/Core/util/XprHelper.h \
@@ -503,71 +753,6 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
  D:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
  E:/Lab/TinyShader/src/Sence/Camera.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_stdinc.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform_defines.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
- D:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
- D:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_begin_code.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_close_code.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_assert.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_asyncio.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_atomic.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_bits.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_blendmode.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_camera.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_error.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_pixels.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_endian.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_properties.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_surface.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_rect.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_iostream.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_clipboard.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_cpuinfo.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_dialog.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_video.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_events.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_audio.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_mutex.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_thread.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_gamepad.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_guid.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_joystick.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_power.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_sensor.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_keyboard.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_keycode.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_scancode.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_mouse.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_pen.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_touch.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_filesystem.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_gpu.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_haptic.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_hidapi.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_hints.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_init.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_loadso.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_locale.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_log.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_messagebox.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_metal.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_misc.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_process.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_render.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_storage.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_system.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_time.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_timer.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_tray.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_version.h \
- E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_oldnames.h \
  E:/Lab/TinyShader/include/stb_image/stb_image_write.h \
  E:/Lab/TinyShader/include/SDL3_ttf/include/SDL3_ttf/SDL_ttf.h \
- E:/Lab/TinyShader/include/eigen/Eigen/Geometry \
- D:/mingw64/include/c++/14.2.0/math.h \
- E:/Lab/TinyShader/include/nuklear/nuklear.h \
- E:/Lab/TinyShader/include/nuklear/nuklear_sdl_renderer.h
+ E:/Lab/TinyShader/include/eigen/Eigen/Geometry

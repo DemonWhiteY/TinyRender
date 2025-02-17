@@ -41,14 +41,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "clean_all::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-clean_all-Release-66f130b9b12ddfeb2b48.json",
+					"jsonFile" : "target-clean_all-Release-d561a70a94391aebdbf3.json",
 					"name" : "clean_all",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "tinyshader::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-tinyshader-Release-1852bb2d8cb896012d6d.json",
+					"jsonFile" : "target-tinyshader-Release-6697639a3582c266724b.json",
 					"name" : "tinyshader",
 					"projectIndex" : 0
 				}
