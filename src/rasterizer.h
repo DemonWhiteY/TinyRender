@@ -57,6 +57,11 @@ public:
         return models;
     };
 
+    std::vector<light> &get_lights()
+    {
+        return lights;
+    }
+
     Camera &get_camera()
     {
         return camera;

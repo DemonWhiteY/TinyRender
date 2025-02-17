@@ -1046,6 +1046,7 @@ CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_tray.h
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_version.h
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_video.h
+ E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_vulkan.h
  E:/Lab/TinyShader/include/imgui/imconfig.h
  E:/Lab/TinyShader/include/imgui/imgui.h
  E:/Lab/TinyShader/include/imgui/imgui_impl_sdl3.h

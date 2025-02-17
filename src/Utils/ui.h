@@ -43,15 +43,23 @@ public:
     {
         this->ras = rasterizer;
     }
-    void create_menu(struct nk_context *ctx);
-    void imageController(SDL_Event event);
+
+    void imageController();
     type Type = type::READ;
+    int model_id = -1;
+    int object_type = -1;
     int model_num = -1;
     bool running = true;
     bool isMouseDown = false;
     bool isCtrlDown = false;
     int mouseX, mouseY;
     SDL_Event event;
+
+    void showMainMeauBar();
+    void showRender();
+    void showSencePanel();
+    void showObjectPanel();
+    void modelInfo();
 };
 
 #endif

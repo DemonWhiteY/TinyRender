@@ -155,10 +155,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "D:/mingw64/bin/g++.exe"
 		},
 		{
@@ -1207,10 +1207,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "vcpkg toolchain file"
+					"value" : "The CMake toolchain file"
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "D:/vcpkg/scripts/buildsystems/vcpkg.cmake"
 		},
 		{

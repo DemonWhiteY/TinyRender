@@ -1041,6 +1041,7 @@ CMakeFiles/tinyshader.dir/include/imgui/imgui_impl_sdl3.cpp.obj: E:/Lab/TinyShad
   E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_tray.h \
   E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_version.h \
   E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_video.h \
+  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_vulkan.h \
   E:/Lab/TinyShader/include/imgui/imconfig.h \
   E:/Lab/TinyShader/include/imgui/imgui.h \
   E:/Lab/TinyShader/include/imgui/imgui_impl_sdl3.h
@@ -6393,8 +6394,6 @@ D:/mingw64/include/c++/14.2.0/cerrno:
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/movdirintrin.h:
 
-E:/Lab/TinyShader/include/eigen/Eigen/src/Core/MathFunctionsImpl.h:
-
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mwaitintrin.h:
 
 D:/mingw64/x86_64-w64-mingw32/include/wnnc.h:
@@ -6500,6 +6499,8 @@ D:/mingw64/include/c++/14.2.0/bits/stl_function.h:
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/wmmintrin.h:
 
 D:/mingw64/x86_64-w64-mingw32/include/specstrings.h:
+
+E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_vulkan.h:
 
 E:/Lab/TinyShader/include/eigen/Eigen/src/SparseCore/SparseDiagonalProduct.h:
 
@@ -7228,6 +7229,8 @@ E:/Lab/TinyShader/include/eigen/Eigen/src/Core/Inverse.h:
 E:/Lab/TinyShader/include/eigen/Eigen/src/Core/Map.h:
 
 E:/Lab/TinyShader/include/eigen/Eigen/src/Core/MapBase.h:
+
+E:/Lab/TinyShader/include/eigen/Eigen/src/Core/MathFunctionsImpl.h:
 
 E:/Lab/TinyShader/include/eigen/Eigen/src/Core/MatrixBase.h:
 

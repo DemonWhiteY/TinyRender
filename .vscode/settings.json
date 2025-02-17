@@ -67,5 +67,6 @@
         "optional": "cpp",
         "cmake.buildType": "Debug",
         "shared_mutex": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
