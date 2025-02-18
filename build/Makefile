@@ -453,6 +453,30 @@ src/Triangle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\tinyshader.dir\build.make CMakeFiles/tinyshader.dir/src/Triangle.cpp.s
 .PHONY : src/Triangle.cpp.s
 
+src/Utils/json_loader.obj: src/Utils/json_loader.cpp.obj
+.PHONY : src/Utils/json_loader.obj
+
+# target to build an object file
+src/Utils/json_loader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tinyshader.dir\build.make CMakeFiles/tinyshader.dir/src/Utils/json_loader.cpp.obj
+.PHONY : src/Utils/json_loader.cpp.obj
+
+src/Utils/json_loader.i: src/Utils/json_loader.cpp.i
+.PHONY : src/Utils/json_loader.i
+
+# target to preprocess a source file
+src/Utils/json_loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tinyshader.dir\build.make CMakeFiles/tinyshader.dir/src/Utils/json_loader.cpp.i
+.PHONY : src/Utils/json_loader.cpp.i
+
+src/Utils/json_loader.s: src/Utils/json_loader.cpp.s
+.PHONY : src/Utils/json_loader.s
+
+# target to generate assembly for a file
+src/Utils/json_loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tinyshader.dir\build.make CMakeFiles/tinyshader.dir/src/Utils/json_loader.cpp.s
+.PHONY : src/Utils/json_loader.cpp.s
+
 src/Utils/objects_loader.obj: src/Utils/objects_loader.cpp.obj
 .PHONY : src/Utils/objects_loader.obj
 
@@ -598,6 +622,9 @@ help:
 	@echo ... src/Triangle.obj
 	@echo ... src/Triangle.i
 	@echo ... src/Triangle.s
+	@echo ... src/Utils/json_loader.obj
+	@echo ... src/Utils/json_loader.i
+	@echo ... src/Utils/json_loader.s
 	@echo ... src/Utils/objects_loader.obj
 	@echo ... src/Utils/objects_loader.i
 	@echo ... src/Utils/objects_loader.s

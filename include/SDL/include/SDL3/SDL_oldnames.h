@@ -1249,7 +1249,8 @@
 #define SDL_ConvertSurfaceFormat SDL_ConvertSurfaceFormat_renamed_SDL_ConvertSurface
 #define SDL_FillRect SDL_FillRect_renamed_SDL_FillSurfaceRect
 #define SDL_FillRects SDL_FillRects_renamed_SDL_FillSurfaceRects
-#define SDL_FreeSurface SDL_FreeSurface_renamed_SDL_DestroySurface
+/* ##SDL_surface.h */
+#define SDL_FreeSurface SDL_DestroySurface
 #define SDL_GetClipRect SDL_GetClipRect_renamed_SDL_GetSurfaceClipRect
 #define SDL_GetColorKey SDL_GetColorKey_renamed_SDL_GetSurfaceColorKey
 #define SDL_HasColorKey SDL_HasColorKey_renamed_SDL_SurfaceHasColorKey

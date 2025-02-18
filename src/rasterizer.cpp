@@ -177,7 +177,6 @@ void Rasterizer::Handle()
         Matrix4f transform = projection * view * model;
         Eigen::Matrix4f inv_trans = (view * model).inverse().transpose();
         int size = models[i].get_triangles().size();
-        std::cout << size << std::endl;
 
 // 使用 OpenMP 并行化外层的 for 循环
 #pragma omp parallel for
@@ -218,8 +217,6 @@ void Rasterizer::Handle()
             // 绘制三角形
             draw_triangle(new_t, viewspace_pos, models[i].get_Texture(), i);
         }
-
-        std::cout << "Model:" << models[i].name << "Have been rendered well" << std::endl;
     }
 }
 

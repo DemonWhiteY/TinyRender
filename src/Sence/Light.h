@@ -1,7 +1,10 @@
 #pragma once
 #include <Eigen/Core>
-struct light
+#include <iostream>
+class light
 {
+public:
     Eigen::Vector3f position;
     Eigen::Vector3f intensity;
+    std::string name;
 };

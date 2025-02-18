@@ -100,6 +100,13 @@ public:
     Vector3f Transform(Vector3f, Matrix4f, float);
     Vector3f World2Screen(Vector3f worldpos);
     void Edge_Detection();
+
+    void clear_all()
+    {
+        models.clear();
+        lights.clear();
+        clear();
+    }
 };
 
 #endif

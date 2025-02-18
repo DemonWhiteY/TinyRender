@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tinyshader.dir/src/Texture.cpp.obj.d"
   "CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj"
   "CMakeFiles/tinyshader.dir/src/Triangle.cpp.obj.d"
+  "CMakeFiles/tinyshader.dir/src/Utils/json_loader.cpp.obj"
+  "CMakeFiles/tinyshader.dir/src/Utils/json_loader.cpp.obj.d"
   "CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj"
   "CMakeFiles/tinyshader.dir/src/Utils/objects_loader.cpp.obj.d"
   "CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj"

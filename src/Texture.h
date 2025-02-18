@@ -19,8 +19,13 @@ class Texture
 private:
     unsigned char *image_data;
     int width, height, channels;
+    std::string file;
 
 public:
+    std::string get_file() const
+    {
+        return file;
+    }
     Texture()
     {
         // 你可以在这里提供默认的路径或初始化
@@ -28,7 +33,30 @@ public:
     }
     Texture(const std::string &filename)
     {
+
+        file = filename;
         image_data = stbi_load(filename.c_str(), &width, &height, &channels, STBI_rgb);
+        if (!image_data)
+        {
+            throw std::runtime_error("Failed to load texture");
+        }
+    }
+    Texture(char *filename)
+    {
+        file = filename;
+        image_data = stbi_load(filename, &width, &height, &channels, STBI_rgb);
+        if (!image_data)
+        {
+            throw std::runtime_error("Failed to load texture");
+        }
+    }
+
+    void reLoad(char *filename)
+    {
+        std::string str(filename);
+        file = str;
+
+        image_data = stbi_load(filename, &width, &height, &channels, STBI_rgb);
         if (!image_data)
         {
             throw std::runtime_error("Failed to load texture");

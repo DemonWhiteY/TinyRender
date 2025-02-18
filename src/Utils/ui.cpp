@@ -1,5 +1,71 @@
 #include "ui.h"
 /* nuklear - 1.32.0 - public domain */
+SDL_Texture *loadTextureFromImage(SDL_Renderer *renderer, const char *imagePath)
+{
+    SDL_Surface *surface = IMG_Load(imagePath);
+    if (!surface)
+    {
+        std::cerr << "Failed to load image: " << SDL_GetError() << std::endl;
+        return nullptr;
+    }
+
+    SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
+    SDL_FreeSurface(surface);
+    if (!texture)
+    {
+        std::cerr << "Failed to create texture: " << SDL_GetError() << std::endl;
+        return nullptr;
+    }
+
+    return texture;
+}
+
+char *getFilePath()
+{
+    char *filePath = new char[1024];
+
+    // 初始化 COM 库
+    HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+    if (SUCCEEDED(hr))
+    {
+        // 创建 IFileDialog 对象
+        IFileDialog *pFileDialog = NULL;
+        hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL, IID_IFileDialog, (void **)&pFileDialog);
+        if (SUCCEEDED(hr))
+        {
+            // 设置文件对话框的属性
+            COMDLG_FILTERSPEC cFileTypes[] =
+                {
+                    {L"All Files", L"*.*"}};
+            pFileDialog->SetFileTypes(ARRAYSIZE(cFileTypes), cFileTypes);
+
+            // 显示文件对话框
+            hr = pFileDialog->Show(NULL);
+            if (SUCCEEDED(hr))
+            {
+                // 获取用户选择的文件路径
+                IShellItem *pItem = NULL;
+                hr = pFileDialog->GetResult(&pItem);
+                if (SUCCEEDED(hr))
+                {
+                    PWSTR pszFilePath = NULL;
+                    hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
+                    if (SUCCEEDED(hr))
+                    {
+                        // 将宽字符路径转换为多字节路径
+                        WideCharToMultiByte(CP_UTF8, 0, pszFilePath, -1, filePath, sizeof(filePath), NULL, NULL);
+                        CoTaskMemFree(pszFilePath);
+                    }
+                    pItem->Release();
+                }
+            }
+            pFileDialog->Release();
+        }
+        CoUninitialize();
+    }
+
+    return filePath;
+}
 
 Eigen::Vector3f rotateY(const Eigen::Vector3f &v, float angle)
 {
@@ -198,10 +264,11 @@ void gui::showRender()
 
     // 获取窗口的大小
     ImVec2 windowSize = ImGui::GetWindowSize();
+    windowPos = ImGui::GetWindowPos();
     // 设置图片的初始大小
-    ImVec2 imageSize(400, 400); // 设置图片显示大小
-    // 计算图片居中的位置
-    ImVec2 imagePos = ImVec2((windowSize.x - imageSize.x) * 0.5f, (windowSize.y - imageSize.y) * 0.5f);
+    ImVec2 imageSize(width, height); // 设置图片显示大小
+                                     // 计算图片居中的位置
+    imagePos = ImVec2((windowSize.x - imageSize.x) * 0.5f, (windowSize.y - imageSize.y) * 0.5f);
 
     ImTextureID user_texture_id = 0;
     user_texture_id = (ImTextureID)texture; // 将SDL_Texture指针转换为ImTextureID
@@ -225,7 +292,7 @@ void gui::showRender()
     ImGui::InputFloat("Scale", &scale, 0.1f, 1.0f, "%.2f");
 
     // 根据缩放比例调整图片大小
-    ImVec2 scaledImageSize(imageSize.x * scale, imageSize.y * scale);
+    scaledImageSize = ImVec2(imageSize.x * scale, imageSize.y * scale);
     imagePos = ImVec2((windowSize.x - scaledImageSize.x) * 0.5f, (windowSize.y - scaledImageSize.y) * 0.5f);
     ImGui::SetCursorPos(imagePos);
     ImGui::Image(user_texture_id, scaledImageSize);
@@ -242,8 +309,12 @@ void gui::showObjectPanel()
     {
     case 0:
         modelInfo();
+        TextureInfo();
+        MaterialInfo();
         break;
-
+    case 1:
+        lightInfo();
+        break;
     default:
 
         break;
@@ -255,43 +326,198 @@ void gui::showObjectPanel()
 void gui::modelInfo()
 {
 
+    if (ImGui::CollapsingHeader("Transform", ImGuiTreeNodeFlags_DefaultOpen))
     {
 
         auto &model = ras->get_models()[model_num];
+        ImGui::Text(model.name.c_str());
         ImGui::Text("position:");
+        bool pos, scale, rotate;
         if (ImGui::BeginTable("PositionTable", 3, ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_Resizable))
         {
             ImGui::TableNextColumn();
-            ImGui::InputFloat("X", &model.translate[0], 0.1f, 1.0f, "%.2f");
+            bool posXChanged = ImGui::InputFloat("X", &model.translate[0], 0.1f, 1.0f, "%.2f");
             ImGui::TableNextColumn();
-            ImGui::InputFloat("Y", &model.translate[1], 0.1f, 1.0f, "%.2f");
+            bool posYChanged = ImGui::InputFloat("Y", &model.translate[1], 0.1f, 1.0f, "%.2f");
             ImGui::TableNextColumn();
-            ImGui::InputFloat("Z", &model.translate[2], 0.1f, 1.0f, "%.2f");
+            bool posZChanged = ImGui::InputFloat("Z", &model.translate[2], 0.1f, 1.0f, "%.2f");
             ImGui::EndTable();
+            pos = posXChanged || posYChanged || posZChanged;
         }
 
         ImGui::Text("Scale:");
         if (ImGui::BeginTable("ScaleTable", 3, ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_Resizable))
         {
             ImGui::TableNextColumn();
-            ImGui::InputFloat("X", &model.scale[0], 0.1f, 1.0f, "%.2f");
+            bool scalex = ImGui::InputFloat("X", &model.scale[0], 0.1f, 1.0f, "%.2f");
             ImGui::TableNextColumn();
-            ImGui::InputFloat("Y", &model.scale[1], 0.1f, 1.0f, "%.2f");
+            bool scaley = ImGui::InputFloat("Y", &model.scale[1], 0.1f, 1.0f, "%.2f");
             ImGui::TableNextColumn();
-            ImGui::InputFloat("Z", &model.scale[2], 0.1f, 1.0f, "%.2f");
+            bool scalez = ImGui::InputFloat("Z", &model.scale[2], 0.1f, 1.0f, "%.2f");
             ImGui::EndTable();
+            scale = scalex || scaley || scalez;
         }
 
         ImGui::Text("Rotation:");
         if (ImGui::BeginTable("RotationTable", 3, ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_Resizable))
         {
             ImGui::TableNextColumn();
-            ImGui::InputFloat("X", &model.rotation[0], 0.1f, 1.0f, "%.2f");
+            bool rotatex = ImGui::InputFloat("X", &model.rotation[0], 0.1f, 1.0f, "%.2f");
             ImGui::TableNextColumn();
-            ImGui::InputFloat("Y", &model.rotation[1], 0.1f, 1.0f, "%.2f");
+            bool rotatey = ImGui::InputFloat("Y", &model.rotation[1], 0.1f, 1.0f, "%.2f");
             ImGui::TableNextColumn();
-            ImGui::InputFloat("Z", &model.rotation[2], 0.1f, 1.0f, "%.2f");
+            bool rotatez = ImGui::InputFloat("Z", &model.rotation[2], 0.1f, 1.0f, "%.2f");
             ImGui::EndTable();
+            rotate = rotatex || rotatey || rotatez;
+        }
+
+        bool activate = pos || scale || rotate;
+        if (activate)
+        {
+            updateSurface();
+        }
+    }
+}
+
+void gui::TextureInfo()
+{
+    if (ImGui::CollapsingHeader("Texture", ImGuiTreeNodeFlags_DefaultOpen))
+    {
+        auto &texture = ras->get_models()[model_num].texture;
+
+        ImGui::Text("Texture:");
+        SDL_Texture *TextureImg;
+        if (texture == nullptr)
+        {
+            TextureImg = loadTextureFromImage(renderer, "../objects/Texture/noPic.jpg");
+        }
+        else
+        {
+            TextureImg = loadTextureFromImage(renderer, texture->get_file().c_str());
+        }
+
+        ImTextureID user_texture_id = 0;
+        user_texture_id = (ImTextureID)TextureImg; // 将SDL_Texture指针转换为ImTextureID
+        ImGui::Image(user_texture_id, ImVec2(256, 256));
+
+        static char filePath[1024] = "";
+        if (ImGui::Button("Select File"))
+        {
+            // 初始化 COM 库
+            HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+            if (SUCCEEDED(hr))
+            {
+                // 创建 IFileDialog 对象
+                IFileDialog *pFileDialog = NULL;
+                hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL, IID_IFileDialog, (void **)&pFileDialog);
+                if (SUCCEEDED(hr))
+                {
+                    // 设置文件对话框的属性
+                    COMDLG_FILTERSPEC cFileTypes[] =
+                        {
+
+                            {L"All Files", L"*.*"}};
+                    pFileDialog->SetFileTypes(ARRAYSIZE(cFileTypes), cFileTypes);
+
+                    // 显示文件对话框
+                    hr = pFileDialog->Show(NULL);
+                    if (SUCCEEDED(hr))
+                    {
+                        // 获取用户选择的文件路径
+                        IShellItem *pItem = NULL;
+                        hr = pFileDialog->GetResult(&pItem);
+                        if (SUCCEEDED(hr))
+                        {
+                            PWSTR pszFilePath = NULL;
+                            hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
+                            if (SUCCEEDED(hr))
+                            {
+                                // 将宽字符路径转换为多字节路径
+                                WideCharToMultiByte(CP_UTF8, 0, pszFilePath, -1, filePath, sizeof(filePath), NULL, NULL);
+                                CoTaskMemFree(pszFilePath);
+                            }
+                            pItem->Release();
+                        }
+                    }
+                    pFileDialog->Release();
+                }
+                CoUninitialize();
+            }
+        }
+
+        ImGui::SameLine();
+        ImGui::Text("Selected File: %s", filePath);
+
+        if (ImGui::Button("Save File"))
+        {
+            if (filePath[0] != '\0')
+            {
+                texture->reLoad(filePath);
+                updateSurface();
+            }
+        }
+    }
+}
+
+void gui::lightInfo()
+{
+    if (ImGui::CollapsingHeader("Light", ImGuiTreeNodeFlags_DefaultOpen))
+    {
+
+        auto &light = ras->get_lights()[model_num];
+        ImGui::Text(light.name.c_str());
+        ImGui::Text("position:");
+        bool pos, ins;
+        if (ImGui::BeginTable("PositionTable", 3, ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_Resizable))
+        {
+            ImGui::TableNextColumn();
+            bool posXChanged = ImGui::InputFloat("X", &light.position[0], 0.1f, 1.0f, "%.2f");
+            ImGui::TableNextColumn();
+            bool posYChanged = ImGui::InputFloat("Y", &light.position[1], 0.1f, 1.0f, "%.2f");
+            ImGui::TableNextColumn();
+            bool posZChanged = ImGui::InputFloat("Z", &light.position[2], 0.1f, 1.0f, "%.2f");
+            ImGui::EndTable();
+            pos = posXChanged || posYChanged || posZChanged;
+        }
+
+        ImGui::Text("Scale:");
+        if (ImGui::BeginTable("ScaleTable", 3, ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_Resizable))
+        {
+            ImGui::TableNextColumn();
+            bool scalex = ImGui::InputFloat("X", &light.intensity[0], 0.1f, 1.0f, "%.2f");
+            ImGui::TableNextColumn();
+            bool scaley = ImGui::InputFloat("Y", &light.intensity[1], 0.1f, 1.0f, "%.2f");
+            ImGui::TableNextColumn();
+            bool scalez = ImGui::InputFloat("Z", &light.intensity[2], 0.1f, 1.0f, "%.2f");
+            ImGui::EndTable();
+            ins = scalex || scaley || scalez;
+        }
+        bool activate = pos || ins;
+        if (activate)
+        {
+            updateSurface();
+        }
+    }
+}
+
+void gui::MaterialInfo()
+{
+    auto &model = ras->get_models()[model_num];
+    float color[3] = {model.color[0], model.color[1], model.color[2]};
+    if (ImGui::CollapsingHeader("Material", ImGuiTreeNodeFlags_DefaultOpen))
+    {
+
+        ImGui::ColorEdit3("Diffuse Color", color, ImGuiColorEditFlags_NoInputs);
+
+        float myFloat = 0.5f;
+        ImGui::SliderFloat("reflectance", &myFloat, 0.0f, 1.0f, "%.3f");
+        ImGui::SliderFloat("refractive", &myFloat, 0.0f, 1.0f, "%.3f");
+
+        if (ImGui::Button("UseChange"))
+        {
+            model.color = Vector3f(color[0], color[1], color[2]);
+            model.set_color();
+            updateSurface();
         }
     }
 }
@@ -323,9 +549,9 @@ void gui::showSencePanel()
             }
             for (size_t i = models.size(); i < lights.size() + models.size(); ++i)
             {
-                if (ImGui::TreeNode((void *)(intptr_t)i, "Light %d", i))
+                if (ImGui::TreeNode((void *)(intptr_t)i, lights[i - models.size()].name.c_str()))
                 {
-                    model_num = i;
+                    model_num = i - models.size();
                     object_type = 1;
                     ImGui::TreePop();
                 }
@@ -342,6 +568,91 @@ void gui::showMainMeauBar()
     {
         if (ImGui::BeginMenu("File"))
         {
+
+            static char newPath[1024] = "";
+            if (ImGui::MenuItem("Open"))
+            {
+                // 初始化 COM 库
+                HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+                if (SUCCEEDED(hr))
+                {
+                    // 创建 IFileDialog 对象
+                    IFileDialog *pFileDialog = NULL;
+                    hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL, IID_IFileDialog, (void **)&pFileDialog);
+                    if (SUCCEEDED(hr))
+                    {
+                        // 设置文件对话框的属性
+                        COMDLG_FILTERSPEC cFileTypes[] =
+                            {
+
+                                {L"All Files", L"*.*"}};
+                        pFileDialog->SetFileTypes(ARRAYSIZE(cFileTypes), cFileTypes);
+
+                        // 显示文件对话框
+                        hr = pFileDialog->Show(NULL);
+                        if (SUCCEEDED(hr))
+                        {
+                            // 获取用户选择的文件路径
+                            IShellItem *pItem = NULL;
+                            hr = pFileDialog->GetResult(&pItem);
+                            if (SUCCEEDED(hr))
+                            {
+                                PWSTR pszFilePath = NULL;
+                                hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
+                                if (SUCCEEDED(hr))
+                                {
+                                    // 将宽字符路径转换为多字节路径
+                                    WideCharToMultiByte(CP_UTF8, 0, pszFilePath, -1, newPath, sizeof(newPath), NULL, NULL);
+                                    CoTaskMemFree(pszFilePath);
+                                }
+                                pItem->Release();
+                            }
+                        }
+                        pFileDialog->Release();
+                    }
+                    CoUninitialize();
+                }
+            }
+            std::string str(newPath);
+            if (!str.empty())
+            {
+                ras->clear_all();
+                json_loader json_loader(str);
+
+                // 从JSON文件中加载模型和光源信息
+                std::vector<Model *> models = json_loader.get_models();
+                std::vector<light> lights = json_loader.get_lights();
+
+                // 遍历并添加所有加载的模型到光栅化器中
+                for (auto model : models)
+                {
+                    ras->add_model(*model);
+                }
+
+                // 遍历并添加所有加载的光源到光栅化器中
+                for (auto light : lights)
+                {
+                    ras->add_light(light);
+                }
+
+                // 添加相机信息到光栅化器中
+                ras->add_camera(json_loader.get_camera());
+
+                // 设置光栅化器的片段着色器为纹理片段着色器
+                ras->set_fragment_shader(texture_fragment_shader);
+                strcpy(newPath, "");
+                updateSurface();
+            }
+
+            if (ImGui::MenuItem("Save"))
+            {
+            }
+            if (ImGui::MenuItem("Save as"))
+            {
+            }
+            if (ImGui::MenuItem("Create"))
+            {
+            }
 
             ImGui::EndMenu();
         }
@@ -365,9 +676,24 @@ void gui::showMainMeauBar()
             }
             ImGui::EndMenu();
         }
+        if (ImGui::BeginMenu("Add"))
+        {
+        }
+        if (ImGui::BeginMenu("Shader"))
+        {
+        }
         ImGui::EndMainMenuBar();
     }
 }
+
+ImVec2 gui::translationPosition(ImVec2 pos)
+{
+    std::cout << "Mouse button up at: (" << pos.x << ", " << pos.y << ")" << std::endl;
+    std::cout << "windows at: (" << windowPos.x << ", " << windowPos.y << ")" << std::endl;
+    std::cout << "windows at: (" << imagePos.x << ", " << imagePos.y << ")" << std::endl;
+    return ImVec2((pos.x - windowPos.x - imagePos.x) * width / scaledImageSize.x, (pos.y - windowPos.y - imagePos.y) * height / scaledImageSize.y);
+}
+
 void gui::imageController()
 {
     // 检测 Ctrl 键按下和释放
@@ -393,11 +719,14 @@ void gui::imageController()
     // 检测鼠标按下事件
     if (ImGui::IsMouseClicked(ImGuiMouseButton_Left))
     {
-        isMouseDown = true;
-        ImVec2 mousePos = ImGui::GetMousePos();
-        mouseX = mousePos.x;
-        mouseY = mousePos.y;
-        model_num = ras->get_pixel_model(mouseX, mouseY);
+
+        ImVec2 mousePos = translationPosition(ImGui::GetMousePos());
+        if (mousePos.x > 0 && mousePos.y > 0 && mousePos.x < width && mousePos.y < height)
+            isMouseDown = true;
+        mouseX = ImGui::GetMousePos().x;
+        mouseY = ImGui::GetMousePos().y;
+        model_num = ras->get_pixel_model(mousePos.x, mousePos.y);
+
         std::cout << "Mouse at:" << model_num << std::endl;
     }
 
@@ -405,8 +734,6 @@ void gui::imageController()
     if (ImGui::IsMouseReleased(ImGuiMouseButton_Left))
     {
         isMouseDown = false;
-        ImVec2 mousePos = ImGui::GetMousePos();
-        std::cout << "Mouse button up at: (" << mousePos.x << ", " << mousePos.y << ")" << std::endl;
     }
 
     // 只读模式
@@ -436,12 +763,11 @@ void gui::imageController()
             }
             else
             {
-                position += Vector3f(deltaX, -deltaY, 0) * 10.0f; // 调整移动速度
-                target += Vector3f(deltaX, -deltaY, 0) * 10.0f;   // 调整移动速度
+                position += Vector3f(deltaX, -deltaY, 0) * -1.0f; // 调整移动速度
+                target += Vector3f(deltaX, -deltaY, 0) * -1.0f;   // 调整移动速度
             }
 
             camera.set_position(position, up, target);
-
             updateSurface();
             mouseX = mousePos.x;
             mouseY = mousePos.y;
@@ -457,12 +783,11 @@ void gui::imageController()
             auto target = camera.get_target();
 
             // 调整滚动速度
-            float zoomSpeed = 10.0f;
+            float zoomSpeed = 0.2f;
             position += Vector3f(0, 0, wheelDelta * zoomSpeed);
             target += Vector3f(0, 0, wheelDelta * zoomSpeed);
 
             camera.set_position(position, up, target);
-
             updateSurface();
         }
     }
@@ -471,34 +796,40 @@ void gui::imageController()
     else if (Type == type::EDIT)
     {
         // 检测鼠标移动事件
-        if (isMouseDown && model_num != -1)
+        if (isMouseDown)
         {
-            ImVec2 mousePos = ImGui::GetMousePos();
-            float deltaX = (mousePos.x - mouseX) * 0.01f; // 水平旋转角度
-            float deltaY = (mousePos.y - mouseY) * 0.01f; // 垂直旋转角度
-
-            auto &model = ras->get_models()[model_num];
-
-            if (isCtrlDown)
+            if (model_num != -1)
             {
-                // 计算新的模型旋转
-                // 这里可以根据需要添加旋转逻辑
+                ImVec2 mousePos = ImGui::GetMousePos();
+                float deltaX = (mousePos.x - mouseX) * 0.01f; // 水平旋转角度
+                float deltaY = (mousePos.y - mouseY) * 0.01f; // 垂直旋转角度
+
+                auto &model = ras->get_models()[model_num];
+                object_type = 0;
+                model_id = model_num;
+                if (isCtrlDown)
+                {
+                    // 计算新的模型旋转
+                    // 这里可以根据需要添加旋转逻辑
+                }
+                else
+                {
+                    model.translate += Vector3f(deltaX, -deltaY, 0) * 1.0f; // 调整移动速度
+                }
+                updateSurface();
+                mouseX = mousePos.x;
+                mouseY = mousePos.y;
             }
             else
             {
-                model.translate += Vector3f(deltaX, -deltaY, 0) * 10.0f; // 调整移动速度
+                object_type = -1;
             }
-
-            updateSurface();
-            mouseX = mousePos.x;
-            mouseY = mousePos.y;
         }
 
         // 检测鼠标滚轮事件
         float wheelDelta = ImGui::GetIO().MouseWheel;
         if (wheelDelta != 0.0f)
         {
-
             updateSurface();
         }
     }

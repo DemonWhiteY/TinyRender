@@ -21,7 +21,9 @@ set(STB_IMAGE_DIR "${CMAKE_SOURCE_DIR}/include/stb_image")
 set(THREAD_DIR "${CMAKE_SOURCE_DIR}/include/thread")
 set(SDL_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/SDL/include")
 set(SDL_LIBRARY "${CMAKE_SOURCE_DIR}/include/SDL/lib/x64/SDL3.lib")
-set(SD3_TTF_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/SDL3_ttf/include")
+set(SDL3_IMAGE_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/SDL3_image/include")
+set(SDL3_IMAGE_LIBRARY "${CMAKE_SOURCE_DIR}/include/SDL3_image/lib/x64/SDL3_image.lib")
+set(SDL3_TTF_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include/SDL3_ttf/include")
 set(SDL3_TTF_LIBRARY "${CMAKE_SOURCE_DIR}/include/SDL3_ttf/lib/x64/SDL3_ttf.lib")
 set(JSON_CPP_DIR "${CMAKE_SOURCE_DIR}/include/json")
 set(NLOHMANN_JSON_DIR "${CMAKE_SOURCE_DIR}/include")
@@ -37,9 +39,9 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 include_directories(${OBJECTS_LOADER_DIR})
 include_directories(${STB_IMAGE_DIR})
 include_directories(${NLOHMANN_JSON_DIR})
-include_directories(${SD3_TTF_INCLUDE_DIR})
+include_directories(${SDL3_TTF_INCLUDE_DIR})
 include_directories(${THREAD_DIR})
-
+include_directories(${SDL3_IMAGE_INCLUDE_DIR})
 include_directories(${IMGUI_DIR})
 
 
@@ -72,7 +74,7 @@ PUBLIC         comdlg32
 PUBLIC         advapi32
 PUBLIC ${SDL_LIBRARY}
 PUBLIC ${SDL3_TTF_LIBRARY}
-
+PUBLIC ${SDL3_IMAGE_LIBRARY}
    
 )
 

@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     Rasterizer *ras = new Rasterizer(900, 900);
 
     // 创建一个JSON加载器对象，用于解析指定的JSON文件
-    json_loader json_loader("../test.JSON");
+    json_loader json_loader("../cornel.JSON");
 
     // 从JSON文件中加载模型和光源信息
     std::vector<Model *> models = json_loader.get_models();

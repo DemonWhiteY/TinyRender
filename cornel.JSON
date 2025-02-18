@@ -1,7 +1,7 @@
 {
     "objects": [
         {
-            "name": "left",
+            "name": "backend",
             "objfile": "../objects/floor.obj",
             "color": [
                 100,
@@ -25,35 +25,11 @@
             ]
         },
         {
-            "name": "left",
-            "objfile": "../objects/floor.obj",
-            "color": [
-                255,
-                0,
-                0
-            ],
-            "scale": [
-                1,
-                1,
-                1
-            ],
-            "rotation": [
-                0,
-                90,
-                0
-            ],
-            "translate": [
-                0,
-                0,
-                0
-            ]
-        },
-        {
             "name": "right",
             "objfile": "../objects/floor.obj",
             "color": [
-                0,
                 255,
+                0,
                 0
             ],
             "scale": [
@@ -67,7 +43,31 @@
                 0
             ],
             "translate": [
+                2,
                 0,
+                -2
+            ]
+        },
+        {
+            "name": "left",
+            "objfile": "../objects/floor.obj",
+            "color": [
+                0,
+                255,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "rotation": [
+                0,
+                270,
+                0
+            ],
+            "translate": [
+                -2,
                 0,
                 -2
             ]
@@ -78,7 +78,31 @@
             "color": [
                 100,
                 100,
-                230
+                100
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "rotation": [
+                90,
+                0,
+                0
+            ],
+            "translate": [
+                0,
+                -2,
+                -2
+            ]
+        },
+        {
+            "name": "top",
+            "objfile": "../objects/floor.obj",
+            "color": [
+                100,
+                100,
+                100
             ],
             "scale": [
                 1,
@@ -92,22 +116,23 @@
             ],
             "translate": [
                 0,
-                0,
-                0
+                2,
+                -2
             ]
         }
     ],
     "lights": [
         {
+            "name": "top",
             "intensity": [
-                1000.0,
-                1000.0,
-                1000.0
+                1.0,
+                1.0,
+                1.0
             ],
             "position": [
-                -20,
-                20,
-                0
+                0,
+                0,
+                -3
             ]
         }
     ],
@@ -115,7 +140,7 @@
         "position": [
             0,
             0,
-            -5
+            -4.9
         ],
         "target": [
             0,
