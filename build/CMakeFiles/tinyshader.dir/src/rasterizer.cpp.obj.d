@@ -565,17 +565,100 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_version.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_oldnames.h \
  E:/Lab/TinyShader/include/stb_image/stb_image_write.h \
+ E:/Lab/TinyShader/include/nlohmann/json.hpp \
+ D:/mingw64/include/c++/14.2.0/iterator \
+ D:/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
+ D:/mingw64/include/c++/14.2.0/utility \
+ D:/mingw64/include/c++/14.2.0/bits/stl_relops.h \
+ E:/Lab/TinyShader/include/nlohmann/adl_serializer.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/abi_macros.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/conversions/from_json.hpp \
+ D:/mingw64/include/c++/14.2.0/forward_list \
+ D:/mingw64/include/c++/14.2.0/bits/forward_list.h \
+ D:/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
+ D:/mingw64/include/c++/14.2.0/valarray \
+ D:/mingw64/include/c++/14.2.0/bits/valarray_array.h \
+ D:/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
+ D:/mingw64/include/c++/14.2.0/bits/valarray_before.h \
+ D:/mingw64/include/c++/14.2.0/bits/slice_array.h \
+ D:/mingw64/include/c++/14.2.0/bits/valarray_after.h \
+ D:/mingw64/include/c++/14.2.0/bits/gslice.h \
+ D:/mingw64/include/c++/14.2.0/bits/gslice_array.h \
+ D:/mingw64/include/c++/14.2.0/bits/mask_array.h \
+ D:/mingw64/include/c++/14.2.0/bits/indirect_array.h \
+ E:/Lab/TinyShader/include/nlohmann/detail/exceptions.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/value_t.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/macro_scope.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/meta/detected.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/meta/void_t.hpp \
+ E:/Lab/TinyShader/include/nlohmann/thirdparty/hedley/hedley.hpp \
+ D:/mingw64/include/c++/14.2.0/version \
+ E:/Lab/TinyShader/include/nlohmann/detail/string_escape.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/input/position_t.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/meta/cpp_future.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/meta/type_traits.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/iterators/iterator_traits.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/meta/call_std/begin.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/meta/call_std/end.hpp \
+ E:/Lab/TinyShader/include/nlohmann/json_fwd.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/string_concat.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/meta/identity_tag.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/meta/std_fs.hpp \
+ D:/mingw64/include/c++/14.2.0/filesystem \
+ D:/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
+ D:/mingw64/include/c++/14.2.0/bits/fs_path.h \
+ D:/mingw64/include/c++/14.2.0/locale \
+ D:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
+ D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
+ D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
+ D:/mingw64/include/c++/14.2.0/bits/codecvt.h \
+ D:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
+ D:/mingw64/include/c++/14.2.0/bits/locale_conv.h \
+ D:/mingw64/include/c++/14.2.0/iomanip \
+ D:/mingw64/include/c++/14.2.0/bits/quoted_string.h \
+ D:/mingw64/include/c++/14.2.0/codecvt \
+ D:/mingw64/include/c++/14.2.0/bits/fs_dir.h \
+ D:/mingw64/include/c++/14.2.0/bits/fs_ops.h \
+ E:/Lab/TinyShader/include/nlohmann/detail/conversions/to_json.hpp \
+ D:/mingw64/include/c++/14.2.0/optional \
+ E:/Lab/TinyShader/include/nlohmann/detail/iterators/iteration_proxy.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/string_utils.hpp \
+ E:/Lab/TinyShader/include/nlohmann/byte_container_with_subtype.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/hash.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/input/binary_reader.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/input/input_adapters.hpp \
+ D:/mingw64/include/c++/14.2.0/numeric \
+ D:/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
+ D:/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
+ E:/Lab/TinyShader/include/nlohmann/detail/input/json_sax.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/input/lexer.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/meta/is_sax.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/input/parser.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/iterators/internal_iterator.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/iterators/primitive_iterator.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/iterators/iter_impl.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/iterators/json_reverse_iterator.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/json_custom_base_class.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/json_pointer.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/json_ref.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/output/binary_writer.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/output/output_adapters.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/output/serializer.hpp \
+ E:/Lab/TinyShader/include/nlohmann/detail/conversions/to_chars.hpp \
+ E:/Lab/TinyShader/include/nlohmann/ordered_map.hpp \
+ D:/mingw64/include/c++/14.2.0/any \
+ E:/Lab/TinyShader/include/nlohmann/detail/macro_unscope.hpp \
+ E:/Lab/TinyShader/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+ D:/mingw64/include/c++/14.2.0/fstream \
+ D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+ D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
+ D:/mingw64/include/c++/14.2.0/bits/fstream.tcc \
  D:/mingw64/include/c++/14.2.0/random \
  D:/mingw64/include/c++/14.2.0/bits/random.h \
  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/opt_random.h \
  D:/mingw64/include/c++/14.2.0/bits/random.tcc \
- D:/mingw64/include/c++/14.2.0/numeric \
- D:/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
- D:/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
  E:/Lab/TinyShader/include/thread/mingw.thread.h \
  D:/mingw64/include/c++/14.2.0/chrono \
- D:/mingw64/include/c++/14.2.0/utility \
- D:/mingw64/include/c++/14.2.0/bits/stl_relops.h \
  E:/Lab/TinyShader/include/thread/mingw.invoke.h \
  D:/mingw64/x86_64-w64-mingw32/include/synchapi.h \
  D:/mingw64/x86_64-w64-mingw32/include/apiset.h \

@@ -1,0 +1,208 @@
+{
+    "camera": {
+        "aspect": 1.0,
+        "far": 100.0,
+        "fov": 60.0,
+        "near": 0.10000000149011612,
+        "position": [
+            0.0,
+            0.0,
+            -4.900000095367432
+        ],
+        "target": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "up": [
+            0.0,
+            1.0,
+            0.0
+        ]
+    },
+    "lights": [
+        {
+            "intensity": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "name": "top",
+            "position": [
+                0.0,
+                0.0,
+                -3.0
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "color": [
+                100.0,
+                100.0,
+                100.0
+            ],
+            "name": "backend",
+            "objfile": "../objects/floor.obj",
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "color": [
+                255.0,
+                0.0,
+                0.0
+            ],
+            "name": "right",
+            "objfile": "../objects/floor.obj",
+            "rotation": [
+                0.0,
+                90.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                2.0,
+                0.0,
+                -2.0
+            ]
+        },
+        {
+            "color": [
+                0.0,
+                255.0,
+                0.0
+            ],
+            "name": "left",
+            "objfile": "../objects/floor.obj",
+            "rotation": [
+                0.0,
+                270.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                -2.0,
+                0.0,
+                -2.0
+            ]
+        },
+        {
+            "color": [
+                100.0,
+                100.0,
+                100.0
+            ],
+            "name": "floor",
+            "objfile": "../objects/floor.obj",
+            "rotation": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                0.0,
+                -2.0,
+                -2.0
+            ]
+        },
+        {
+            "color": [
+                100.0,
+                100.0,
+                100.0
+            ],
+            "name": "top",
+            "objfile": "../objects/floor.obj",
+            "rotation": [
+                270.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                0.0,
+                2.0,
+                -2.0
+            ]
+        },
+        {
+            "color": [
+                100.0,
+                100.0,
+                240.0
+            ],
+            "name": "temp",
+            "objfile": "E:\\Lab\\TinyShader\\objects\\cube.obj",
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "color": [
+                100.0,
+                100.0,
+                240.0
+            ],
+            "name": "temp",
+            "objfile": "E:\\Lab\\TinyShader\\objects\\rock.obj",
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    ]
+}

@@ -25,7 +25,7 @@ json_loader::json_loader(std::string path)
         std::string name = object["name"];
         std::string objfile = object["objfile"];
         models.push_back(new Model(objfile, name));
-
+        models.back()->filename = objfile;
         // 设置模型纹理或颜色
         if (object.contains("texture"))
         {

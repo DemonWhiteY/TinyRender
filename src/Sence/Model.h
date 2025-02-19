@@ -11,9 +11,7 @@
 class Model
 {
 private:
-    std::string filename = "";
-
-    std::vector<Triangle *> triangles; // 使用 unique_ptr 管理内存
+        std::vector<Triangle *> triangles; // 使用 unique_ptr 管理内存
 
 public:
     std::string name;
@@ -22,6 +20,7 @@ public:
     Vector3f translate;
     Vector3f color;
     Texture *texture = nullptr;
+    std::string filename = "";
 
     Model(/* args */);
     Model(const std::string &filename, const std::string &name);

@@ -6033,6 +6033,7 @@ CMakeFiles/tinyshader.dir/src/main.cpp.obj: E:/Lab/TinyShader/src/main.cpp \
 
 CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasterizer.cpp \
   D:/mingw64/include/c++/14.2.0/algorithm \
+  D:/mingw64/include/c++/14.2.0/any \
   D:/mingw64/include/c++/14.2.0/array \
   D:/mingw64/include/c++/14.2.0/atomic \
   D:/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
@@ -6052,6 +6053,7 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   D:/mingw64/include/c++/14.2.0/bits/char_traits.h \
   D:/mingw64/include/c++/14.2.0/bits/charconv.h \
   D:/mingw64/include/c++/14.2.0/bits/chrono.h \
+  D:/mingw64/include/c++/14.2.0/bits/codecvt.h \
   D:/mingw64/include/c++/14.2.0/bits/concept_check.h \
   D:/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h \
   D:/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h \
@@ -6061,20 +6063,34 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   D:/mingw64/include/c++/14.2.0/bits/exception.h \
   D:/mingw64/include/c++/14.2.0/bits/exception_defines.h \
   D:/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
+  D:/mingw64/include/c++/14.2.0/bits/forward_list.h \
+  D:/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
+  D:/mingw64/include/c++/14.2.0/bits/fs_dir.h \
+  D:/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
+  D:/mingw64/include/c++/14.2.0/bits/fs_ops.h \
+  D:/mingw64/include/c++/14.2.0/bits/fs_path.h \
+  D:/mingw64/include/c++/14.2.0/bits/fstream.tcc \
   D:/mingw64/include/c++/14.2.0/bits/functexcept.h \
   D:/mingw64/include/c++/14.2.0/bits/functional_hash.h \
+  D:/mingw64/include/c++/14.2.0/bits/gslice.h \
+  D:/mingw64/include/c++/14.2.0/bits/gslice_array.h \
   D:/mingw64/include/c++/14.2.0/bits/hash_bytes.h \
   D:/mingw64/include/c++/14.2.0/bits/hashtable.h \
   D:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+  D:/mingw64/include/c++/14.2.0/bits/indirect_array.h \
   D:/mingw64/include/c++/14.2.0/bits/invoke.h \
   D:/mingw64/include/c++/14.2.0/bits/ios_base.h \
   D:/mingw64/include/c++/14.2.0/bits/istream.tcc \
   D:/mingw64/include/c++/14.2.0/bits/list.tcc \
   D:/mingw64/include/c++/14.2.0/bits/locale_classes.h \
   D:/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
+  D:/mingw64/include/c++/14.2.0/bits/locale_conv.h \
   D:/mingw64/include/c++/14.2.0/bits/locale_facets.h \
   D:/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
+  D:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
+  D:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
   D:/mingw64/include/c++/14.2.0/bits/localefwd.h \
+  D:/mingw64/include/c++/14.2.0/bits/mask_array.h \
   D:/mingw64/include/c++/14.2.0/bits/memory_resource.h \
   D:/mingw64/include/c++/14.2.0/bits/memoryfwd.h \
   D:/mingw64/include/c++/14.2.0/bits/move.h \
@@ -6087,6 +6103,7 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   D:/mingw64/include/c++/14.2.0/bits/postypes.h \
   D:/mingw64/include/c++/14.2.0/bits/predefined_ops.h \
   D:/mingw64/include/c++/14.2.0/bits/ptr_traits.h \
+  D:/mingw64/include/c++/14.2.0/bits/quoted_string.h \
   D:/mingw64/include/c++/14.2.0/bits/random.h \
   D:/mingw64/include/c++/14.2.0/bits/random.tcc \
   D:/mingw64/include/c++/14.2.0/bits/range_access.h \
@@ -6095,6 +6112,7 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   D:/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
   D:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
   D:/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
+  D:/mingw64/include/c++/14.2.0/bits/slice_array.h \
   D:/mingw64/include/c++/14.2.0/bits/specfun.h \
   D:/mingw64/include/c++/14.2.0/bits/sstream.tcc \
   D:/mingw64/include/c++/14.2.0/bits/std_abs.h \
@@ -6121,6 +6139,7 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   D:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
   D:/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
   D:/mingw64/include/c++/14.2.0/bits/stl_vector.h \
+  D:/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
   D:/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
   D:/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
   D:/mingw64/include/c++/14.2.0/bits/string_view.tcc \
@@ -6133,6 +6152,10 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   D:/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
   D:/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
   D:/mingw64/include/c++/14.2.0/bits/utility.h \
+  D:/mingw64/include/c++/14.2.0/bits/valarray_after.h \
+  D:/mingw64/include/c++/14.2.0/bits/valarray_array.h \
+  D:/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
+  D:/mingw64/include/c++/14.2.0/bits/valarray_before.h \
   D:/mingw64/include/c++/14.2.0/bits/vector.tcc \
   D:/mingw64/include/c++/14.2.0/bits/version.h \
   D:/mingw64/include/c++/14.2.0/cassert \
@@ -6142,6 +6165,7 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   D:/mingw64/include/c++/14.2.0/climits \
   D:/mingw64/include/c++/14.2.0/clocale \
   D:/mingw64/include/c++/14.2.0/cmath \
+  D:/mingw64/include/c++/14.2.0/codecvt \
   D:/mingw64/include/c++/14.2.0/compare \
   D:/mingw64/include/c++/14.2.0/complex \
   D:/mingw64/include/c++/14.2.0/concepts \
@@ -6163,19 +6187,26 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   D:/mingw64/include/c++/14.2.0/ext/numeric_traits.h \
   D:/mingw64/include/c++/14.2.0/ext/string_conversions.h \
   D:/mingw64/include/c++/14.2.0/ext/type_traits.h \
+  D:/mingw64/include/c++/14.2.0/filesystem \
+  D:/mingw64/include/c++/14.2.0/forward_list \
+  D:/mingw64/include/c++/14.2.0/fstream \
   D:/mingw64/include/c++/14.2.0/functional \
   D:/mingw64/include/c++/14.2.0/initializer_list \
+  D:/mingw64/include/c++/14.2.0/iomanip \
   D:/mingw64/include/c++/14.2.0/ios \
   D:/mingw64/include/c++/14.2.0/iosfwd \
   D:/mingw64/include/c++/14.2.0/iostream \
   D:/mingw64/include/c++/14.2.0/istream \
+  D:/mingw64/include/c++/14.2.0/iterator \
   D:/mingw64/include/c++/14.2.0/limits \
   D:/mingw64/include/c++/14.2.0/list \
+  D:/mingw64/include/c++/14.2.0/locale \
   D:/mingw64/include/c++/14.2.0/map \
   D:/mingw64/include/c++/14.2.0/memory \
   D:/mingw64/include/c++/14.2.0/mutex \
   D:/mingw64/include/c++/14.2.0/new \
   D:/mingw64/include/c++/14.2.0/numeric \
+  D:/mingw64/include/c++/14.2.0/optional \
   D:/mingw64/include/c++/14.2.0/ostream \
   D:/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
   D:/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
@@ -6209,10 +6240,14 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   D:/mingw64/include/c++/14.2.0/typeinfo \
   D:/mingw64/include/c++/14.2.0/unordered_map \
   D:/mingw64/include/c++/14.2.0/utility \
+  D:/mingw64/include/c++/14.2.0/valarray \
   D:/mingw64/include/c++/14.2.0/vector \
+  D:/mingw64/include/c++/14.2.0/version \
   D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
   D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
   D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
+  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
   D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++locale.h \
   D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
   D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
@@ -6220,8 +6255,10 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
   D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
   D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
+  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
   D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/opt_random.h \
   D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  D:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/adxintrin.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/ammintrin.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxbf16intrin.h \
@@ -6713,6 +6750,52 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
   E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
   E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/ReshapedMethods.h \
+  E:/Lab/TinyShader/include/nlohmann/adl_serializer.hpp \
+  E:/Lab/TinyShader/include/nlohmann/byte_container_with_subtype.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/abi_macros.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/conversions/from_json.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/conversions/to_chars.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/conversions/to_json.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/exceptions.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/hash.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/input/binary_reader.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/input/input_adapters.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/input/json_sax.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/input/lexer.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/input/parser.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/input/position_t.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/iterators/internal_iterator.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/iterators/iter_impl.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/iterators/iteration_proxy.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/iterators/iterator_traits.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/iterators/json_reverse_iterator.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/iterators/primitive_iterator.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/json_custom_base_class.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/json_pointer.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/json_ref.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/macro_scope.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/macro_unscope.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/meta/call_std/begin.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/meta/call_std/end.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/meta/cpp_future.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/meta/detected.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/meta/identity_tag.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/meta/is_sax.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/meta/std_fs.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/meta/type_traits.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/meta/void_t.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/output/binary_writer.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/output/output_adapters.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/output/serializer.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/string_concat.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/string_escape.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/string_utils.hpp \
+  E:/Lab/TinyShader/include/nlohmann/detail/value_t.hpp \
+  E:/Lab/TinyShader/include/nlohmann/json.hpp \
+  E:/Lab/TinyShader/include/nlohmann/json_fwd.hpp \
+  E:/Lab/TinyShader/include/nlohmann/ordered_map.hpp \
+  E:/Lab/TinyShader/include/nlohmann/thirdparty/hedley/hedley.hpp \
+  E:/Lab/TinyShader/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
   E:/Lab/TinyShader/include/stb_image/stb_image.h \
   E:/Lab/TinyShader/include/stb_image/stb_image_write.h \
   E:/Lab/TinyShader/include/thread/mingw.invoke.h \

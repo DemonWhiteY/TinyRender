@@ -15,6 +15,8 @@
 #include "SDL3/SDL.h"
 #include "stb_image.h"
 #include "stb_image_write.h"
+#include <nlohmann/json.hpp> // 使用 nlohmann/json 库
+#include <fstream>
 using namespace Eigen;
 
 enum class Buffers
@@ -107,6 +109,8 @@ public:
         lights.clear();
         clear();
     }
+
+    void write_scene_to_json(const std::string &path);
 };
 
 #endif

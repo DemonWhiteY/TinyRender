@@ -276,3 +276,67 @@ void Rasterizer::add_model(Model model)
 {
     this->models.push_back(model);
 }
+
+void Rasterizer::write_scene_to_json(const std::string &path)
+{
+    nlohmann::json root;
+
+    // 写入模型信息
+    nlohmann::json objects_json = nlohmann::json::array();
+    for (const auto &model : this->models)
+    {
+        nlohmann::json model_json;
+        model_json["name"] = model.name;
+        model_json["objfile"] = model.filename;
+
+        // 写入纹理或颜色信息
+        if (model.texture)
+        {
+            model_json["texture"] = model.texture->get_file();
+        }
+        else
+        {
+            model_json["color"] = {model.color[0], model.color[1], model.color[2]};
+        }
+
+        // 写入变换属性
+        model_json["scale"] = {model.scale[0], model.scale[1], model.scale[2]};
+        model_json["rotation"] = {model.rotation[0], model.rotation[1], model.rotation[2]};
+        model_json["translate"] = {model.translate[0], model.translate[1], model.translate[2]};
+
+        objects_json.push_back(model_json);
+    }
+    root["objects"] = objects_json;
+
+    // 写入灯光信息
+    nlohmann::json lights_json = nlohmann::json::array();
+    for (const auto &l : lights)
+    {
+        nlohmann::json light_json;
+        light_json["name"] = l.name;
+        light_json["position"] = {l.position[0], l.position[1], l.position[2]};
+        light_json["intensity"] = {l.intensity[0], l.intensity[1], l.intensity[2]};
+        lights_json.push_back(light_json);
+    }
+    root["lights"] = lights_json;
+
+    // 写入相机信息
+    nlohmann::json camera_json;
+    camera_json["position"] = {camera.get_position()[0], camera.get_position()[1], camera.get_position()[2]};
+    camera_json["target"] = {camera.get_target()[0], camera.get_target()[1], camera.get_target()[2]};
+    camera_json["up"] = {camera.get_up()[0], camera.get_up()[1], camera.get_up()[2]};
+    camera_json["fov"] = camera.get_eye_fov();
+    camera_json["aspect"] = camera.get_aspect_ratio();
+    camera_json["near"] = camera.get_zNear();
+    camera_json["far"] = camera.get_zFar();
+    root["camera"] = camera_json;
+
+    // 写入JSON文件
+    std::ofstream out(path);
+    if (!out.is_open())
+    {
+        printf("[error] Can't open the output file!\n");
+        return;
+    }
+    out << std::setw(4) << root << std::endl; // 使用std::setw(4)来格式化输出，使其更易读
+}

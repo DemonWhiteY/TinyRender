@@ -20,53 +20,6 @@ SDL_Texture *loadTextureFromImage(SDL_Renderer *renderer, const char *imagePath)
     return texture;
 }
 
-char *getFilePath()
-{
-    char *filePath = new char[1024];
-
-    // 初始化 COM 库
-    HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
-    if (SUCCEEDED(hr))
-    {
-        // 创建 IFileDialog 对象
-        IFileDialog *pFileDialog = NULL;
-        hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL, IID_IFileDialog, (void **)&pFileDialog);
-        if (SUCCEEDED(hr))
-        {
-            // 设置文件对话框的属性
-            COMDLG_FILTERSPEC cFileTypes[] =
-                {
-                    {L"All Files", L"*.*"}};
-            pFileDialog->SetFileTypes(ARRAYSIZE(cFileTypes), cFileTypes);
-
-            // 显示文件对话框
-            hr = pFileDialog->Show(NULL);
-            if (SUCCEEDED(hr))
-            {
-                // 获取用户选择的文件路径
-                IShellItem *pItem = NULL;
-                hr = pFileDialog->GetResult(&pItem);
-                if (SUCCEEDED(hr))
-                {
-                    PWSTR pszFilePath = NULL;
-                    hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
-                    if (SUCCEEDED(hr))
-                    {
-                        // 将宽字符路径转换为多字节路径
-                        WideCharToMultiByte(CP_UTF8, 0, pszFilePath, -1, filePath, sizeof(filePath), NULL, NULL);
-                        CoTaskMemFree(pszFilePath);
-                    }
-                    pItem->Release();
-                }
-            }
-            pFileDialog->Release();
-        }
-        CoUninitialize();
-    }
-
-    return filePath;
-}
-
 Eigen::Vector3f rotateY(const Eigen::Vector3f &v, float angle)
 {
     Eigen::Matrix3f rotationMatrix;
@@ -452,7 +405,15 @@ void gui::TextureInfo()
         {
             if (filePath[0] != '\0')
             {
-                texture->reLoad(filePath);
+                if (texture == nullptr)
+                {
+                    texture = new Texture(filePath);
+                }
+                else
+                {
+                    texture->reLoad(filePath);
+                }
+
                 updateSurface();
             }
         }
@@ -646,12 +607,17 @@ void gui::showMainMeauBar()
 
             if (ImGui::MenuItem("Save"))
             {
+                ras->write_scene_to_json("../cornel2.JSON");
             }
             if (ImGui::MenuItem("Save as"))
             {
             }
             if (ImGui::MenuItem("Create"))
             {
+                ras->clear_all();
+
+                strcpy(newPath, "");
+                updateSurface();
             }
 
             ImGui::EndMenu();
@@ -678,9 +644,67 @@ void gui::showMainMeauBar()
         }
         if (ImGui::BeginMenu("Add"))
         {
+            static char objPath[1024] = "";
+            if (ImGui::MenuItem("Model"))
+            {
+                // 初始化 COM 库
+                HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+                if (SUCCEEDED(hr))
+                {
+                    // 创建 IFileDialog 对象
+                    IFileDialog *pFileDialog = NULL;
+                    hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL, IID_IFileDialog, (void **)&pFileDialog);
+                    if (SUCCEEDED(hr))
+                    {
+                        // 设置文件对话框的属性
+                        COMDLG_FILTERSPEC cFileTypes[] =
+                            {
+
+                                {L"All Files", L"*.*"}};
+                        pFileDialog->SetFileTypes(ARRAYSIZE(cFileTypes), cFileTypes);
+
+                        // 显示文件对话框
+                        hr = pFileDialog->Show(NULL);
+                        if (SUCCEEDED(hr))
+                        {
+                            // 获取用户选择的文件路径
+                            IShellItem *pItem = NULL;
+                            hr = pFileDialog->GetResult(&pItem);
+                            if (SUCCEEDED(hr))
+                            {
+                                PWSTR pszFilePath = NULL;
+                                hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
+                                if (SUCCEEDED(hr))
+                                {
+                                    // 将宽字符路径转换为多字节路径
+                                    WideCharToMultiByte(CP_UTF8, 0, pszFilePath, -1, objPath, sizeof(objPath), NULL, NULL);
+                                    CoTaskMemFree(pszFilePath);
+                                }
+                                pItem->Release();
+                            }
+                        }
+                        pFileDialog->Release();
+                    }
+                    CoUninitialize();
+                }
+            }
+            std::string str(objPath);
+            if (!str.empty())
+            {
+                auto newModel = new Model(objPath, "temp");
+                newModel->set_Transform(Vector3f(1, 1, 1), Vector3f(0, 0, 0), Vector3f(0, 0, 0));
+                newModel->color = Vector3f(100, 100, 240);
+                newModel->filename = str;
+                newModel->set_color();
+                ras->add_model(*newModel);
+                strcpy(objPath, "");
+                updateSurface();
+            }
+            ImGui::EndMenu();
         }
         if (ImGui::BeginMenu("Shader"))
         {
+            ImGui::EndMenu();
         }
         ImGui::EndMainMenuBar();
     }
