@@ -11,7 +11,7 @@
 class Model
 {
 private:
-        std::vector<Triangle *> triangles; // 使用 unique_ptr 管理内存
+    std::vector<Triangle *> triangles; // 使用 unique_ptr 管理内存
 
 public:
     std::string name;
@@ -21,11 +21,18 @@ public:
     Vector3f color;
     Texture *texture = nullptr;
     std::string filename = "";
+    Vector3f min_bounds;
+    Vector3f max_bounds;
+    std::vector<Vector3f> vertices;
+    bool shadow_face = false;
 
     Model(/* args */);
     Model(const std::string &filename, const std::string &name);
     ~Model();
-    void load_triangles(std::vector<Vector3f>, std::vector<Vector3f>, std::vector<Vector3i>, std::vector<Vector2f>);
+    void load_triangles(std::vector<Vector3f> &, std::vector<Vector3f>, std::vector<Vector3i>, std::vector<Vector2f>);
+    void get_position_bounds();
+    void get_vertices();
+    void Init();
     std::vector<Triangle *> get_triangles() { return triangles; }
     void set_Texture(Texture *t) { texture = t; };
     Texture *get_Texture() { return texture; }

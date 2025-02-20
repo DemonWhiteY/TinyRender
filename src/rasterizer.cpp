@@ -13,6 +13,8 @@ Rasterizer::Rasterizer(int w, int h) : width(w), height(h)
     frame_buf.assign(frame_buf.size(), {255, 255, 255});
     depth_buf.assign(depth_buf.size(), 1000);
     model_buf.assign(model_buf.size(), -1);
+    shadow_depth_buf.resize(w * h);
+    shadow_depth_buf.assign(shadow_depth_buf.size(), 1000);
 }
 
 Rasterizer::Rasterizer()
@@ -88,9 +90,51 @@ void Rasterizer::output()
 
     stbi_write_bmp("../output/output.bmp", width, height, 3, data.data());
 }
-
+bool Rasterizer::is_within_bounds(int x, int y, int z)
+{
+    // 假设 framebuffer 的尺寸为 width x height x depth
+    return x >= 0 && x < width && y >= 0 && y < height;
+}
+void Rasterizer::draw_line(Vector3f v1, Vector3f v2, Vector3f color)
+{
+    int x0 = static_cast<int>(v1.x());
+    int y0 = static_cast<int>(v1.y());
+    int x1 = static_cast<int>(v2.x());
+    int y1 = static_cast<int>(v2.y());
+    int z0 = static_cast<int>(v1.z());
+    int z1 = static_cast<int>(v2.z());
+    int border_x0 = std::min(x0, x1);
+    int border_x1 = std::max(x0, x1);
+    int dx = abs(x1 - x0);
+    int dy = abs(y1 - y0);
+    int sx = (x0 < x1) ? 1 : -1;
+    int sy = (y0 < y1) ? 1 : -1;
+    int err = dx - dy;
+    int dz = abs(v1.z() - v2.z());
+    int x = x0;
+    int y = y0;
+    int z = z0;
+    for (int i = 0; i <= dx + dy; ++i)
+    {
+        if (x > 0 && x < width && y > 0 && y < height && x >= border_x0 && x <= border_x1)
+            set_pixel({x, y, z}, color, 0); // z坐标设置为0，可以根据需要调整
+        int e2 = 2 * err;
+        if (e2 > -dy)
+        {
+            err -= dy;
+            x += sx;
+            z += dz / dx * sx;
+        }
+        if (e2 < dx)
+        {
+            err += dx;
+            y += sy;
+            z += dz / dy * sy;
+        }
+    }
+}
 // 绘制三角形函数，负责将给定的三角形光栅化到图像上
-void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos, Texture *texture, int modelnum)
+void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos, std::vector<Vector3f> ori_pos, Texture *texture, int modelnum, bool shadow)
 {
     // 获取三角形的顶点信息和其他相关数据
     Triangle.getinfo();
@@ -118,17 +162,41 @@ void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos
                 float z_interpolated = alpha * v[0].z() / v[0].w() + beta * v[1].z() / v[1].w() + gamma * v[2].z() / v[2].w();
                 z_interpolated *= w_reciprocal;
 
+                // int index = get_index(x, y, width, height);
+                // if (z_interpolated < shadow_depth_buf[index])
+                // {
+                //     shadow_depth_buf[index] = z_interpolated;
+                // }
+
                 // 插值计算颜色、法线、纹理坐标和视点位置
                 auto interpolated_color = interpolate(alpha, beta, gamma, Triangle.color[0], Triangle.color[1], Triangle.color[2], 1);
                 auto interpolated_normal = interpolate(alpha, beta, gamma, Triangle.normal[0], Triangle.normal[1], Triangle.normal[2], 1);
                 auto interpolated_texcoords = interpolate(alpha, beta, gamma, Triangle.tex_coords[0], Triangle.tex_coords[1], Triangle.tex_coords[2], 1);
                 auto interpolated_viewpos = interpolate(alpha, beta, gamma, view_pos[0], view_pos[1], view_pos[2], 1);
-
+                auto interpolated_ori_pos = interpolate(alpha, beta, gamma, ori_pos[0], ori_pos[1], ori_pos[2], 1);
                 // 准备片段着色器的输入数据
                 fragment_shader_payload payload(interpolated_color / 255.0f, interpolated_normal.normalized(), interpolated_texcoords, texture, lights);
                 payload.view_pos = interpolated_viewpos;
+                payload.ori_pos = interpolated_ori_pos;
+                payload.shadow_depth_buf = &shadow_depth_buf;
                 // 调用片段着色器计算最终像素颜色
                 auto pixel_color = fragment_shader(payload);
+                if (shadow)
+                {
+                    auto light_view_martix = lights[0].light_camera->get_view_matrix();
+                    auto light_projection_martix = lights[0].light_camera->get_projection_matrix();
+                    Eigen::Matrix4f transform = light_projection_martix * light_view_martix;
+                    auto result_pos = Transform(interpolated_ori_pos, transform, 1);
+                    result_pos = World2Screen(result_pos);
+                    if (result_pos[0] < width && result_pos[0] >= 0 && result_pos[1] < height && result_pos[1] >= 0)
+                    {
+                        auto z = shadow_depth_buf[get_index(result_pos[0], result_pos[1], width, height)];
+                        if (result_pos[2] - z > 0.1)
+                        {
+                            pixel_color = Vector3f(20, 20, 20);
+                        }
+                    }
+                }
 
                 // 设置像素的深度值和颜色
                 set_pixel({x, y, z_interpolated}, pixel_color, modelnum);
@@ -177,15 +245,51 @@ void Rasterizer::Handle()
         Matrix4f transform = projection * view * model;
         Eigen::Matrix4f inv_trans = (view * model).inverse().transpose();
         int size = models[i].get_triangles().size();
+        for (auto &light : lights)
+        {
+            light.final_position = Transform(light.position, view, 0);
+        }
+        render_to_shadow_map();
+        if (model_select == i)
+        {
+            std::vector<Vector3f> new_vertices;
+            new_vertices.resize(8);
+            for (int j = 0; j < 8; j++)
+            {
+                new_vertices[j] = World2Screen(Transform(models[i].vertices[j], transform, 1.0f));
+            }
+            Eigen::Vector3f line_color(255, 0, 0); // 黑色
 
-// 使用 OpenMP 并行化外层的 for 循环
-#pragma omp parallel for
+            // 绘制底部边
+            draw_line(new_vertices[0], new_vertices[1], line_color);
+            draw_line(new_vertices[1], new_vertices[7], line_color);
+            draw_line(new_vertices[2], new_vertices[0], line_color);
+            draw_line(new_vertices[7], new_vertices[2], line_color);
+
+            // // 绘制顶部边
+            draw_line(new_vertices[4], new_vertices[5], line_color);
+            draw_line(new_vertices[5], new_vertices[3], line_color);
+            draw_line(new_vertices[4], new_vertices[6], line_color);
+
+            draw_line(new_vertices[6], new_vertices[3], line_color);
+
+            // // 绘制连接边
+            draw_line(new_vertices[0], new_vertices[3], line_color);
+            draw_line(new_vertices[1], new_vertices[6], line_color);
+            draw_line(new_vertices[2], new_vertices[5], line_color);
+            draw_line(new_vertices[4], new_vertices[7], line_color);
+        }
+
         for (int t = 0; t < size; t++)
         {
             Triangle *ori_t = models[i].get_triangles()[t];
             Triangle new_t;
             std::vector<Eigen::Vector3f> viewspace_pos;
-
+            std::vector<Eigen::Vector3f> ori_pos;
+            for (int n = 0; n < 3; n++)
+            {
+                ori_pos.push_back(get_ori_pos(ori_t->v[n]));
+            }
             // 计算顶点位置并放入 viewspace_pos
             for (int n = 0; n < 3; n++)
             {
@@ -215,9 +319,23 @@ void Rasterizer::Handle()
             }
 
             // 绘制三角形
-            draw_triangle(new_t, viewspace_pos, models[i].get_Texture(), i);
+            if (models[i].shadow_face)
+            {
+                draw_triangle(new_t, viewspace_pos, ori_pos, models[i].get_Texture(), i, true);
+            }
+            else
+                draw_triangle(new_t, viewspace_pos, ori_pos, models[i].get_Texture(), i, false);
         }
     }
+
+    output_shadow_map("../output/shadow_map.bmp", lights[0]);
+}
+Vector3f Rasterizer::get_ori_pos(Vector3f v)
+{
+    Vector4f newpos = {v.x(), v.y(), v.z(), 1.0};
+    Vector4f result;
+    result = model * newpos;
+    return {result.x(), result.y(), result.z()};
 }
 
 Vector3f Rasterizer::get_view_pos(Vector3f v)
@@ -257,7 +375,7 @@ void Rasterizer::clear()
 {
 
     std::fill(frame_buf.begin(), frame_buf.end(), Eigen::Vector3f{255, 255, 255});
-
+    std::fill(shadow_depth_buf.begin(), shadow_depth_buf.end(), 1000);
     std::fill(depth_buf.begin(), depth_buf.end(), std::numeric_limits<float>::infinity());
     std::fill(model_buf.begin(), model_buf.end(), -1);
 }
@@ -277,7 +395,7 @@ void Rasterizer::add_model(Model model)
     this->models.push_back(model);
 }
 
-void Rasterizer::write_scene_to_json(const std::string &path)
+void Rasterizer::write_scene_to_json(std::string &path)
 {
     nlohmann::json root;
 
@@ -339,4 +457,126 @@ void Rasterizer::write_scene_to_json(const std::string &path)
         return;
     }
     out << std::setw(4) << root << std::endl; // 使用std::setw(4)来格式化输出，使其更易读
+}
+
+void Rasterizer::render_to_shadow_map()
+{
+
+    for (auto &light : lights)
+    {
+
+        auto light_projection_matrix = light.light_camera->get_projection_matrix();
+        auto light_view_matrix = light.light_camera->get_view_matrix();
+        // 清除阴影贴图的深度缓冲区
+        std::fill(shadow_depth_buf.begin(), shadow_depth_buf.end(), 1000);
+
+        // 遍历所有模型并渲染到阴影贴图
+        for (int i = 0; i < models.size(); i++)
+        {
+            auto light_model_matrix = models[i].get_model_matrix();
+
+            Matrix4f transform = light_projection_matrix * light_view_matrix * light_model_matrix;
+            int size = models[i].get_triangles().size();
+
+            for (int t = 0; t < size; t++)
+            {
+                Triangle *ori_t = models[i].get_triangles()[t];
+                Triangle new_t;
+
+                // 变换顶点并设置新三角形的顶点
+                for (int n = 0; n < 3; n++)
+                {
+
+                    Vector3f new_vertex = Transform(ori_t->v[n], transform, 1.0f);
+                    new_vertex = World2Screen(new_vertex);
+                    new_t.setVertex(n, new_vertex);
+                }
+
+                draw_triangle_to_shadow_map(new_t, light);
+            }
+        }
+    }
+}
+
+void Rasterizer::draw_triangle_to_shadow_map(Triangle Triangle, light &l)
+{
+    // 获取三角形的顶点信息
+    // 获取三角形的顶点信息和其他相关数据
+    Triangle.getinfo();
+
+    // 将三角形的顶点转换为齐次坐标表示
+    auto v = Triangle.toVector4();
+
+    // 遍历三角形的包围盒内的每一个像素
+    for (int x = std::max(Triangle.boxmin.x(), 0.0f); x < Triangle.boxmax.x() && x < width; x++)
+    {
+        for (int y = std::max(Triangle.boxmin.y(), 0.0f); y < Triangle.boxmax.y() && y < height; y++)
+        {
+            // 检查当前像素是否在三角形内部
+            if (isPointInTriangle({Triangle.v[0][0], Triangle.v[0][1]}, {Triangle.v[1][0], Triangle.v[1][1]}, {Triangle.v[2][0], Triangle.v[2][1]}, {x + 0.5, y + 0.5}))
+            {
+                // 计算当前像素的重心坐标
+                std::tuple<float, float, float> barycentric_coords = computeBarycentric2D(x, y, Triangle.v);
+                float alpha = std::get<0>(barycentric_coords);
+                float beta = std::get<1>(barycentric_coords);
+                float gamma = std::get<2>(barycentric_coords);
+
+                // 计算深度值的 reciprocate
+                float w_reciprocal = 1.0 / (alpha / v[0].w() + beta / v[1].w() + gamma / v[2].w());
+                // 使用重心坐标插值计算深度值
+                float z_interpolated = alpha * v[0].z() / v[0].w() + beta * v[1].z() / v[1].w() + gamma * v[2].z() / v[2].w();
+                z_interpolated *= w_reciprocal;
+
+                int index = get_index(x, y, width, height);
+                if (z_interpolated < shadow_depth_buf[index])
+                {
+                    shadow_depth_buf[index] = z_interpolated;
+                }
+            }
+        }
+    }
+}
+
+int Rasterizer::get_index(int x, int y, int w, int h)
+{
+    return (h - 1 - y) * w + x;
+}
+
+void Rasterizer::output_shadow_map(const std::string &filename, light &light)
+{
+
+    std::vector<unsigned char> data(width * height);
+
+    // 找到深度缓冲区中的最大和最小深度值
+    float min_depth = *std::min_element(shadow_depth_buf.begin(), shadow_depth_buf.end());
+    float max_depth = *std::max_element(shadow_depth_buf.begin(), shadow_depth_buf.end());
+    float m_depth = min_depth;
+    for (int i = 0; i < width * height; i++)
+    {
+        if (shadow_depth_buf[i] != max_depth && shadow_depth_buf[i] > m_depth)
+        {
+            m_depth = shadow_depth_buf[i];
+        }
+    }
+    for (int i = 0; i < width * height; i++)
+    {
+        if (shadow_depth_buf[i] == max_depth)
+            shadow_depth_buf[i] == m_depth;
+    }
+    //  将深度值映射到 [0, 255] 范围内的灰度值
+    for (int y = 0; y < height; ++y)
+    {
+        for (int x = 0; x < width; ++x)
+        {
+            int index = get_index(x, y, width, height);
+            float depth = shadow_depth_buf[index];
+
+            unsigned char gray = static_cast<unsigned char>((depth - min_depth) / (m_depth - min_depth) * 255.0f);
+
+            data[y * width + x] = gray;
+        }
+    }
+
+    // 保存灰度图像
+    stbi_write_bmp(filename.c_str(), width, height, 1, data.data());
 }

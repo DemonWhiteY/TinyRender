@@ -10,8 +10,34 @@ Model::Model(const std::string &filename, const std::string &name)
     std::vector<Vector2f> texCroods;
     objects_loader loader;
     loader.load_obj(filename, position, index, normal, texCroods);
-    std::cout << "load_model" << std::endl;
     this->load_triangles(position, normal, index, texCroods);
+    this->filename = filename;
+    if (position.empty())
+    {
+        // 如果 position 为空，初始化 min_bounds 和 max_bounds 为零向量
+        min_bounds = Vector3f(0, 0, 0);
+        max_bounds = Vector3f(0, 0, 0);
+    }
+    else
+    {
+        min_bounds = Vector3f(0, 0, 0);
+        max_bounds = Vector3f(0, 0, 0);
+
+        // // 遍历 position 向量，更新 min_bounds 和 max_bounds
+        for (const auto &pos : position)
+        {
+            min_bounds[0] = std::min(min_bounds.x(), pos.x());
+            min_bounds[1] = std::min(min_bounds.y(), pos.y());
+            min_bounds[2] = std::min(min_bounds.z(), pos.z());
+
+            max_bounds[0] = std::max(max_bounds.x(), pos.x());
+            max_bounds[1] = std::max(max_bounds.y(), pos.y());
+            max_bounds[2] = std::max(max_bounds.z(), pos.z());
+        }
+        get_vertices();
+    }
+
+    // // 初始化 min_bounds 和 max_bounds 为第一个顶点的位置
 }
 
 Model::Model(/* args */)
@@ -20,6 +46,46 @@ Model::Model(/* args */)
 
 Model::~Model()
 {
+}
+
+void Model::get_vertices()
+{
+    vertices.resize(8);
+    vertices[0] = min_bounds;
+    vertices[1] = Vector3f(max_bounds.x(), min_bounds.y(), min_bounds.z());
+    vertices[2] = Vector3f(min_bounds.x(), max_bounds.y(), min_bounds.z());
+    vertices[3] = Vector3f(min_bounds.x(), min_bounds.y(), max_bounds.z());
+    vertices[4] = max_bounds;
+    vertices[5] = Vector3f(min_bounds.x(), max_bounds.y(), max_bounds.z());
+    vertices[6] = Vector3f(max_bounds.x(), min_bounds.y(), max_bounds.z());
+    vertices[7] = Vector3f(max_bounds.x(), max_bounds.y(), min_bounds.z());
+}
+
+void Model::get_position_bounds()
+{
+    // if (position.empty())
+    // {
+    //     // 如果 position 为空，初始化 min_bounds 和 max_bounds 为零向量
+    //     min_bounds = Vector3f(0, 0, 0);
+    //     max_bounds = Vector3f(0, 0, 0);
+    //     return;
+    // }
+
+    // // 初始化 min_bounds 和 max_bounds 为第一个顶点的位置
+    // min_bounds = position[0];
+    // max_bounds = position[0];
+
+    // // 遍历 position 向量，更新 min_bounds 和 max_bounds
+    // for (const auto &pos : position)
+    // {
+    //     min_bounds[0] = std::min(min_bounds.x(), pos.x());
+    //     min_bounds[1] = std::min(min_bounds.y(), pos.y());
+    //     min_bounds[2] = std::min(min_bounds.z(), pos.z());
+
+    //     max_bounds[0] = std::max(max_bounds.x(), pos.x());
+    //     max_bounds[1] = std::max(max_bounds.y(), pos.y());
+    //     max_bounds[2] = std::max(max_bounds.z(), pos.z());
+    // }
 }
 
 /**
@@ -32,7 +98,7 @@ Model::~Model()
  * @param index 顶点索引数组，每个三角形一个Vector3i，定义了三角形的顶点顺序
  * @param texCrood 纹理坐标数组，每个顶点一个Vector2f，用于映射纹理到三角形
  */
-void Model::load_triangles(std::vector<Vector3f> position, std::vector<Vector3f> normal, std::vector<Vector3i> index, std::vector<Vector2f> texCrood)
+void Model::load_triangles(std::vector<Vector3f> &position, std::vector<Vector3f> normal, std::vector<Vector3i> index, std::vector<Vector2f> texCrood)
 {
     // 遍历索引数组，每个索引代表一个三角形的一个顶点
     for (int i = 0; i < index.size(); i++)
@@ -60,6 +126,13 @@ void Model::load_triangles(std::vector<Vector3f> position, std::vector<Vector3f>
     }
 }
 
+void Model::Init()
+{
+    this->set_Transform(Vector3f(1, 1, 1), Vector3f(0, 0, 0), Vector3f(0, 0, 0));
+    this->color = Vector3f(100, 100, 240);
+    this->filename = filename;
+    this->set_color();
+}
 Eigen::Matrix4f Model::get_model_matrix()
 {
     // 创建单位矩阵

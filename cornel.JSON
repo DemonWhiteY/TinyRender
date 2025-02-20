@@ -1,160 +1,160 @@
 {
-    "objects": [
-        {
-            "name": "backend",
-            "objfile": "../objects/floor.obj",
-            "color": [
-                100,
-                100,
-                100
-            ],
-            "scale": [
-                1,
-                1,
-                1
-            ],
-            "rotation": [
-                0,
-                0,
-                0
-            ],
-            "translate": [
-                0,
-                0,
-                0
-            ]
-        },
-        {
-            "name": "right",
-            "objfile": "../objects/floor.obj",
-            "color": [
-                255,
-                0,
-                0
-            ],
-            "scale": [
-                1,
-                1,
-                1
-            ],
-            "rotation": [
-                0,
-                90,
-                0
-            ],
-            "translate": [
-                2,
-                0,
-                -2
-            ]
-        },
-        {
-            "name": "left",
-            "objfile": "../objects/floor.obj",
-            "color": [
-                0,
-                255,
-                0
-            ],
-            "scale": [
-                1,
-                1,
-                1
-            ],
-            "rotation": [
-                0,
-                270,
-                0
-            ],
-            "translate": [
-                -2,
-                0,
-                -2
-            ]
-        },
-        {
-            "name": "floor",
-            "objfile": "../objects/floor.obj",
-            "color": [
-                100,
-                100,
-                100
-            ],
-            "scale": [
-                1,
-                1,
-                1
-            ],
-            "rotation": [
-                90,
-                0,
-                0
-            ],
-            "translate": [
-                0,
-                -2,
-                -2
-            ]
-        },
-        {
-            "name": "top",
-            "objfile": "../objects/floor.obj",
-            "color": [
-                100,
-                100,
-                100
-            ],
-            "scale": [
-                1,
-                1,
-                1
-            ],
-            "rotation": [
-                270,
-                0,
-                0
-            ],
-            "translate": [
-                0,
-                2,
-                -2
-            ]
-        }
-    ],
+    "camera": {
+        "aspect": 1.0,
+        "far": 100.0,
+        "fov": 60.0,
+        "near": 0.10000000149011612,
+        "position": [
+            0.0,
+            0.0,
+            -4.900000095367432
+        ],
+        "target": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "up": [
+            0.0,
+            1.0,
+            0.0
+        ]
+    },
     "lights": [
         {
-            "name": "top",
             "intensity": [
                 1.0,
                 1.0,
                 1.0
             ],
+            "name": "top",
             "position": [
-                0,
-                0,
-                -3
+                -1.4901161193847656e-08,
+                0.9900000095367432,
+                2.9999992847442627
             ]
         }
     ],
-    "camera": {
-        "position": [
-            0,
-            0,
-            -4.9
-        ],
-        "target": [
-            0,
-            0,
-            0
-        ],
-        "up": [
-            0,
-            1,
-            0
-        ],
-        "fov": 60,
-        "aspect": 1,
-        "near": 0.1,
-        "far": 100
-    }
+    "objects": [
+        {
+            "color": [
+                100.0,
+                100.0,
+                100.0
+            ],
+            "name": "backend",
+            "objfile": "../objects/floor.obj",
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "color": [
+                255.0,
+                0.0,
+                0.0
+            ],
+            "name": "right",
+            "objfile": "../objects/floor.obj",
+            "rotation": [
+                0.0,
+                90.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                2.0,
+                0.0,
+                -2.0
+            ]
+        },
+        {
+            "color": [
+                0.0,
+                255.0,
+                0.0
+            ],
+            "name": "left",
+            "objfile": "../objects/floor.obj",
+            "rotation": [
+                0.0,
+                270.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                -2.0,
+                0.0,
+                -2.0
+            ]
+        },
+        {
+            "color": [
+                100.0,
+                100.0,
+                100.0
+            ],
+            "name": "floor",
+            "objfile": "../objects/floor.obj",
+            "rotation": [
+                90.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                0.0,
+                -2.0,
+                -2.0
+            ]
+        },
+        {
+            "color": [
+                100.0,
+                100.0,
+                100.0
+            ],
+            "name": "top",
+            "objfile": "../objects/floor.obj",
+            "rotation": [
+                270.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translate": [
+                0.0,
+                2.0,
+                -2.0
+            ]
+        }
+    ]
 }

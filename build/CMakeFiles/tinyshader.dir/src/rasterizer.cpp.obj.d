@@ -488,8 +488,9 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/bits/list.tcc \
  E:/Lab/TinyShader/src/Texture.h \
  E:/Lab/TinyShader/include/stb_image/stb_image.h \
- E:/Lab/TinyShader/src/Sence/Light.h E:\Lab\TinyShader\src\Sence/Model.h \
- E:/Lab/TinyShader/src/Triangle.hpp E:/Lab/TinyShader/src/Texture.h \
+ E:/Lab/TinyShader/src/Sence/Light.h E:/Lab/TinyShader/src/Sence/Camera.h \
+ E:\Lab\TinyShader\src\Sence/Model.h E:/Lab/TinyShader/src/Triangle.hpp \
+ E:/Lab/TinyShader/src/Texture.h \
  E:/Lab/TinyShader/src/Utils/objects_loader.h \
  E:/Lab/TinyShader/include/tiny_obj_loader/tiny_obj_loader.h \
  D:/mingw64/include/c++/14.2.0/memory \
@@ -501,7 +502,6 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
  D:/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
  D:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
- E:\Lab\TinyShader\src\Sence/Camera.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_stdinc.h \
  E:/Lab/TinyShader/include/SDL/include/SDL3/SDL_platform_defines.h \

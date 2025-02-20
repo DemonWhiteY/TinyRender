@@ -2855,6 +2855,7 @@ CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj: E:/Lab/TinyShader/src/Shade
   E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
   E:/Lab/TinyShader/include/eigen/Eigen/src/plugins/ReshapedMethods.h \
   E:/Lab/TinyShader/include/stb_image/stb_image.h \
+  E:/Lab/TinyShader/src/Sence/Camera.h \
   E:/Lab/TinyShader/src/Sence/Light.h \
   E:/Lab/TinyShader/src/Texture.h \
   E:/Lab/TinyShader/src/Shader/Shader.h
@@ -6801,11 +6802,11 @@ CMakeFiles/tinyshader.dir/src/rasterizer.cpp.obj: E:/Lab/TinyShader/src/rasteriz
   E:/Lab/TinyShader/include/thread/mingw.invoke.h \
   E:/Lab/TinyShader/include/thread/mingw.thread.h \
   E:/Lab/TinyShader/include/tiny_obj_loader/tiny_obj_loader.h \
+  E:/Lab/TinyShader/src/Sence/Camera.h \
   E:/Lab/TinyShader/src/Sence/Light.h \
   E:/Lab/TinyShader/src/Texture.h \
   E:/Lab/TinyShader/src/Triangle.hpp \
   E:/Lab/TinyShader/src/Utils/objects_loader.h \
-  E:/Lab/TinyShader/src/Sence/Camera.h \
   E:/Lab/TinyShader/src/Sence/Model.h \
   E:/Lab/TinyShader/src/Shader/Shader.h \
   E:/Lab/TinyShader/src/Triangle.hpp \

@@ -50,7 +50,9 @@ public:
     }
 
     void imageController();
+    float myFloat = 0.5f;
     type Type = type::READ;
+    float color[3] = {0.0f, 0.0f, 0.0f};
     int model_id = -1;
     int object_type = -1;
     int model_num = -1;
@@ -63,10 +65,12 @@ public:
     ImVec2 windowPos;
     ImVec2 imagePos;
     ImVec2 scaledImageSize;
+    SDL_Texture *TextureImg;
     void showMainMeauBar();
     void showRender();
     void showSencePanel();
     void showObjectPanel();
+    void Camerainfo();
     void modelInfo();
     void lightInfo();
     void TextureInfo();

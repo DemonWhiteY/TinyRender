@@ -820,8 +820,9 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  E:/Lab/TinyShader/src/Triangle.hpp D:/mingw64/include/c++/14.2.0/vector \
  E:/Lab/TinyShader/include/eigen/Eigen/Dense \
  E:/Lab/TinyShader/src/Shader/Shader.h E:/Lab/TinyShader/src/Texture.h \
- E:/Lab/TinyShader/src/Sence/Light.h E:/Lab/TinyShader/src/Sence/Model.h \
- E:/Lab/TinyShader/src/Triangle.hpp E:/Lab/TinyShader/src/Texture.h \
+ E:/Lab/TinyShader/src/Sence/Light.h E:/Lab/TinyShader/src/Sence/Camera.h \
+ E:/Lab/TinyShader/src/Sence/Model.h E:/Lab/TinyShader/src/Triangle.hpp \
+ E:/Lab/TinyShader/src/Texture.h \
  E:/Lab/TinyShader/src/Utils/objects_loader.h \
  E:/Lab/TinyShader/include/tiny_obj_loader/tiny_obj_loader.h \
  D:/mingw64/include/c++/14.2.0/memory \
@@ -833,7 +834,6 @@ CMakeFiles/tinyshader.dir/src/Utils/ui.cpp.obj: \
  D:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
  D:/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
  D:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
- E:/Lab/TinyShader/src/Sence/Camera.h \
  E:/Lab/TinyShader/include/stb_image/stb_image_write.h \
  E:/Lab/TinyShader/include/nlohmann/json.hpp \
  D:/mingw64/include/c++/14.2.0/iterator \

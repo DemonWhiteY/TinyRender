@@ -42,6 +42,7 @@ gui::gui(int width, int height)
 
 void gui::updateSurface()
 {
+    ras->model_select = model_num;
     ras->clear();
     ras->Handle();
     ras->output();
@@ -268,6 +269,9 @@ void gui::showObjectPanel()
     case 1:
         lightInfo();
         break;
+    case 2:
+        Camerainfo();
+        break;
     default:
 
         break;
@@ -276,6 +280,82 @@ void gui::showObjectPanel()
     ImGui::End();
 }
 
+void gui::Camerainfo()
+{
+    if (ImGui::CollapsingHeader("Camera", ImGuiTreeNodeFlags_DefaultOpen))
+    {
+        auto &camera = ras->get_camera();
+
+        ImGui::Text("Position:");
+        bool posChanged = false;
+        Eigen::Vector3f position = camera.get_position();
+        if (ImGui::BeginTable("PositionTable", 3, ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_Resizable))
+        {
+            ImGui::TableNextColumn();
+            bool posXChanged = ImGui::InputFloat("X", &position[0], 0.1f, 1.0f, "%.2f");
+            ImGui::TableNextColumn();
+            bool posYChanged = ImGui::InputFloat("Y", &position[1], 0.1f, 1.0f, "%.2f");
+            ImGui::TableNextColumn();
+            bool posZChanged = ImGui::InputFloat("Z", &position[2], 0.1f, 1.0f, "%.2f");
+            ImGui::EndTable();
+            posChanged = posXChanged || posYChanged || posZChanged;
+        }
+
+        ImGui::Text("Up:");
+        bool upChanged = false;
+        Eigen::Vector3f up = camera.get_up();
+        if (ImGui::BeginTable("UpTable", 3, ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_Resizable))
+        {
+            ImGui::TableNextColumn();
+            bool upXChanged = ImGui::InputFloat("X", &up[0], 0.1f, 1.0f, "%.2f");
+            ImGui::TableNextColumn();
+            bool upYChanged = ImGui::InputFloat("Y", &up[1], 0.1f, 1.0f, "%.2f");
+            ImGui::TableNextColumn();
+            bool upZChanged = ImGui::InputFloat("Z", &up[2], 0.1f, 1.0f, "%.2f");
+            ImGui::EndTable();
+            upChanged = upXChanged || upYChanged || upZChanged;
+        }
+
+        ImGui::Text("Target:");
+        bool targetChanged = false;
+        Eigen::Vector3f target = camera.get_target();
+        if (ImGui::BeginTable("TargetTable", 3, ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_Resizable))
+        {
+            ImGui::TableNextColumn();
+            bool targetXChanged = ImGui::InputFloat("X", &target[0], 0.1f, 1.0f, "%.2f");
+            ImGui::TableNextColumn();
+            bool targetYChanged = ImGui::InputFloat("Y", &target[1], 0.1f, 1.0f, "%.2f");
+            ImGui::TableNextColumn();
+            bool targetZChanged = ImGui::InputFloat("Z", &target[2], 0.1f, 1.0f, "%.2f");
+            ImGui::EndTable();
+            targetChanged = targetXChanged || targetYChanged || targetZChanged;
+        }
+
+        ImGui::Text("Field of View (FOV):");
+        float eye_fov = camera.get_eye_fov();
+        bool fovChanged = ImGui::SliderFloat("FOV", &eye_fov, 10.0f, 120.0f, "%.1f");
+
+        ImGui::Text("Aspect Ratio:");
+        float aspect_ratio = camera.get_aspect_ratio();
+        bool aspectRatioChanged = ImGui::SliderFloat("Aspect Ratio", &aspect_ratio, 0.1f, 2.0f, "%.2f");
+
+        ImGui::Text("Near Plane:");
+        float zNear = camera.get_zNear();
+        bool zNearChanged = ImGui::SliderFloat("Near Plane", &zNear, 0.01f, 10.0f, "%.2f");
+
+        ImGui::Text("Far Plane:");
+        float zFar = camera.get_zFar();
+        bool zFarChanged = ImGui::SliderFloat("Far Plane", &zFar, 10.0f, 100.0f, "%.2f");
+
+        bool activate = posChanged || upChanged || targetChanged || fovChanged || aspectRatioChanged || zNearChanged || zFarChanged;
+        if (activate)
+        {
+            camera.set_position(position, up, target);
+            camera.set_ratio(eye_fov, aspect_ratio, zNear, zFar);
+            updateSurface();
+        }
+    }
+}
 void gui::modelInfo()
 {
 
@@ -283,6 +363,7 @@ void gui::modelInfo()
     {
 
         auto &model = ras->get_models()[model_num];
+
         ImGui::Text(model.name.c_str());
         ImGui::Text("position:");
         bool pos, scale, rotate;
@@ -339,7 +420,7 @@ void gui::TextureInfo()
         auto &texture = ras->get_models()[model_num].texture;
 
         ImGui::Text("Texture:");
-        SDL_Texture *TextureImg;
+
         if (texture == nullptr)
         {
             TextureImg = loadTextureFromImage(renderer, "../objects/Texture/noPic.jpg");
@@ -464,19 +545,19 @@ void gui::lightInfo()
 void gui::MaterialInfo()
 {
     auto &model = ras->get_models()[model_num];
-    float color[3] = {model.color[0], model.color[1], model.color[2]};
+
     if (ImGui::CollapsingHeader("Material", ImGuiTreeNodeFlags_DefaultOpen))
     {
 
-        ImGui::ColorEdit3("Diffuse Color", color, ImGuiColorEditFlags_NoInputs);
+        ImGui::ColorEdit3("Diffuse Color", color);
 
-        float myFloat = 0.5f;
         ImGui::SliderFloat("reflectance", &myFloat, 0.0f, 1.0f, "%.3f");
         ImGui::SliderFloat("refractive", &myFloat, 0.0f, 1.0f, "%.3f");
 
         if (ImGui::Button("UseChange"))
         {
-            model.color = Vector3f(color[0], color[1], color[2]);
+            model.color = Vector3f(color[0] * 255, color[1] * 255, color[2] * 255);
+            std::cout << color[0] << " " << color[1] << " " << color[2] << std::endl;
             model.set_color();
             updateSurface();
         }
@@ -503,8 +584,10 @@ void gui::showSencePanel()
             {
                 if (ImGui::TreeNode((void *)(intptr_t)i, ras->get_models()[i].name.c_str()))
                 {
+
                     model_num = i;
                     object_type = 0;
+                    updateSurface();
                     ImGui::TreePop();
                 }
             }
@@ -514,6 +597,7 @@ void gui::showSencePanel()
                 {
                     model_num = i - models.size();
                     object_type = 1;
+                    updateSurface();
                     ImGui::TreePop();
                 }
             }
@@ -593,12 +677,13 @@ void gui::showMainMeauBar()
                 // 遍历并添加所有加载的光源到光栅化器中
                 for (auto light : lights)
                 {
+                    light.Init();
                     ras->add_light(light);
                 }
 
                 // 添加相机信息到光栅化器中
                 ras->add_camera(json_loader.get_camera());
-
+                ras->sence_file = str;
                 // 设置光栅化器的片段着色器为纹理片段着色器
                 ras->set_fragment_shader(texture_fragment_shader);
                 strcpy(newPath, "");
@@ -607,7 +692,7 @@ void gui::showMainMeauBar()
 
             if (ImGui::MenuItem("Save"))
             {
-                ras->write_scene_to_json("../cornel2.JSON");
+                ras->write_scene_to_json(ras->sence_file);
             }
             if (ImGui::MenuItem("Save as"))
             {
@@ -615,7 +700,7 @@ void gui::showMainMeauBar()
             if (ImGui::MenuItem("Create"))
             {
                 ras->clear_all();
-
+                ras->sence_file = "../temp.JSON";
                 strcpy(newPath, "");
                 updateSurface();
             }
@@ -691,19 +776,53 @@ void gui::showMainMeauBar()
             std::string str(objPath);
             if (!str.empty())
             {
-                auto newModel = new Model(objPath, "temp");
-                newModel->set_Transform(Vector3f(1, 1, 1), Vector3f(0, 0, 0), Vector3f(0, 0, 0));
-                newModel->color = Vector3f(100, 100, 240);
-                newModel->filename = str;
-                newModel->set_color();
+                auto newModel = new Model(objPath, "Model" + std::to_string(ras->get_models().size()));
+                newModel->Init();
+
                 ras->add_model(*newModel);
+
                 strcpy(objPath, "");
                 updateSurface();
+            }
+
+            if (ImGui::MenuItem("Light"))
+            {
+                ras->add_light(light(Vector3f(0, 0, 0), Vector3f(10, 10, 10), "light" + std::to_string(ras->get_lights().size())));
+                updateSurface();
+            }
+            if (ImGui::BeginMenu("Shape"))
+            {
+                if (ImGui::MenuItem("Sphere"))
+                {
+                    auto model = new Model("../objects/sphere.obj", "Sphere" + std::to_string(ras->get_models().size()));
+                    model->Init();
+                    ras->add_model(*model);
+                    updateSurface();
+                }
+                if (ImGui::MenuItem("Cube"))
+                {
+                    auto model = new Model("../objects/cube.obj", "cube" + std::to_string(ras->get_models().size()));
+                    model->Init();
+                    ras->add_model(*model);
+                    updateSurface();
+                }
+                if (ImGui::MenuItem("Plain"))
+                {
+                    auto model = new Model("../objects/plane.obj", "Plain" + std::to_string(ras->get_models().size()));
+                    model->Init();
+                    ras->add_model(*model);
+                    updateSurface();
+                }
+                ImGui::EndMenu();
             }
             ImGui::EndMenu();
         }
         if (ImGui::BeginMenu("Shader"))
         {
+            if (ImGui::MenuItem("Camera"))
+            {
+                object_type = 2;
+            }
             ImGui::EndMenu();
         }
         ImGui::EndMainMenuBar();
@@ -712,9 +831,9 @@ void gui::showMainMeauBar()
 
 ImVec2 gui::translationPosition(ImVec2 pos)
 {
-    std::cout << "Mouse button up at: (" << pos.x << ", " << pos.y << ")" << std::endl;
-    std::cout << "windows at: (" << windowPos.x << ", " << windowPos.y << ")" << std::endl;
-    std::cout << "windows at: (" << imagePos.x << ", " << imagePos.y << ")" << std::endl;
+    // std::cout << "Mouse button up at: (" << pos.x << ", " << pos.y << ")" << std::endl;
+    // std::cout << "windows at: (" << windowPos.x << ", " << windowPos.y << ")" << std::endl;
+    // std::cout << "windows at: (" << imagePos.x << ", " << imagePos.y << ")" << std::endl;
     return ImVec2((pos.x - windowPos.x - imagePos.x) * width / scaledImageSize.x, (pos.y - windowPos.y - imagePos.y) * height / scaledImageSize.y);
 }
 
@@ -751,7 +870,7 @@ void gui::imageController()
         mouseY = ImGui::GetMousePos().y;
         model_num = ras->get_pixel_model(mousePos.x, mousePos.y);
 
-        std::cout << "Mouse at:" << model_num << std::endl;
+        // std::cout << "Mouse at:" << model_num << std::endl;
     }
 
     // 检测鼠标释放事件

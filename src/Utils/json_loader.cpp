@@ -26,6 +26,10 @@ json_loader::json_loader(std::string path)
         std::string objfile = object["objfile"];
         models.push_back(new Model(objfile, name));
         models.back()->filename = objfile;
+        if (object.contains("shadow"))
+        {
+            models.back()->shadow_face = true;
+        }
         // 设置模型纹理或颜色
         if (object.contains("texture"))
         {
@@ -71,7 +75,7 @@ json_loader::json_loader(std::string path)
     for (const auto &_light : root["lights"])
     {
 
-        auto l = light{{0, 0, 0}, {0, 0, 0}};
+        auto l = light{{0, 0, 0}, {0, 0, 0}, "light"};
         l.name = _light["name"];
         l.position[0] = _light["position"][0];
         l.position[1] = _light["position"][1];
@@ -79,7 +83,6 @@ json_loader::json_loader(std::string path)
         l.intensity[0] = _light["intensity"][0];
         l.intensity[1] = _light["intensity"][1];
         l.intensity[2] = _light["intensity"][2];
-
         lights.push_back(l);
     }
 

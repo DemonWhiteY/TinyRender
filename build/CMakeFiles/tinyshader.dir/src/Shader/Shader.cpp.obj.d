@@ -476,4 +476,6 @@ CMakeFiles/tinyshader.dir/src/Shader/Shader.cpp.obj: \
  E:/Lab/TinyShader/src/Texture.h D:/mingw64/include/c++/14.2.0/iostream \
  E:/Lab/TinyShader/include/stb_image/stb_image.h \
  E:/Lab/TinyShader/src/Sence/Light.h \
- E:/Lab/TinyShader/include/eigen/Eigen/Core
+ E:/Lab/TinyShader/include/eigen/Eigen/Core \
+ E:/Lab/TinyShader/src/Sence/Camera.h \
+ E:/Lab/TinyShader/include/eigen/Eigen/Dense

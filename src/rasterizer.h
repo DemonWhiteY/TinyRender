@@ -42,12 +42,15 @@ private:
     std::vector<float> depth_buf;
     std::vector<float> model_buf;
     std::vector<Eigen::Vector3f> frame_buf;
+    std::vector<float> shadow_depth_buf;
 
     std::function<Eigen::Vector3f(fragment_shader_payload)> fragment_shader;
     std::function<Eigen::Vector3f(vertex_shader_payload)> vertex_shader;
 
 public:
+    std::string sence_file;
     int width, height;
+    int model_select;
     Rasterizer();
     Rasterizer(int w, int h);
     ~Rasterizer();
@@ -88,14 +91,17 @@ public:
     // void Rasterizer::clear(Buffers buff);
 
     int get_index(int x, int y);
-
+    bool is_within_bounds(int x, int y, int z);
     void set_pixel(const Eigen::Vector3f &point, const Eigen::Vector3f &color, int);
     void clear();
 
-    void draw_triangle(Triangle triangle, std::vector<Vector3f>, Texture *, int);
+    void draw_triangle(Triangle triangle, std::vector<Vector3f>, std::vector<Eigen::Vector3f>, Texture *, int, bool);
+
+    void draw_line(Vector3f v1, Vector3f v2, Vector3f color);
     void output();
 
     Vector3f get_view_pos(Vector3f v);
+    Vector3f get_ori_pos(Vector3f v);
     float crossProduct(Vector2f A, Vector2f B, Vector2f P);
     bool isPointInTriangle(Vector2f A, Vector2f B, Vector2f C, Vector2f P);
     std::tuple<float, float, float> computeBarycentric2D(float x, float y, const Vector3f *v);
@@ -110,7 +116,12 @@ public:
         clear();
     }
 
-    void write_scene_to_json(const std::string &path);
+    void write_scene_to_json(std::string &path);
+
+    void render_to_shadow_map();
+    void draw_triangle_to_shadow_map(Triangle Triangle, light &l);
+    int get_index(int x, int y, int w, int h);
+    void output_shadow_map(const std::string &filename, light &light);
 };
 
 #endif
