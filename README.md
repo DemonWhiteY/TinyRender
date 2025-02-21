@@ -17,6 +17,8 @@ Tiny_Renderer 基于C++开发，使用Dear-Imgui作为Gui, SDL3提供硬件支�
 
 ### 预览
 
+[点这里见Bilibili视频](https://www.bilibili.com/video/BV1hBPFeQERT/?vd_source=3d8f0cd38a3e8b245bde8a4d3f0783be)
+
 - sphere 实时阴影渲染
     ![alt text](screnn_pic/2.png)
     右侧为灯光视角下的深度贴图
