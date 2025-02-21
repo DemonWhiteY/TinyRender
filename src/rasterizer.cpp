@@ -162,13 +162,6 @@ void Rasterizer::draw_triangle(Triangle Triangle, std::vector<Vector3f> view_pos
                 float z_interpolated = alpha * v[0].z() / v[0].w() + beta * v[1].z() / v[1].w() + gamma * v[2].z() / v[2].w();
                 z_interpolated *= w_reciprocal;
 
-                // int index = get_index(x, y, width, height);
-                // if (z_interpolated < shadow_depth_buf[index])
-                // {
-                //     shadow_depth_buf[index] = z_interpolated;
-                // }
-
-                // 插值计算颜色、法线、纹理坐标和视点位置
                 auto interpolated_color = interpolate(alpha, beta, gamma, Triangle.color[0], Triangle.color[1], Triangle.color[2], 1);
                 auto interpolated_normal = interpolate(alpha, beta, gamma, Triangle.normal[0], Triangle.normal[1], Triangle.normal[2], 1);
                 auto interpolated_texcoords = interpolate(alpha, beta, gamma, Triangle.tex_coords[0], Triangle.tex_coords[1], Triangle.tex_coords[2], 1);

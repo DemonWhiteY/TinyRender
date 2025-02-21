@@ -540,6 +540,16 @@ void gui::lightInfo()
             updateSurface();
         }
     }
+
+    if (ImGui::CollapsingHeader("Shadow", ImGuiTreeNodeFlags_DefaultOpen))
+    {
+
+        TextureImg = loadTextureFromImage(renderer, "../output/shadow_map.bmp");
+
+        ImTextureID user_texture_id = 0;
+        user_texture_id = (ImTextureID)TextureImg; // 将SDL_Texture指针转换为ImTextureID
+        ImGui::Image(user_texture_id, ImVec2(256, 256));
+    }
 }
 
 void gui::MaterialInfo()

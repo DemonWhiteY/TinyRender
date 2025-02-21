@@ -66,6 +66,7 @@ public:
     ImVec2 imagePos;
     ImVec2 scaledImageSize;
     SDL_Texture *TextureImg;
+    SDL_Texture *ShadowMapImg;
     void showMainMeauBar();
     void showRender();
     void showSencePanel();
